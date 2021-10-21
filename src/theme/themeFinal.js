@@ -1,38 +1,42 @@
 import themeBase from "./themeBase.js";
-const mainFont = "Roboto, sans-serif";
+const titleFont = "Space Mono, monospace";
+const mainFont = "Lexend Deca, sans-serif"
 const theme = themeBase
 
 theme.typography.h1 = {
-  fontFamily: mainFont,
-  fontSize: 32,
-  lineHeight: "40px",
-  fontWeight: 800,
-  color: theme.palette.primary.main,
-  [theme.breakpoints.up("md")]: {
+  fontFamily: titleFont,
+  fontSize: 56,
+  lineHeight: 56,
+  fontWeight: 700,
+  color: theme.palette.text.primary,
+/*   [theme.breakpoints.up("md")]: {
     fontSize: 48,
     lineHeight: "56px",
-  },
+  }, */
 };
 
 theme.typography.h2 = {
-  fontFamily: mainFont,
-  fontSize: 40,
-  lineHeight: "55px",
-  fontWeight: 800,
+  fontFamily: titleFont,
+  fontSize: 48,
+  lineHeight: 48,
+  fontWeight: 700,
+  color: theme.palette.text.primary,
 };
 
 theme.typography.h3 = {
-  fontFamily: mainFont,
-  fontSize: 24,
-  lineHeight: "32px",
-  fontWeight: 800,
+  fontFamily: titleFont,
+  fontSize: 40,
+  lineHeight: 40,
+  fontWeight: 700,
+  color: theme.palette.text.primary,
 };
 
 theme.typography.h4 = {
-  fontFamily: mainFont,
-  fontSize: 18,
-  lineHeight: "25px",
-  fontWeight: 800,
+  fontFamily: titleFont,
+  fontSize: 24,
+  lineHeight: 24,
+  fontWeight: 700,
+  color: theme.palette.text.primary,
 };
 
 theme.typography.body2 = {
@@ -40,6 +44,7 @@ theme.typography.body2 = {
   fontSize: 15,
   lineHeight: "25px",
   fontWeight: 500,
+  color: theme.palette.text.primary,
 };
 
 export default theme;

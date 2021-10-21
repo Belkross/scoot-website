@@ -1,16 +1,20 @@
 export const palette = {
-  mode: "dark",
+  mode: "light",
   primary: {
-    main: "#3ee9e5",
+    main: "#fcb72b",
+    light: "#fff4df",
   },
   secondary: {
-    main: "#093f68",
+    main: "#939caa",
+    light: "#e5ecf4",
+    dark: "#495567",
   },
-  error: {
-    main: "#ff2965",
+  text: {
+    primary: "#495567",
+    
   },
   background: {
-    default: "#080c20",
+    paper: "#f2f5f9",
   },
 };
 
