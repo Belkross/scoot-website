@@ -1,0 +1,61 @@
+introduction:
+  title: Louer un scooter n’a jamais été aussi simple
+  description:
+    Avec Scoot, circucler dans les grandes agglomérations devient un plaisir.
+    Nos scooters vous attendent dans plusieurs métropoles internationales.
+    Utilise l’application pour repérer le véhicule le plus proche, dévérouille
+    le moins de temps qu’il ne faut pour le dire, et c’est parti !
+  illustration:
+    desktop: assets/images/home-hero-desktop.jpg
+    tablet: assets/images/home-hero-tablet.jpg
+    mobile: assets/images/home-hero-mobile.jpg
+  button: Get Scootin
+
+part1:
+  h2: Comment ça marche ?
+  step1:
+    title: Localise-toi
+    description:
+      Use the app to find the nearest scooter to you. We are continuously
+      placing scooters in the areas with most demand, so one should never be too
+      far away.
+    illustration: assets/icons/locate.svg
+  step2:
+    title: Chosis un scooter
+    description:
+      We show the most important info for the scooters closest to you. So you
+      know how much charge they have left and can see roughly how much it will
+      cost.
+    illustration: assets/icons/scooter.svg
+  step3:
+    title: En route !
+    description:
+      Scan the QR code and the bike will unlock. Retract the cable lock, put on
+      a helmet, and you’re off! Always lock bikes away from walkways and
+      accessibility ramps.
+    illustration: assets/icons/ride.svg
+
+part2:
+  button: Learn more
+  section1:
+    title: Easy to use riding telemetry
+    description:
+      The Scoot app is available with riding telemetry. This means it can show
+      you your average speed, how long you've been using the scooter, your
+      traveling distance, and many more things all in an easy to use app.
+    illustration: assets/images/telemetry.jpg
+  section2:
+    title: Coming to a city near you
+    description:
+      Scoot is available in 4 major cities so far. We’re expanding rapidly, so
+      be sure to let us know if you want to see us in your hometown. We’re
+      aiming to let our scooters loose on 23 cities over the coming year.
+    illustration: assets/images/near-you.jpg
+  section3:
+    title: Zero hassle payments
+    description:
+      Our payment is as easy as one two three. We accept most credit cards and
+      debit cards. You can also link your PayPal account inside the app. Need to
+      pay later? No worries! You can defer payment for up to a month.
+    illustration: assets/images/payments.jpg
+  
