@@ -1,10 +1,14 @@
 import React from "react";
 import Layout from "../components/Layout/Layout";
-import data from "../content/PageIndex.yaml"
+import Introduction from "../components/PageIndex/Introduction";
+/* import content from "../content/PageIndex.yaml"; */
 
 const PageIndex = () => {
-  console.log(data)
-  return <Layout></Layout>;
+  return (
+    <Layout>
+      <Introduction />
+    </Layout>
+  );
 };
 
 export default PageIndex;

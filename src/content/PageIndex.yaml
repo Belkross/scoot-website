@@ -1,18 +1,17 @@
 introduction:
-  title: Louer un scooter n’a jamais été aussi simple
+  title: La mobilité rendue simple
   description:
-    Avec Scoot, circucler dans les grandes agglomérations devient un plaisir.
-    Nos scooters vous attendent dans plusieurs métropoles internationales.
+    Avec Scoot, circuler dans les grandes agglomérations devient un plaisir.
     Utilise l’application pour repérer le véhicule le plus proche, dévérouille
-    le moins de temps qu’il ne faut pour le dire, et c’est parti !
+    le, et c’est parti !
   illustration:
     desktop: assets/images/home-hero-desktop.jpg
     tablet: assets/images/home-hero-tablet.jpg
     mobile: assets/images/home-hero-mobile.jpg
-  button: Get Scootin
+  button: Get scootin
 
 part1:
-  h2: Comment ça marche ?
+  title: Comment ça marche ?
   step1:
     title: Localise-toi
     description:
@@ -58,4 +57,3 @@ part2:
       debit cards. You can also link your PayPal account inside the app. Need to
       pay later? No worries! You can defer payment for up to a month.
     illustration: assets/images/payments.jpg
-  

@@ -1,4 +1,4 @@
-import { createTheme } from "@mui/material/styles";
+import { createTheme, responsiveFontSizes } from "@mui/material/styles";
 import breakpoints from "./breakpoints.js";
 import palette from "./palette.js";
 import shape from "./shape.js";
@@ -8,6 +8,7 @@ function createThemeObject() {
   return { breakpoints, components, palette, shape };
 }
 
-const themeBase = createTheme(createThemeObject());
+let themeBase = createTheme(createThemeObject());
+themeBase = responsiveFontSizes(themeBase)
 
 export default themeBase;

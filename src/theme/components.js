@@ -2,10 +2,11 @@ const components = {
   MuiButton: {
     defaultProps: {
       variant: "contained",
+      color: "secondary",
     },
     styleOverrides: {
       root: {
-        textTransform: "none",
+        padding: "16px 28px",
       },
     },
   },
