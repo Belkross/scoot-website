@@ -3,12 +3,20 @@ import Box from "@mui/material/Box";
 import Stack from "@mui/material/Stack";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
-import pageContent from "../../content/PageIndex.yaml";
-const { introduction: content } = pageContent;
 
 function Introduction(props) {
+  const { content } = props;
   return (
-    <Box sx={sx_container}>
+    <Box
+      sx={{
+        ...sx_container,
+        backgroundImage: {
+          xs: `url(${require(`/src/${content.illustration.mobile}`).default})`,
+          sm: `url(${require(`/src/${content.illustration.tablet}`).default})`,
+          lg: `url(${require(`/src/${content.illustration.desktop}`).default})`,
+        },
+      }}
+    >
       <Stack sx={sx_stack} spacing={3}>
         <Typography
           variant="h1"
@@ -25,13 +33,9 @@ function Introduction(props) {
 export default Introduction;
 
 const sx_container = {
+  mb: 12,
   height: 650,
   backgroundColor: "background.default",
-  backgroundImage: {
-    xs: `url(${require(`/src/${content.illustration.mobile}`).default})`,
-    sm: `url(${require(`/src/${content.illustration.tablet}`).default})`,
-    lg: `url(${require(`/src/${content.illustration.desktop}`).default})`,
-  },
   backgroundRepeat: "no-repeat",
   backgroundSize: "cover",
 };
