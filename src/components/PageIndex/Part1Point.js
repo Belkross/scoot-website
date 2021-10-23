@@ -13,7 +13,7 @@ function Point({ title, description, illustration }) {
       <Box
         sx={{
           ...sx_illustration,
-          backgroundImage: `url(${require(`/src/${illustration}`).default})`,
+          backgroundImage: `url(${require(`/src/assets/${illustration}`).default})`,
         }}
       />
       <Stack sx={sx_textStack} spacing={2}>

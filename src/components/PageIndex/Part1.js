@@ -2,7 +2,7 @@ import React from "react";
 import Stack from "@mui/material/Stack";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
-import Point from "./Point";
+import Point from "./Part1Point";
 
 function Part1(props) {
   const { content } = props;
@@ -22,17 +22,17 @@ function Part1(props) {
         <Point
           title={content.step1.title}
           description={content.step1.description}
-          illustration={content.step1.illustration}
+          illustration={content.step1.illustration.relativePath}
         />
         <Point
           title={content.step2.title}
           description={content.step2.description}
-          illustration={content.step2.illustration}
+          illustration={content.step2.illustration.relativePath}
         />
         <Point
           title={content.step3.title}
           description={content.step3.description}
-          illustration={content.step3.illustration}
+          illustration={content.step3.illustration.relativePath}
         />
       </Stack>
     </Box>

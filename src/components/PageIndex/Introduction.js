@@ -11,9 +11,18 @@ function Introduction(props) {
       sx={{
         ...sx_container,
         backgroundImage: {
-          xs: `url(${require(`/src/${content.illustration.mobile}`).default})`,
-          sm: `url(${require(`/src/${content.illustration.tablet}`).default})`,
-          lg: `url(${require(`/src/${content.illustration.desktop}`).default})`,
+          xs: `url(${
+            require(`/src/assets/${content.illustration_mobile.relativePath}`)
+              .default
+          })`,
+          sm: `url(${
+            require(`/src/assets/${content.illustration_tablet.relativePath}`)
+              .default
+          })`,
+          lg: `url(${
+            require(`/src/assets/${content.illustration_desktop.relativePath}`)
+              .default
+          })`,
         },
       }}
     >
@@ -36,8 +45,9 @@ const sx_container = {
   mb: 12,
   height: 650,
   backgroundColor: "background.default",
-  backgroundRepeat: "no-repeat",
   backgroundSize: "cover",
+  backgroundRepeat: "no-repeat",
+  width: "100%"
 };
 
 const sx_stack = {
