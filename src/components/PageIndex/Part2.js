@@ -3,8 +3,7 @@ import Stack from "@mui/material/Stack";
 import Point from "./Part2Point";
 
 function Part2(props) {
-  const {content} = props
-  console.log(content)
+  const { content } = props;
   return (
     <Stack>
       <Point
