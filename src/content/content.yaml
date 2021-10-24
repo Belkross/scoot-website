@@ -128,7 +128,11 @@ PageRecrutement:
       title: UX Analyst
       location: London, United Kingdom
       button: Postuler
-page_guide:
+page_about:
+  header:
+    title: About
+    illustration: ../assets/images/home-hero-desktop.jpg
+    illustration_alt: ""
   section1:
     article1:
       title: Mobility for the digital era
@@ -138,14 +142,16 @@ page_guide:
         fingertips.
       illustration: ../assets/images/digital-era.jpg
       illustration_alt: une personne utilise un smartphone
+      button: Contact us
     article2:
       title: Better urban living
       description:
         We’re helping connect cities and bring people closer together. Our
         scooters are also fully-electric and we offset the minimal carbon
         footprint for each ride.
-      illustration: ../assets/image/better-living.jpg
+      illustration: ../assets/images/better-living.jpg
       illustration_alt: espace urbain
+      button: Contact us
   section2:
     h2: FAQs
     sectionA:

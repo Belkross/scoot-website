@@ -27,9 +27,9 @@ function AppBarTop(props) {
             display={{ xs: "none", md: "flex" }}
           >
             <LinkMui to="/" children="Accueil" />
-            <LinkMui to="/guide/" children="Guide" />
+            <LinkMui to="/about/" children="About" />
             <LinkMui to="/localisation/" children="Localisation" />
-            <LinkMui to="/recrutement/" children="Recrutement" />
+            <LinkMui to="/recrutement/" children="Careers" />
             <LinkMui to="/contact/" children="Contact" />
             <Button children="Get scootin" />
           </Stack>
