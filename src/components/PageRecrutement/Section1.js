@@ -1,10 +1,11 @@
 import React from "react";
 import PointIllustrated from "../PointIllustrated";
+import Box from "@mui/material/Box";
 
-function Part1(props) {
+function Section1(props) {
   const { content } = props;
   return (
-    <article>
+    <Box component="article" mb={{ xs: 12, md: 20 }}>
       <PointIllustrated
         title={content.title}
         description={content.description}
@@ -13,8 +14,8 @@ function Part1(props) {
         button={content.button}
         direction="row"
       />
-    </article>
+    </Box>
   );
 }
 
-export default Part1;
+export default Section1;

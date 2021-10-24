@@ -2,16 +2,18 @@ import React from "react";
 import Container from "@mui/material/Container";
 import Typography from "@mui/material/Typography";
 import Layout from "../components/Layout/Layout";
-import Part1 from "../components/PageRecrutement/Part1";
+import Section1 from "../components/PageRecrutement/Section1";
+import Section2 from "../components/PageRecrutement/Section2";
 import { graphql } from "gatsby";
 
 function PageRecrutement({ data }) {
   const { PageRecrutement: content } = data.contentYaml;
   return (
     <Layout>
-      <Typography variant="h1">{content.title}</Typography>
+      <Typography variant="h1" textAlign="center" my={8}>{content.title}</Typography>
       <Container>
-        <Part1 content={content.Part1} />
+        <Section1 content={content.section1} />
+        <Section2 content={content.section2} />
       </Container>
     </Layout>
   );
@@ -22,7 +24,7 @@ export const query = graphql`
   query PageRecrutement {
     contentYaml {
       PageRecrutement {
-        Part1 {
+        section1 {
           button
           description
           title
@@ -34,9 +36,9 @@ export const query = graphql`
             }
           }
         }
-        Part2 {
+        section2 {
           title
-          section1 {
+          article1 {
             description
             illustration_alt
             title
@@ -47,7 +49,7 @@ export const query = graphql`
               }
             }
           }
-          section2 {
+          article2 {
             description
             illustration_alt
             title
@@ -58,7 +60,7 @@ export const query = graphql`
               }
             }
           }
-          section3 {
+          article3 {
             description
             illustration_alt
             title
@@ -71,29 +73,29 @@ export const query = graphql`
           }
         }
         title
-        Part3 {
+        section3 {
           button
-          job1 {
+          article1 {
             location
             title
           }
-          job2 {
+          article2 {
             location
             title
           }
-          job3 {
+          article3 {
             location
             title
           }
-          job4 {
+          article4 {
             location
             title
           }
-          job5 {
+          article5 {
             location
             title
           }
-          job6 {
+          article6 {
             location
             title
           }
