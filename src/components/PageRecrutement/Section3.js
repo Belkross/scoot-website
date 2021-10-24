@@ -11,6 +11,7 @@ function Section3(props) {
   const list_articles = array_articles.map((article) => {
     return (
       <Job
+        key={article.title}
         title={article.title}
         location={article.location}
         button={article.button}

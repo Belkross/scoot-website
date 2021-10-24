@@ -67,7 +67,10 @@ PageIndex:
       illustration_alt:
         un portefeuille contenant des billets et des cartes de crédit
 PageRecrutement:
-  title: Recrutement
+  header:
+    title: Recrutement
+    illustration: ../assets/images/home-hero-desktop.jpg
+    illustration_alt: ""
   section1:
     title: Care to join our mission?
     description:

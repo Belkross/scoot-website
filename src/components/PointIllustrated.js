@@ -18,6 +18,8 @@ function PointIllustrated(props) {
         image={image}
         style={{
           borderRadius: "50%",
+          maxHeight: "400px",
+          maxWidth: "400px",
         }}
         alt={alt}
       />
