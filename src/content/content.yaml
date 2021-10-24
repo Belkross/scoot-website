@@ -101,22 +101,27 @@ PageRecrutement:
       illustration: ../assets/images/our-community.jpg
       illustration_alt: "un groupe de personne en milieu urbain"
   section3:
-    button: Postuler
     article1:
       title: General Manager
       location: Jakarta, Indonesia
+      button: Postuler
     article2:
       title: UI/UX Designer
       location: Yokohama, Japan
+      button: Postuler
     article3:
       title: Blog Content Copywriter
       location: New York, United States
+      button: Postuler
     article4:
       title: Graphic Designer
       location: New York, United States
+      button: Postuler
     article5:
       title: Fleet Supervisor
       location: Jakarta, Indonesia
+      button: Postuler
     article6:
       title: UX Analyst
       location: London, United Kingdom
+      button: Postuler

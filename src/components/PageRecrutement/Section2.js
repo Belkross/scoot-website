@@ -19,12 +19,12 @@ function Section2(props) {
   });
 
   return (
-    <section>
-      <Stack spacing={6}>
+    
+      <Stack component="section" spacing={6}>
         <Typography variant="h2" children={content.title} textAlign="center" />
         <Stack sx={sx_articles}>{list_articles}</Stack>
       </Stack>
-    </section>
+    
   );
 }
 

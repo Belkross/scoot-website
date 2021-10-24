@@ -5,7 +5,7 @@ import Box from "@mui/material/Box";
 function Section1(props) {
   const { content } = props;
   return (
-    <Box component="article" mb={{ xs: 12, md: 20 }}>
+    <Box component="section" mb={{ xs: 12, md: 20 }}>
       <PointIllustrated
         title={content.title}
         description={content.description}
