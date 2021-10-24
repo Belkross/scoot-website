@@ -1,18 +1,19 @@
 import React from "react";
-import MainPoint from "../MainPoint";
+import PointIllustrated from "../PointIllustrated";
 
 function Part1(props) {
   const { content } = props;
   return (
-    <div>
-      <MainPoint
+    <article>
+      <PointIllustrated
         title={content.title}
         description={content.description}
         illustration={content.illustration}
+        alt={content.illustration_alt}
         button={content.button}
         direction="row"
       />
-    </div>
+    </article>
   );
 }
 

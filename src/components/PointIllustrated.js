@@ -1,11 +1,13 @@
 import React from "react";
 import Stack from "@mui/material/Stack";
-import Box from "@mui/material/Box";
+
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
+import { GatsbyImage, getImage } from "gatsby-plugin-image";
 
-function MainPoint(props) {
-  const { title, description, illustration, button, direction } = props;
+function PointIllustrated(props) {
+  const { title, description, illustration, button, direction, alt } = props;
+  const image = getImage(illustration);
 
   return (
     <Stack
@@ -13,15 +15,12 @@ function MainPoint(props) {
       direction={{ xs: "column", md: direction }}
       spacing={6}
     >
-      <Box
-        component="img"
-        alt="bonjour"
-        sx={{
-          ...sx_illustration,
-          backgroundImage: `url(${
-            require(`/src/assets/${illustration.relativePath}`).default
-          })`,
+      <GatsbyImage
+        image={image}
+        style={{
+          borderRadius: "50%",
         }}
+        alt={alt}
       />
       <Stack sx={sx_text} spacing={4}>
         <Typography variant="h2" children={title} />
@@ -32,22 +31,16 @@ function MainPoint(props) {
   );
 }
 
-export default MainPoint;
+export default PointIllustrated;
 
 const sx_container = {
   mb: 12,
   alignItems: "center",
 };
 
-const sx_illustration = {
-  width: { xs: 280, sm: 445 },
-  height: { xs: 280, sm: 445 },
-  borderRadius: "50%",
-  flexShrink: 0,
-};
-
 const sx_text = {
-  maxWidth: 600,
+  maxWidth: 550,
   alignItems: "center",
   textAlign: { xs: "center", md: "left" },
+  flexShrink: 2,
 };
