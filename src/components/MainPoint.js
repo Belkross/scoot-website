@@ -14,13 +14,15 @@ function MainPoint(props) {
       spacing={6}
     >
       <Box
+        component="img"
+        alt="bonjour"
         sx={{
           ...sx_illustration,
           backgroundImage: `url(${
             require(`/src/assets/${illustration.relativePath}`).default
           })`,
         }}
-      ></Box>
+      />
       <Stack sx={sx_text} spacing={4}>
         <Typography variant="h2" children={title} />
         <Typography children={description} />
