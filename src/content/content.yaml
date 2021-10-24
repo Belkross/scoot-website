@@ -1,6 +1,6 @@
-Footer: 
+Footer:
   title: Télécharge gratuitement l’application !
-  
+
 PageIndex:
   introduction:
     title: La mobilité rendue simple
@@ -66,3 +66,57 @@ PageIndex:
       illustration: ../assets/images/payments.jpg
       illustration_alt:
         un portefeuille contenant des billets et des cartes de crédit
+PageRecrutement:
+  title: Recrutement
+  Part1:
+    title: Care to join our mission?
+    description:
+      We’re always looking for ambitious individuals to help us on our journey.
+      If you’re passionate about our mission to provide clean, accessible
+      transport to improve urban living we want to hear from you!
+    button: Say Hello
+    illustration: ../assets/images/join-us.jpg
+    illustration_alt: une équipe en réunion de travail
+  Part2:
+    title: Why join us?
+    section1:
+      title: Our tech
+      description:
+        We’re using cutting edge technology to drive accessible urban
+        transportation forward. Our fully electric scooters are a joy to ride!
+      illustration: ../assets/images/our-tech.jpg
+      illustration_alt: ""
+    section2:
+      title: Our integrity
+      description:
+        We are fully committed to deliver a great yet safe, sustainable
+        micro-mobility experience in every city we serve.
+      illustration: ../assets/images/our-integrity.jpg
+      illustration_alt: ""
+    section3:
+      title: Our community
+      description:
+        We support every community we serve. All workers are paid a living wage
+        based on their location and are Scoot employees.
+      illustration: ../assets/images/our-community.jpg
+      illustration_alt: ""
+  Part3:
+    button: Postuler
+    job1:
+      title: General Manager
+      location: Jakarta, Indonesia
+    job2:
+      title: UI/UX Designer
+      location: Yokohama, Japan
+    job3:
+      title: Blog Content Copywriter
+      location: New York, United States
+    job4:
+      title: Graphic Designer
+      location: New York, United States
+    job5:
+      title: Fleet Supervisor
+      location: Jakarta, Indonesia
+    job6:
+      title: UX Analyst
+      location: London, United Kingdom
