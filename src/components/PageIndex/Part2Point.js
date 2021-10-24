@@ -38,8 +38,8 @@ const sx_container = {
 };
 
 const sx_illustration = {
-  width: { xs: 310, sm: 445 },
-  height: { xs: 310, sm: 445 },
+  width: { xs: 280, sm: 445 },
+  height: { xs: 280, sm: 445 },
   borderRadius: "50%",
   flexShrink: 0,
 };
