@@ -2,7 +2,7 @@ import React from "react";
 import Container from "@mui/material/Container";
 import Layout from "../components/Layout/Layout";
 import Section1 from "../components/PageIndex/Section1";
-import Part1 from "../components/PageIndex/Part1";
+import Section2 from "../components/PageIndex/Section2";
 import Part2 from "../components/PageIndex/Part2";
 import { graphql } from "gatsby";
 
@@ -12,7 +12,7 @@ const PageIndex = ({ data }) => {
     <Layout>
       <Section1 content={content.section1} />
       <Container>
-        <Part1 content={content.section2} />
+        <Section2 content={content.section2} />
         <Part2 content={content.section3} />
       </Container>
     </Layout>
@@ -45,28 +45,33 @@ export const query = graphql`
         }
         section2 {
           title
-          step1 {
-            title
-            description
-            illustration {
-              relativePath
+          articles {
+            article1 {
+              title
+              description
+              illustration {
+                relativePath
+                publicURL
+              }
+              illustration_alt
             }
-            illustration_alt
-          }
-          step2 {
-            title
-            description
-            illustration_alt
-            illustration {
-              relativePath
+            article2 {
+              title
+              description
+              illustration_alt
+              illustration {
+                relativePath
+                publicURL
+              }
             }
-          }
-          step3 {
-            title
-            description
-            illustration_alt
-            illustration {
-              relativePath
+            article3 {
+              title
+              description
+              illustration_alt
+              illustration {
+                relativePath
+                publicURL
+              }
             }
           }
         }
