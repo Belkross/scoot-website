@@ -83,10 +83,11 @@ page_index:
         illustration: ../assets/images/payments.jpg
         illustration_alt:
           un portefeuille contenant des billets et des cartes de crédit
+
 PageRecrutement:
   header:
     title: Recrutement
-    illustration: ../assets/images/home-hero-desktop.jpg
+    illustration: ../assets/images/careers-locations-hero-desktop.jpg
     illustration_alt: ""
   section1:
     title: Care to join our mission?
@@ -145,10 +146,11 @@ PageRecrutement:
       title: UX Analyst
       location: London, United Kingdom
       button: Postuler
+
 page_about:
   header:
     title: About
-    illustration: ../assets/images/home-hero-desktop.jpg
+    illustration: ../assets/images/about-hero-desktop.jpg
     illustration_alt: ""
   section1:
     article1:

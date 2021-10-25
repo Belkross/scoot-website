@@ -28,7 +28,7 @@ export const query = graphql`
           title
           illustration {
             childImageSharp {
-              gatsbyImageData
+              gatsbyImageData(quality: 100)
             }
           }
           illustration_alt

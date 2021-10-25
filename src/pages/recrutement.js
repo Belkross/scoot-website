@@ -11,11 +11,11 @@ function PageRecrutement({ data }) {
   const { PageRecrutement: content } = data.contentYaml;
   return (
     <Layout>
-      <PageHeader content={content.header}/>
+      <PageHeader content={content.header} />
       <Container component="main">
-        <Section1 content={content.section1} />
         <Section2 content={content.section2} />
         <Section3 content={content.section3} />
+        <Section1 content={content.section1} />
       </Container>
     </Layout>
   );
@@ -31,7 +31,7 @@ export const query = graphql`
           title
           illustration {
             childImageSharp {
-              gatsbyImageData
+              gatsbyImageData(quality: 100)
             }
           }
         }

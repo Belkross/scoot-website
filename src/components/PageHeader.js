@@ -36,7 +36,7 @@ const sx_typography = {
   gridArea: "1/1",
   position: "relative",
   placeItems: "center",
-  color: "background.default"
+  color: "primary.light"
 };
 
 
