@@ -13,11 +13,13 @@ header:
     tab4:
       name: Contact
       url: /contact/
-  mainAction: Télécharger Scootin
-Footer:
+  mainAction: Télécharger Scoot
+
+footer:
   title: Télécharge gratuitement l’application !
-PageIndex:
-  introduction:
+
+page_index:
+  section1:
     title: La mobilité rendue simple
     description:
       Avec Scoot, circuler dans les grandes agglomérations devient un plaisir.
@@ -26,9 +28,9 @@ PageIndex:
     illustration_desktop: ../assets/images/home-hero-desktop.jpg
     illustration_tablet: ../assets/images/home-hero-tablet.jpg
     illustration_mobile: ../assets/images/home-hero-mobile.jpg
-    illustration_alt: e
+    illustration_alt: ""
     button: Get scootin
-  part1:
+  section2:
     title: Comment ça marche ?
     step1:
       title: Localise-toi
@@ -54,7 +56,7 @@ PageIndex:
         accessibility ramps.
       illustration: ../assets/icons/ride.svg
       illustration_alt: driven scooter icon
-  part2:
+  section3:
     button: Learn more
     section1:
       title: Easy to use riding telemetry

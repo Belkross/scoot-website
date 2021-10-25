@@ -1,19 +1,19 @@
 import React from "react";
 import Container from "@mui/material/Container";
 import Layout from "../components/Layout/Layout";
-import Introduction from "../components/PageIndex/Introduction";
+import Section1 from "../components/PageIndex/Section1";
 import Part1 from "../components/PageIndex/Part1";
 import Part2 from "../components/PageIndex/Part2";
 import { graphql } from "gatsby";
 
 const PageIndex = ({ data }) => {
-  const { PageIndex: content } = data.contentYaml;
+  const { page_index: content } = data.contentYaml;
   return (
     <Layout>
-      <Introduction content={content.introduction} />
+      <Section1 content={content.section1} />
       <Container>
-        <Part1 content={content.part1} />
-        <Part2 content={content.part2} />
+        <Part1 content={content.section2} />
+        <Part2 content={content.section3} />
       </Container>
     </Layout>
   );
@@ -22,14 +22,17 @@ const PageIndex = ({ data }) => {
 export default PageIndex;
 
 export const query = graphql`
-  query PageIndex {
+  query page_index {
     contentYaml {
-      PageIndex {
-        introduction {
+      page_index {
+        section1 {
           button
           description
           illustration_desktop {
             relativePath
+            childImageSharp {
+              gatsbyImageData(quality: 100)
+            }
           }
           illustration_tablet {
             relativePath
@@ -40,7 +43,7 @@ export const query = graphql`
           illustration_alt
           title
         }
-        part1 {
+        section2 {
           title
           step1 {
             title
@@ -67,7 +70,7 @@ export const query = graphql`
             }
           }
         }
-        part2 {
+        section3 {
           button
           section1 {
             title
