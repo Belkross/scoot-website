@@ -8,12 +8,8 @@ function Value(props) {
   const image = getImage(illustration);
   return (
     <Stack sx={sx_container} component="article">
-      <GatsbyImage
-        image={image}
-        alt={alt}
-        style={{ width: "230px", height: "230px", borderRadius: "50%" }}
-      />
-      <Stack sx={sx_text} spacing={3}>
+      <GatsbyImage image={image} alt={alt} style={style_image} />
+      <Stack sx={sx_text}>
         <Typography variant="h3" children={title} />
         <Typography children={description} />
       </Stack>
@@ -24,13 +20,16 @@ function Value(props) {
 export default Value;
 
 const sx_container = {
-  gap: 4,
   mb: { xs: 8, md: 12 },
   alignItems: { xs: "center" },
+  gap: 4,
 };
+
+const style_image = { width: "230px", height: "230px", borderRadius: "50%" };
 
 const sx_text = {
   maxWidth: 550,
   alignItems: { xs: "center", md: "flex-start" },
   textAlign: { xs: "center", md: "left" },
+  gap: 3,
 };
