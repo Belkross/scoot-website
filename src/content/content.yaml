@@ -1,6 +1,21 @@
+header:
+  logo: Scoot
+  tabs:
+    tab1:
+      name: Accueil
+      url: /
+    tab2:
+      name: Recrutement
+      url: /recrutement/
+    tab3:
+      name: Faq
+      url: /faq/
+    tab4:
+      name: Contact
+      url: /contact/
+  mainAction: Télécharger Scootin
 Footer:
   title: Télécharge gratuitement l’application !
-
 PageIndex:
   introduction:
     title: La mobilité rendue simple

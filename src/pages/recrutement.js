@@ -1,7 +1,7 @@
 import React from "react";
 import Layout from "../components/Layout/Layout";
 import Container from "@mui/material/Container";
-import Header from "../components/Header";
+import PageHeader from "../components/PageHeader";
 import Section1 from "../components/PageRecrutement/Section1";
 import Section2 from "../components/PageRecrutement/Section2";
 import Section3 from "../components/PageRecrutement/Section3";
@@ -11,7 +11,7 @@ function PageRecrutement({ data }) {
   const { PageRecrutement: content } = data.contentYaml;
   return (
     <Layout>
-      <Header content={content.header}/>
+      <PageHeader content={content.header}/>
       <Container component="main">
         <Section1 content={content.section1} />
         <Section2 content={content.section2} />

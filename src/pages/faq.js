@@ -1,7 +1,7 @@
 import React from "react";
 import Layout from "../components/Layout/Layout";
 import Container from "@mui/material/Container";
-import Header from "../components/Header";
+import PageHeader from "../components/PageHeader";
 import Section1 from "../components/PageAbout/Section1";
 import Section2 from "../components/PageAbout/Section2";
 import { graphql } from "gatsby";
@@ -10,7 +10,7 @@ function PageAbout({ data }) {
   const { page_about: content } = data.contentYaml;
   return (
     <Layout>
-      <Header content={content.header} />
+      <PageHeader content={content.header} />
       <Container>
         <Section1 content={content.section1} />
         <Section2 content={content.section2} />
