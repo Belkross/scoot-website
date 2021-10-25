@@ -2,8 +2,8 @@ import React from "react";
 import Layout from "../components/Layout/Layout";
 import Container from "@mui/material/Container";
 import PageHeader from "../components/PageHeader";
-import Section1 from "../components/PageAbout/Section1";
-import Section2 from "../components/PageAbout/Section2";
+import Section1 from "../components/pageFaq/Section1";
+import Section2 from "../components/pageFaq/Section2";
 import { graphql } from "gatsby";
 
 function PageAbout({ data }) {
