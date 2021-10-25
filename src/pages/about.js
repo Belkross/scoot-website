@@ -3,6 +3,7 @@ import Layout from "../components/Layout/Layout";
 import Container from "@mui/material/Container";
 import Header from "../components/Header";
 import Section1 from "../components/PageAbout/Section1";
+import Section2 from "../components/PageAbout/Section2";
 import { graphql } from "gatsby";
 
 function PageAbout({ data }) {
@@ -12,6 +13,7 @@ function PageAbout({ data }) {
       <Header content={content.header} />
       <Container>
         <Section1 content={content.section1} />
+        <Section2 content={content.section2} />
       </Container>
     </Layout>
   );
