@@ -7,7 +7,7 @@ import { GatsbyImage, getImage } from "gatsby-plugin-image";
 
 function section1(props) {
   const { content } = props;
-  const image = getImage(content.illustration_desktop);
+  const image = getImage(content.illustration);
   return (
     <Box component="section" sx={sx_container}>
       <GatsbyImage

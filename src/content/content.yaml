@@ -25,9 +25,7 @@ page_index:
       Avec Scoot, circuler dans les grandes agglomérations devient un plaisir.
       Utilise l’application pour repérer le véhicule le plus proche, dévérouille
       le, et c’est parti !
-    illustration_desktop: ../assets/images/home-hero-desktop.jpg
-    illustration_tablet: ../assets/images/home-hero-tablet.jpg
-    illustration_mobile: ../assets/images/home-hero-mobile.jpg
+    illustration: ../assets/images/home-hero-desktop.jpg
     illustration_alt: ""
     button: Get scootin
   section2:
@@ -59,31 +57,32 @@ page_index:
         illustration_alt: ""
   section3:
     button: Learn more
-    section1:
-      title: Easy to use riding telemetry
-      description:
-        The Scoot app is available with riding telemetry. This means it can show
-        you your average speed, how long you've been using the scooter, your
-        traveling distance, and many more things all in an easy to use app.
-      illustration: ../assets/images/telemetry.jpg
-      illustration_alt: une personne souriante se sert de son smartphone
-    section2:
-      title: Coming to a city near you
-      description:
-        Scoot is available in 4 major cities so far. We’re expanding rapidly, so
-        be sure to let us know if you want to see us in your hometown. We’re
-        aiming to let our scooters loose on 23 cities over the coming year.
-      illustration: ../assets/images/near-you.jpg
-      illustration_alt: une ville moderne avec de nombreux gratte-ciel
-    section3:
-      title: Zero hassle payments
-      description:
-        Our payment is as easy as one two three. We accept most credit cards and
-        debit cards. You can also link your PayPal account inside the app. Need
-        to pay later? No worries! You can defer payment for up to a month.
-      illustration: ../assets/images/payments.jpg
-      illustration_alt:
-        un portefeuille contenant des billets et des cartes de crédit
+    articles:
+      article1:
+        title: Easy to use riding telemetry
+        description:
+          The Scoot app is available with riding telemetry. This means it can show
+          you your average speed, how long you've been using the scooter, your
+          traveling distance, and many more things all in an easy to use app.
+        illustration: ../assets/images/telemetry.jpg
+        illustration_alt: une personne souriante se sert de son smartphone
+      article2:
+        title: Coming to a city near you
+        description:
+          Scoot is available in 4 major cities so far. We’re expanding rapidly, so
+          be sure to let us know if you want to see us in your hometown. We’re
+          aiming to let our scooters loose on 23 cities over the coming year.
+        illustration: ../assets/images/near-you.jpg
+        illustration_alt: une ville moderne avec de nombreux gratte-ciel
+      article3:
+        title: Zero hassle payments
+        description:
+          Our payment is as easy as one two three. We accept most credit cards and
+          debit cards. You can also link your PayPal account inside the app. Need
+          to pay later? No worries! You can defer payment for up to a month.
+        illustration: ../assets/images/payments.jpg
+        illustration_alt:
+          un portefeuille contenant des billets et des cartes de crédit
 PageRecrutement:
   header:
     title: Recrutement

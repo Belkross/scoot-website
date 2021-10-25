@@ -3,7 +3,7 @@ import Container from "@mui/material/Container";
 import Layout from "../components/Layout/Layout";
 import Section1 from "../components/PageIndex/Section1";
 import Section2 from "../components/PageIndex/Section2";
-import Part2 from "../components/PageIndex/Part2";
+import Section3 from "../components/PageIndex/Section3";
 import { graphql } from "gatsby";
 
 const PageIndex = ({ data }) => {
@@ -13,7 +13,7 @@ const PageIndex = ({ data }) => {
       <Section1 content={content.section1} />
       <Container>
         <Section2 content={content.section2} />
-        <Part2 content={content.section3} />
+        <Section3 content={content.section3} />
       </Container>
     </Layout>
   );
@@ -28,17 +28,10 @@ export const query = graphql`
         section1 {
           button
           description
-          illustration_desktop {
-            relativePath
+          illustration {
             childImageSharp {
               gatsbyImageData(quality: 100)
             }
-          }
-          illustration_tablet {
-            relativePath
-          }
-          illustration_mobile {
-            relativePath
           }
           illustration_alt
           title
@@ -50,7 +43,6 @@ export const query = graphql`
               title
               description
               illustration {
-                relativePath
                 publicURL
               }
               illustration_alt
@@ -60,7 +52,6 @@ export const query = graphql`
               description
               illustration_alt
               illustration {
-                relativePath
                 publicURL
               }
             }
@@ -69,7 +60,6 @@ export const query = graphql`
               description
               illustration_alt
               illustration {
-                relativePath
                 publicURL
               }
             }
@@ -77,28 +67,36 @@ export const query = graphql`
         }
         section3 {
           button
-          section1 {
-            title
-            description
-            illustration_alt
-            illustration {
-              relativePath
+          articles {
+            article1 {
+              title
+              description
+              illustration_alt
+              illustration {
+                childImageSharp {
+                  gatsbyImageData
+                }
+              }
             }
-          }
-          section2 {
-            title
-            description
-            illustration_alt
-            illustration {
-              relativePath
+            article2 {
+              title
+              description
+              illustration_alt
+              illustration {
+                childImageSharp {
+                  gatsbyImageData
+                }
+              }
             }
-          }
-          section3 {
-            title
-            description
-            illustration_alt
-            illustration {
-              relativePath
+            article3 {
+              title
+              description
+              illustration_alt
+              illustration {
+                childImageSharp {
+                  gatsbyImageData
+                }
+              }
             }
           }
         }
