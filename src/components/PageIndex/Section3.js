@@ -13,6 +13,7 @@ function Section3(props) {
         illustration={article.illustration}
         alt={article.illustration_alt}
         button={content.button}
+        description={article.description}
         direction={index % 2 === 0 ? "row-reverse" : "row"}
       />
     );
