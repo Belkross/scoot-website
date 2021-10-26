@@ -2,8 +2,8 @@ import React from "react";
 import Layout from "../components/Layout/Layout";
 import Container from "@mui/material/Container";
 import PageHeader from "../components/PageHeader";
-import Section1 from "../components/PageFaq/Section1.js";
-import Section2 from "../components/PageFaq/Section2.js";
+/* import Section1 from "../components/PageFaq/Section1.js";
+import Section2 from "../components/PageFaq/Section2.js"; */
 import { graphql } from "gatsby";
 
 function PageFaq({ data }) {
@@ -12,8 +12,8 @@ function PageFaq({ data }) {
     <Layout>
       <PageHeader content={content.page_header} />
       <Container>
-        <Section1 content={content.section1} />
-        <Section2 content={content.section2} />
+        {/* <Section1 content={content.section1} />
+        <Section2 content={content.section2} /> */}
       </Container>
     </Layout>
   );
