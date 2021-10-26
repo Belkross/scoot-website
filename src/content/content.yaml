@@ -148,72 +148,75 @@ page_recrutement:
       location: London, United Kingdom
       button: Postuler
 
-page_about:
-  header:
+page_faq:
+  page_header:
     title: About
     illustration: ../assets/images/about-hero-desktop.jpg
     illustration_alt: ""
   section1:
-    article1:
-      title: Mobility for the digital era
-      description:
-        Getting around should be simple (and even fun!) for everyone. We embrace
-        technology to   provide low cost, smart access to scooters at your
-        fingertips.
-      illustration: ../assets/images/digital-era.jpg
-      illustration_alt: une personne utilise un smartphone
-      button: Contact us
-    article2:
-      title: Better urban living
-      description:
-        We’re helping connect cities and bring people closer together. Our
-        scooters are also fully-electric and we offset the minimal carbon
-        footprint for each ride.
-      illustration: ../assets/images/better-living.jpg
-      illustration_alt: espace urbain
-      button: Contact us
+    articles:
+      article1:
+        title: Mobility for the digital era
+        description:
+          Getting around should be simple (and even fun!) for everyone. We embrace
+          technology to   provide low cost, smart access to scooters at your
+          fingertips.
+        illustration: ../assets/images/digital-era.jpg
+        illustration_alt: une personne utilise un smartphone
+        button: Contact us
+      article2:
+        title: Better urban living
+        description:
+          We’re helping connect cities and bring people closer together. Our
+          scooters are also fully-electric and we offset the minimal carbon
+          footprint for each ride.
+        illustration: ../assets/images/better-living.jpg
+        illustration_alt: espace urbain
+        button: Contact us
   section2:
     h2: FAQs
     sectionA:
       h3: How it works
-      article1:
-        title: How do I download the app?
-        description:
-          To download the Scoot app, you can search “Scoot” in both the App and
-          Google Play stores.   An even simpler way to do it would be to click
-          the relevant link at the bottom of this page and you’ll be re-directed
-          to the correct page.
-      article2:
-        title: Can I find a nearby Scoots?
-        description:
-          Definitely! Simply open up the app and allow us to find your location
-          while using it. We'll show you all of the closest Scoots and some
-          extra useful information.
-      article3:
-        title: Do I need a license to ride?
-        description:
-          Yup! We provide information inside the app regarding local laws and
-          the license you need to be able to ride our Scoots.
+      articles:
+        article1:
+          title: How do I download the app?
+          description:
+            To download the Scoot app, you can search “Scoot” in both the App and
+            Google Play stores.   An even simpler way to do it would be to click
+            the relevant link at the bottom of this page and you’ll be re-directed
+            to the correct page.
+        article2:
+          title: Can I find a nearby Scoots?
+          description:
+            Definitely! Simply open up the app and allow us to find your location
+            while using it. We'll show you all of the closest Scoots and some
+            extra useful information.
+        article3:
+          title: Do I need a license to ride?
+          description:
+            Yup! We provide information inside the app regarding local laws and
+            the license you need to be able to ride our Scoots.
     sectionB:
       h3: Safe driving
-      article1:
-        title: Should I wear a helmet?
-        description:
-          Yes, please do! All cities have different laws. But we strongly
-          strongly strongly recommend always wearing a helmet regardless of the
-          local laws. We like you and we want you to be as safe as possible
-          while Scooting.
-      article2:
-        title: How about the rules & regulations?
-        description:
-          Now is not the time to be a rule breaker. Be sure you're complying
-          with all local laws and regulations. Also, just be a good human being.
-          Be sure not to park your Scoot where it can block access to buildings
-          or get in people's way.
-      article3:
-        title: What if I damage my Scoot?
-        description:
-          Be sure to read our terms and conditions carefully. Not the most fun
-          job we know but we make it as clear as possible. There's an option to
-          add insurance for each trip, or you can sign up for annual insurance
-          if you're a regular Scooter.
+      articles: 
+        article1:
+          title: Should I wear a helmet?
+          description:
+            Yes, please do! All cities have different laws. But we strongly
+            strongly strongly recommend always wearing a helmet regardless of the
+            local laws. We like you and we want you to be as safe as possible
+            while Scooting.
+        article2:
+          title: How about the rules & regulations?
+          description:
+            Now is not the time to be a rule breaker. Be sure you're complying
+            with all local laws and regulations. Also, just be a good human being.
+            Be sure not to park your Scoot where it can block access to buildings
+            or get in people's way.
+        article3:
+          title: What if I damage my Scoot?
+          description:
+            Be sure to read our terms and conditions carefully. Not the most fun
+            job we know but we make it as clear as possible. There's an option to
+            add insurance for each trip, or you can sign up for annual insurance
+            if you're a regular Scooter.

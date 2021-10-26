@@ -7,10 +7,10 @@ import Section2 from "../components/pageFaq/Section2";
 import { graphql } from "gatsby";
 
 function PageAbout({ data }) {
-  const { page_about: content } = data.contentYaml;
+  const { page_faq: content } = data.contentYaml;
   return (
     <Layout>
-      <PageHeader content={content.header} />
+      <PageHeader content={content.page_header} />
       <Container>
         <Section1 content={content.section1} />
         <Section2 content={content.section2} />
@@ -21,10 +21,10 @@ function PageAbout({ data }) {
 
 export default PageAbout;
 export const query = graphql`
-  query page_about {
+  query page_faq {
     contentYaml {
-      page_about {
-        header {
+      page_faq {
+        page_header {
           title
           illustration {
             childImageSharp {
@@ -34,59 +34,66 @@ export const query = graphql`
           illustration_alt
         }
         section1 {
-          article1 {
-            description
-            title
-            illustration_alt
-            illustration {
-              childImageSharp {
-                gatsbyImageData
+          articles {
+            article1 {
+              description
+              title
+              illustration_alt
+              illustration {
+                childImageSharp {
+                  gatsbyImageData
+                }
               }
+              button
             }
-            button
-          }
-          article2 {
-            title
-            illustration_alt
-            description
-            illustration {
-              childImageSharp {
-                gatsbyImageData
+            article2 {
+              title
+              illustration_alt
+              description
+              illustration {
+                childImageSharp {
+                  gatsbyImageData
+                }
               }
+              button
             }
-            button
           }
         }
         section2 {
           h2
           sectionA {
-            article1 {
-              description
-              title
+            articles {
+              article1 {
+                description
+                title
+              }
+              article2 {
+                description
+                title
+              }
+              article3 {
+                description
+                title
+              }
             }
-            article2 {
-              description
-              title
-            }
-            article3 {
-              description
-              title
-            }
+
             h3
           }
           sectionB {
             h3
-            article1 {
-              title
-              description
-            }
-            article2 {
-              title
-              description
-            }
-            article3 {
-              title
-              description
+            articles {
+              article1 {
+                title
+                description
+              }
+              article2 {
+                title
+                description
+              }
+              article3 {
+                title
+                description
+              }
             }
           }
         }
