@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
     siteUrl: "https://www.yourdomain.tld",
-    title: "gatsby-mui-starter",
+    title: "Scoot",
   },
   plugins: [
     "gatsby-plugin-image",
