@@ -84,8 +84,8 @@ page_index:
         illustration_alt:
           un portefeuille contenant des billets et des cartes de crédit
 
-PageRecrutement:
-  header:
+page_recrutement:
+  page_header:
     title: Recrutement
     illustration: ../assets/images/careers-locations-hero-desktop.jpg
     illustration_alt: ""
@@ -100,27 +100,28 @@ PageRecrutement:
     illustration_alt: une équipe en réunion de travail
   section2:
     title: Why join us?
-    article1:
-      title: Our techno
-      description:
-        We’re using cutting edge technology to drive accessible urban
-        transportation forward. Our fully electric scooters are a joy to ride!
-      illustration: ../assets/images/our-tech.jpg
-      illustration_alt: "smartphone"
-    article2:
-      title: Our integrity
-      description:
-        We are fully committed to deliver a great yet safe, sustainable
-        micro-mobility experience in every city we serve.
-      illustration: ../assets/images/our-integrity.jpg
-      illustration_alt: "une personne conduisant un scooter"
-    article3:
-      title: Our community
-      description:
-        We support every community we serve. All workers are paid a living wage
-        based on their location and are Scoot employees.
-      illustration: ../assets/images/our-community.jpg
-      illustration_alt: "un groupe de personne en milieu urbain"
+    articles:
+      article1:
+        title: Our techno
+        description:
+          We’re using cutting edge technology to drive accessible urban
+          transportation forward. Our fully electric scooters are a joy to ride!
+        illustration: ../assets/images/our-tech.jpg
+        illustration_alt: "smartphone"
+      article2:
+        title: Our integrity
+        description:
+          We are fully committed to deliver a great yet safe, sustainable
+          micro-mobility experience in every city we serve.
+        illustration: ../assets/images/our-integrity.jpg
+        illustration_alt: "une personne conduisant un scooter"
+      article3:
+        title: Our community
+        description:
+          We support every community we serve. All workers are paid a living wage
+          based on their location and are Scoot employees.
+        illustration: ../assets/images/our-community.jpg
+        illustration_alt: "un groupe de personne en milieu urbain"
   section3:
     article1:
       title: General Manager

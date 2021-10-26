@@ -8,10 +8,10 @@ import Section3 from "../components/PageRecrutement/Section3";
 import { graphql } from "gatsby";
 
 function PageRecrutement({ data }) {
-  const { PageRecrutement: content } = data.contentYaml;
+  const { page_recrutement: content } = data.contentYaml;
   return (
     <Layout>
-      <PageHeader content={content.header} />
+      <PageHeader content={content.page_header} />
       <Container component="main">
         <Section2 content={content.section2} />
         <Section3 content={content.section3} />
@@ -25,8 +25,8 @@ export default PageRecrutement;
 export const query = graphql`
   query PageRecrutement {
     contentYaml {
-      PageRecrutement {
-        header {
+      page_recrutement {
+        page_header {
           illustration_alt
           title
           illustration {
@@ -49,36 +49,38 @@ export const query = graphql`
         }
         section2 {
           title
-          article1 {
-            description
-            illustration_alt
-            title
-            illustration {
-              relativePath
-              childImageSharp {
-                gatsbyImageData
+          articles {
+            article1 {
+              description
+              illustration_alt
+              title
+              illustration {
+                relativePath
+                childImageSharp {
+                  gatsbyImageData
+                }
               }
             }
-          }
-          article2 {
-            description
-            illustration_alt
-            title
-            illustration {
-              relativePath
-              childImageSharp {
-                gatsbyImageData
+            article2 {
+              description
+              illustration_alt
+              title
+              illustration {
+                relativePath
+                childImageSharp {
+                  gatsbyImageData
+                }
               }
             }
-          }
-          article3 {
-            description
-            illustration_alt
-            title
-            illustration {
-              relativePath
-              childImageSharp {
-                gatsbyImageData
+            article3 {
+              description
+              illustration_alt
+              title
+              illustration {
+                relativePath
+                childImageSharp {
+                  gatsbyImageData
+                }
               }
             }
           }

@@ -5,7 +5,7 @@ import Value from "./Value";
 
 function Section2(props) {
   const { content } = props;
-  const array_articles = [content.article1, content.article2, content.article3];
+  const array_articles = Object.values(content.articles);
   const list_articles = array_articles.map((article) => {
     return (
       <Value
@@ -19,12 +19,10 @@ function Section2(props) {
   });
 
   return (
-    
-      <Stack component="section" spacing={6}>
-        <Typography variant="h2" children={content.title} textAlign="center" />
-        <Stack sx={sx_articles}>{list_articles}</Stack>
-      </Stack>
-    
+    <Stack component="section" spacing={6}>
+      <Typography variant="h2" children={content.title} textAlign="center" />
+      <Stack sx={sx_articles}>{list_articles}</Stack>
+    </Stack>
   );
 }
 
