@@ -2,11 +2,11 @@ import React from "react";
 import Layout from "../components/Layout/Layout";
 import Container from "@mui/material/Container";
 import PageHeader from "../components/PageHeader";
-import Section1 from "../components/PageFaq/Section1";
-import Section2 from "../components/PageFaq/Section2";
+import Section1 from "../components/PageFaq/Section1.js";
+import Section2 from "../components/PageFaq/Section2.js";
 import { graphql } from "gatsby";
 
-function PageAbout({ data }) {
+function PageFaq({ data }) {
   const { page_faq: content } = data.contentYaml;
   return (
     <Layout>
@@ -19,7 +19,7 @@ function PageAbout({ data }) {
   );
 }
 
-export default PageAbout;
+export default PageFaq;
 export const query = graphql`
   query page_faq {
     contentYaml {
