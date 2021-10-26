@@ -6,7 +6,8 @@ import Button from "@mui/material/Button";
 function Section1() {
   return (
     <Stack component="section" sx={sx_container}>
-      <form name="contactBelkross" data-netlify="true" style={style_form} method="POST" action="/recrutement">
+      <form name="contact" data-netlify="true" style={style_form} method="POST">
+        <input type="hidden" name="form-name" value="contact" />
         <TextField label="Nom" name="nom"/>
         <TextField label="Message" name="message" multiline sx={sx_message}/>
         <Button type="submit">Valider</Button>
