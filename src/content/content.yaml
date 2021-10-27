@@ -61,25 +61,28 @@ page_index:
       article1:
         title: Easy to use riding telemetry
         description:
-          The Scoot app is available with riding telemetry. This means it can show
-          you your average speed, how long you've been using the scooter, your
-          traveling distance, and many more things all in an easy to use app.
+          The Scoot app is available with riding telemetry. This means it can
+          show you your average speed, how long you've been using the scooter,
+          your traveling distance, and many more things all in an easy to use
+          app.
         illustration: ../assets/images/telemetry.jpg
         illustration_alt: une personne souriante se sert de son smartphone
       article2:
         title: Coming to a city near you
         description:
-          Scoot is available in 4 major cities so far. We’re expanding rapidly, so
-          be sure to let us know if you want to see us in your hometown. We’re
-          aiming to let our scooters loose on 23 cities over the coming year.
+          Scoot is available in 4 major cities so far. We’re expanding rapidly,
+          so be sure to let us know if you want to see us in your hometown.
+          We’re aiming to let our scooters loose on 23 cities over the coming
+          year.
         illustration: ../assets/images/near-you.jpg
         illustration_alt: une ville moderne avec de nombreux gratte-ciel
       article3:
         title: Zero hassle payments
         description:
-          Our payment is as easy as one two three. We accept most credit cards and
-          debit cards. You can also link your PayPal account inside the app. Need
-          to pay later? No worries! You can defer payment for up to a month.
+          Our payment is as easy as one two three. We accept most credit cards
+          and debit cards. You can also link your PayPal account inside the app.
+          Need to pay later? No worries! You can defer payment for up to a
+          month.
         illustration: ../assets/images/payments.jpg
         illustration_alt:
           un portefeuille contenant des billets et des cartes de crédit
@@ -118,8 +121,8 @@ page_recrutement:
       article3:
         title: Our community
         description:
-          We support every community we serve. All workers are paid a living wage
-          based on their location and are Scoot employees.
+          We support every community we serve. All workers are paid a living
+          wage based on their location and are Scoot employees.
         illustration: ../assets/images/our-community.jpg
         illustration_alt: "un groupe de personne en milieu urbain"
   section3:
@@ -158,9 +161,9 @@ page_faq:
       article1:
         title: Mobility for the digital era
         description:
-          Getting around should be simple (and even fun!) for everyone. We embrace
-          technology to   provide low cost, smart access to scooters at your
-          fingertips.
+          Getting around should be simple (and even fun!) for everyone. We
+          embrace technology to   provide low cost, smart access to scooters at
+          your fingertips.
         illustration: ../assets/images/digital-era.jpg
         illustration_alt: une personne utilise un smartphone
         button: Contact us
@@ -181,16 +184,16 @@ page_faq:
         article1:
           title: How do I download the app?
           description:
-            To download the Scoot app, you can search “Scoot” in both the App and
-            Google Play stores.   An even simpler way to do it would be to click
-            the relevant link at the bottom of this page and you’ll be re-directed
-            to the correct page.
+            To download the Scoot app, you can search “Scoot” in both the App
+            and Google Play stores.   An even simpler way to do it would be to
+            click the relevant link at the bottom of this page and you’ll be
+            re-directed to the correct page.
         article2:
           title: Can I find a nearby Scoots?
           description:
-            Definitely! Simply open up the app and allow us to find your location
-            while using it. We'll show you all of the closest Scoots and some
-            extra useful information.
+            Definitely! Simply open up the app and allow us to find your
+            location while using it. We'll show you all of the closest Scoots
+            and some extra useful information.
         article3:
           title: Do I need a license to ride?
           description:
@@ -198,25 +201,39 @@ page_faq:
             the license you need to be able to ride our Scoots.
     sectionB:
       h3: Safe driving
-      articles: 
+      articles:
         article1:
           title: Should I wear a helmet?
           description:
             Yes, please do! All cities have different laws. But we strongly
-            strongly strongly recommend always wearing a helmet regardless of the
-            local laws. We like you and we want you to be as safe as possible
-            while Scooting.
+            strongly strongly recommend always wearing a helmet regardless of
+            the local laws. We like you and we want you to be as safe as
+            possible while Scooting.
         article2:
           title: How about the rules & regulations?
           description:
             Now is not the time to be a rule breaker. Be sure you're complying
-            with all local laws and regulations. Also, just be a good human being.
-            Be sure not to park your Scoot where it can block access to buildings
-            or get in people's way.
+            with all local laws and regulations. Also, just be a good human
+            being. Be sure not to park your Scoot where it can block access to
+            buildings or get in people's way.
         article3:
           title: What if I damage my Scoot?
           description:
             Be sure to read our terms and conditions carefully. Not the most fun
-            job we know but we make it as clear as possible. There's an option to
-            add insurance for each trip, or you can sign up for annual insurance
-            if you're a regular Scooter.
+            job we know but we make it as clear as possible. There's an option
+            to add insurance for each trip, or you can sign up for annual
+            insurance if you're a regular Scooter.
+
+page_contact:
+  header_page:
+    title: Contact
+    illustration: ../assets/images/about-hero-desktop.jpg
+    illustration_alt: ""
+  section2:
+    title: Care to join our mission ?
+    description:
+      We’re always looking for ambitious individuals to help us on our journey.
+      If you’re passionate about our mission to provide clean, accessible
+      transport to improve urban living we want to hear from you!
+    illustration: ../assets/images/join-us.jpg
+    illustration_alt: des employés travaillant en équipe
