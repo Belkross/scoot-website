@@ -6,28 +6,15 @@ import Checkbox from "@mui/material/Checkbox";
 import FormControlLabel from "@mui/material/FormControlLabel";
 import Grid from "@mui/material/Grid";
 
-/* 
-  netlify form
-
-  add required to fields that need it.
-  to connect form with netlify:
-    <form data-netlify="true" method="POST" name="<netlify field>"> 
-    <input type="hidden" name="form-name" value="<form name>" />
-    </form>
-  to avoid netlify’s validation message on submit: 
-    action="/<page url>"
-*/
-
 function Section1() {
   return (
     <Stack component="section">
       <form
+        style={style_form}
         name="Formulaire de contact"
         data-netlify="true"
         method="POST"
         action="/form_validation"
-        subject="contact depuis www.belkross.com"
-        style={style_form}
       >
         <input type="hidden" name="form-name" value="Formulaire de contact" />
         <ContactFormComponents />

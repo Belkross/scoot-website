@@ -11,7 +11,7 @@ const PageContact = ({ data }) => {
   return (
     <Layout>
       <PageHeader content={content.header_page} />
-      <Container>
+      <Container component="main">
         <Section2 content={content.section2} />
         <Section1 />
       </Container>
