@@ -153,7 +153,7 @@ page_recrutement:
 
 page_faq:
   page_header:
-    title: About
+    title: Faq
     illustration: ../assets/images/about-hero-desktop.jpg
     illustration_alt: ""
   section1:

@@ -19,7 +19,7 @@ export default Header;
 const sx_container = {
   display: "grid",
   height: "150px",
-  mb: { xs: 10, md: 14 },
+  mb: 9,
 };
 
 const style_image = {

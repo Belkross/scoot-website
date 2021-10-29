@@ -12,7 +12,6 @@ function Section2(props) {
 
   return (
     <Stack component="section" sx={sx_container}>
-      <Typography variant="h2" children={content.h2} mb={6} />
       <Faq title={content.sectionB.h3} list_articles={list_articles2} />
       <Faq title={content.sectionA.h3} list_articles={list_articles1} />
     </Stack>
@@ -54,4 +53,3 @@ function createAccordionList(array_articles) {
   });
   return list;
 }
-
