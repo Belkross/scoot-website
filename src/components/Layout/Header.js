@@ -1,4 +1,5 @@
 import React from "react";
+import Grid from "@mui/material/Grid";
 import Stack from "@mui/material/Stack";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
@@ -17,33 +18,42 @@ function Header(props) {
 
   return (
     <AppBarTop>
-      <Typography sx={sx_logo}>{content.logo}</Typography>
-      <Stack component="nav" sx={sx_nav}>
-        {list_tabs}
-        <Button children={content.mainAction} />
-        <ButtonThemeMode
-          onClick={props.onThemeModeTrigger}
-          currentThemeMode={props.currentThemeMode}
-        />
-      </Stack>
-        <IconButton sx={sx_ButtonMenu} children={<MenuIcon />} />
+      <Grid container component="nav" alignItems="center">
+        <Grid item xs={6} md={2}>
+          <Typography sx={sx_logo}>{content.logo}</Typography>
+        </Grid>
+        <Grid item sx={sx_tabsGrid} md={8}>
+          <Stack sx={sx_tabs}>
+            {list_tabs}
+            <Button children={content.mainAction} />
+          </Stack>
+        </Grid>
+        <Grid item xs={6} md={2} textAlign="right">
+          <ButtonThemeMode
+            onClick={props.onThemeModeTrigger}
+            currentThemeMode={props.currentThemeMode}
+          />
+          <IconButton children={<MenuIcon />} />
+        </Grid>
+      </Grid>
     </AppBarTop>
   );
 }
 
 export default Header;
 
-const sx_nav = {
+const sx_tabsGrid = {
+  display: { xs: "none", md: "grid" },
+};
+
+const sx_tabs = {
   flexDirection: "row",
   alignItems: "center",
-  display: { xs: "none", md: "flex" },
-  gap: 2
+  justifyContent: "center",
+
+  gap: 2,
 };
 
 const sx_logo = {
   fontSize: "1.5rem",
-};
-
-const sx_ButtonMenu = {
-  display: { xs: "block", md: "none" },
 };
