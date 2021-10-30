@@ -7,7 +7,9 @@ function AppBarTop({ children }) {
   return (
     <AppBar position="sticky" component="header" sx={sx_container}>
       <Toolbar>
-        <Stack sx={sx_containerStack}>{children}</Stack>
+        <Stack sx={sx_containerStack} component="nav">
+          {children}
+        </Stack>
       </Toolbar>
     </AppBar>
   );
