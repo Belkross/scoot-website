@@ -28,7 +28,7 @@ function Layout({ children }) {
   return (
     <ThemeProvider theme={cachedMuiTheme}>
       <CssBaseline />
-      <HtmlAttributesAndHead />
+      <HtmlAttributesAndHead content={data.site.siteMetadata}/>
       <Header
         content={content}
         currentThemeMode={themeMode}
@@ -44,6 +44,11 @@ export default Layout;
 
 const query = graphql`
   query component_layout {
+    site {
+      siteMetadata {
+        description
+      }
+    }
     contentYaml {
       header {
         logo

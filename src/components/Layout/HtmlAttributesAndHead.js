@@ -1,7 +1,7 @@
 import React from "react";
 import { Helmet } from "react-helmet";
 
-function HtmlAttributesAndHead() {
+function HtmlAttributesAndHead(props) {
   return (
     <Helmet
       htmlAttributes={{
@@ -9,6 +9,7 @@ function HtmlAttributesAndHead() {
       }}
     >
       <title>Maker</title>
+      <meta name="description" content={props.content.description} />
     </Helmet>
   );
 }
