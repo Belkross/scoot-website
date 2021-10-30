@@ -11,7 +11,8 @@ function Section3(props) {
         key={article.title}
         title={article.title}
         location={article.location}
-        button={article.button}
+        link={article.link}
+        linkPath={article.linkPath}
       />
     );
   });

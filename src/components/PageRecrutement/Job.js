@@ -1,16 +1,16 @@
 import React from "react";
 import Stack from "@mui/material/Stack";
 import Typography from "@mui/material/Typography";
-import Button from "@mui/material/Button";
+import ButtonLink from "../ButtonLink";
 
-function Job({ title, location, button }) {
+function Job({ title, location, link, linkPath }) {
   return (
     <Stack component="article" sx={sx_container}>
       <Stack sx={sx_text}>
         <Typography variant="h3" children={title} />
         <Typography children={location} />
       </Stack>
-      <Button color="secondary" children={button} />
+      <ButtonLink children={link} linkPath={linkPath}/>
     </Stack>
   );
 }

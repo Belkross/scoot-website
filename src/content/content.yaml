@@ -128,26 +128,38 @@ page_recrutement:
       title: General Manager
       location: Jakarta, Indonesia
       button: Postuler
+      link: Postuler
+      linkPath: /contact
     article2:
       title: UI/UX Designer
       location: Yokohama, Japan
       button: Postuler
+      link: Postuler
+      linkPath: /contact
     article3:
       title: Blog Content Copywriter
       location: New York, United States
       button: Postuler
+      link: Postuler
+      linkPath: /contact
     article4:
       title: Graphic Designer
       location: New York, United States
       button: Postuler
+      link: Postuler
+      linkPath: /contact
     article5:
       title: Fleet Supervisor
       location: Jakarta, Indonesia
       button: Postuler
+      link: Postuler
+      linkPath: /contact
     article6:
       title: UX Analyst
       location: London, United Kingdom
       button: Postuler
+      link: Postuler
+      linkPath: /contact
 
 page_faq:
   page_header:

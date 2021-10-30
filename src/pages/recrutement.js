@@ -75,32 +75,38 @@ export const query = graphql`
           article1 {
             location
             title
-            button
+            link
+            linkPath
           }
           article2 {
             location
             title
-            button
+            link
+            linkPath
           }
           article3 {
             location
             title
-            button
+            link
+            linkPath
           }
           article4 {
             location
             title
-            button
+            link
+            linkPath
           }
           article5 {
             location
             title
-            button
+            link
+            linkPath
           }
           article6 {
             location
             title
-            button
+            link
+            linkPath
           }
         }
       }
