@@ -7,12 +7,15 @@ import Header from "./Header";
 import Footer from "./Footer";
 import { initializeThemeModeCookie, setUpCookie } from "../functions/cookie";
 import { useStaticQuery, graphql } from "gatsby";
+import PageTransition from "./PageTransition";
 
 function Layout({ children }) {
   const data = useStaticQuery(query);
   const { header: content } = data.contentYaml;
   //darkMode
-  const [themeMode, setThemeMode] = useState(initializeThemeModeCookie("muiThemeMode"));
+  const [themeMode, setThemeMode] = useState(
+    initializeThemeModeCookie("muiThemeMode")
+  );
   const cachedMuiTheme = useMemo(() => createMuiTheme(themeMode), [themeMode]);
   const handleToggle_themeMode = () => {
     setThemeMode((previousMode) => {
@@ -31,15 +34,13 @@ function Layout({ children }) {
         currentThemeMode={themeMode}
         onThemeModeTrigger={handleToggle_themeMode}
       />
-      {children}
+      <PageTransition>{children}</PageTransition>
       <Footer />
     </ThemeProvider>
   );
 }
 
 export default Layout;
-
-
 
 const query = graphql`
   query component_layout {
