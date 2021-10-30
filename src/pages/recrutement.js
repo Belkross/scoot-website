@@ -2,7 +2,6 @@ import React from "react";
 import Layout from "../components/Layout/Layout";
 import Container from "@mui/material/Container";
 import PageHeader from "../components/PageHeader";
-import Section1 from "../components/PageRecrutement/Section1";
 import Section2 from "../components/PageRecrutement/Section2";
 import Section3 from "../components/PageRecrutement/Section3";
 import { graphql } from "gatsby";
@@ -15,7 +14,6 @@ function PageRecrutement({ data }) {
       <Container component="main">
         <Section2 content={content.section2} />
         <Section3 content={content.section3} />
-        <Section1 content={content.section1} />
       </Container>
     </Layout>
   );
@@ -32,18 +30,6 @@ export const query = graphql`
           illustration {
             childImageSharp {
               gatsbyImageData(quality: 100)
-            }
-          }
-        }
-        section1 {
-          button
-          description
-          title
-          illustration_alt
-          illustration {
-            relativePath
-            childImageSharp {
-              gatsbyImageData
             }
           }
         }

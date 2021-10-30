@@ -28,6 +28,7 @@ page_index:
     illustration: ../assets/images/home-hero-desktop.jpg
     illustration_alt: ""
     button: Get scootin
+    buttonPath:
   section2:
     title: Comment ça marche ?
     articles:
@@ -67,6 +68,8 @@ page_index:
           app.
         illustration: ../assets/images/telemetry.jpg
         illustration_alt: une personne souriante se sert de son smartphone
+        link: Plus de détails
+        linkPath: /faq
       article2:
         title: Coming to a city near you
         description:
@@ -76,6 +79,8 @@ page_index:
           year.
         illustration: ../assets/images/near-you.jpg
         illustration_alt: une ville moderne avec de nombreux gratte-ciel
+        link: Découvrir les villes
+        linkPath: /faq
       article3:
         title: Zero hassle payments
         description:
@@ -86,21 +91,14 @@ page_index:
         illustration: ../assets/images/payments.jpg
         illustration_alt:
           un portefeuille contenant des billets et des cartes de crédit
+        link: En savoir plus
+        linkPath: /faq
 
 page_recrutement:
   page_header:
     title: Recrutement
     illustration: ../assets/images/careers-locations-hero-desktop.jpg
     illustration_alt: ""
-  section1:
-    title: Care to join our mission?
-    description:
-      We’re always looking for ambitious individuals to help us on our journey.
-      If you’re passionate about our mission to provide clean, accessible
-      transport to improve urban living we want to hear from you!
-    button: Say Hello
-    illustration: ../assets/images/join-us.jpg
-    illustration_alt: une équipe en réunion de travail
   section2:
     title: Why join us?
     articles:

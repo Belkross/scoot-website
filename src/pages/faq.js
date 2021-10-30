@@ -45,7 +45,6 @@ export const query = graphql`
                   gatsbyImageData
                 }
               }
-              button
             }
             article2 {
               title
@@ -56,7 +55,6 @@ export const query = graphql`
                   gatsbyImageData
                 }
               }
-              button
             }
           }
         }

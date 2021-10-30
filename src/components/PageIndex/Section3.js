@@ -1,19 +1,20 @@
 import React from "react";
 import Stack from "@mui/material/Stack";
-import PointIllustrated from "../PointIllustrated";
+import PointIllustratedLink from "../PointIllustratedLink";
 
 function Section3(props) {
   const { content } = props;
   const array_articles = Object.values(content.articles);
   const list_articles = array_articles.map((article, index) => {
     return (
-      <PointIllustrated
+      <PointIllustratedLink
         key={article.title}
         title={article.title}
-        illustration={article.illustration}
-        alt={article.illustration_alt}
-        button={content.button}
         description={article.description}
+        illustration={article.illustration}
+        illustration_alt={article.illustration_alt}
+        link={article.link}
+        linkPath={article.linkPath}
         direction={index % 2 === 0 ? "row-reverse" : "row"}
       />
     );

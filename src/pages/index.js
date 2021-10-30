@@ -77,6 +77,8 @@ export const query = graphql`
                   gatsbyImageData
                 }
               }
+              link
+              linkPath
             }
             article2 {
               title
@@ -87,6 +89,8 @@ export const query = graphql`
                   gatsbyImageData
                 }
               }
+              link
+              linkPath
             }
             article3 {
               title
@@ -97,6 +101,8 @@ export const query = graphql`
                   gatsbyImageData
                 }
               }
+              link
+              linkPath
             }
           }
         }

@@ -1,17 +1,16 @@
 import React from "react";
-import PointIllustratedNoButton from "../PointIllustratedNoButton.js";
+import PointIllustrated from "../PointIllustrated.js";
 import Stack from "@mui/material/Stack";
 
 function Section2(props) {
   const { content } = props;
   return (
     <Stack>
-      <PointIllustratedNoButton
+      <PointIllustrated
         title={content.title}
         description={content.description}
         illustration={content.illustration}
-        alt={content.illustration_alt}
-        
+        illustration_alt={content.illustration_alt}
       />
     </Stack>
   );

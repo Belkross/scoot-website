@@ -11,14 +11,13 @@ function Section1(props) {
         title={article.title}
         description={article.description}
         illustration={article.illustration}
-        alt={article.illustration_alt}
-        button={article.button}
+        illustration_alt={article.illustration_alt}
         direction={index % 2 === 0 ? "row-reverse" : "row"}
       />
     );
   });
   return (
-    <Box component="section" mb={{ xs: 12, md: 20 }}>
+    <Box component="section" mb={12}>
       {list_articles}
     </Box>
   );
