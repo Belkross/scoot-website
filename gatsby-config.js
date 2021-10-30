@@ -2,6 +2,7 @@ module.exports = {
   siteMetadata: {
     siteUrl: "https://www.yourdomain.tld",
     title: "Scoot",
+    description: "Exemple d’un site vitrine par Truong Huy"
   },
   plugins: [
     "gatsby-plugin-image",
