@@ -1,24 +1,30 @@
-import React from "react";
+import React, { useState } from "react";
 import Accordion from "@mui/material/Accordion";
 import AccordionSummary from "@mui/material/AccordionSummary";
 import AccordionDetails from "@mui/material/AccordionDetails";
 import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
 import Stack from "@mui/material/Stack";
-import IconChevron from "../assets/icons/IconChevron.js";
+import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
+import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
 
-function MyAccordion({ summary, details }) {
+function MyAccordion({ title, description }) {
+  const [expansion, setExpansion] = useState(false);
+  const handleClick = (event) => {
+    setExpansion((prevState) => !prevState);
+  };
+
   return (
     <Box component="article">
-      <Accordion sx={sx_Accordion}>
+      <Accordion sx={sx_Accordion} expanded={expansion} onClick={handleClick}>
         <AccordionSummary>
           <Stack sx={sx_stackSummary}>
-            <Typography variant="h4" children={summary} />
-            <IconChevron />
+            <Typography variant="h4" children={title} />
+            {expansion ? <KeyboardArrowUpIcon /> : <KeyboardArrowDownIcon />}
           </Stack>
         </AccordionSummary>
         <AccordionDetails>
-          <Typography children={details} />
+          <Typography children={description} />
         </AccordionDetails>
       </Accordion>
     </Box>

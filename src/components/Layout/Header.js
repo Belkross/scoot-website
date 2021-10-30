@@ -2,12 +2,12 @@ import React from "react";
 import Grid from "@mui/material/Grid";
 import Stack from "@mui/material/Stack";
 import Typography from "@mui/material/Typography";
-import Button from "@mui/material/Button";
 import IconButton from "@mui/material/IconButton";
 import MenuIcon from "@mui/icons-material/Menu";
 import ButtonThemeMode from "../ButtonThemeMode.js";
 import LinkMui from "../LinkMui.js";
 import AppBarTop from "../AppBarTop.js";
+import ButtonMainAction from "../ButtonMainAction.js";
 
 function Header(props) {
   const { content } = props;
@@ -25,7 +25,7 @@ function Header(props) {
         <Grid item sx={sx_tabsGrid} md={8}>
           <Stack sx={sx_tabs}>
             {list_tabs}
-            <Button children={content.mainAction} />
+            <ButtonMainAction children={content.mainAction} />
           </Stack>
         </Grid>
         <Grid item xs={6} md={2} textAlign="right">

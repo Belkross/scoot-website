@@ -46,7 +46,7 @@ function createAccordionList(array_articles) {
     return (
       <MyAccordion
         key={article.title}
-        summary={article.title}
+        title={article.title}
         details={article.description}
       />
     );

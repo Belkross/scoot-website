@@ -2,7 +2,7 @@ import React from "react";
 import Box from "@mui/material/Box";
 import Stack from "@mui/material/Stack";
 import Typography from "@mui/material/Typography";
-import Button from "@mui/material/Button";
+import ButtonMainAction from "../ButtonMainAction";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
 
 function section1(props) {
@@ -29,7 +29,7 @@ function Text({ title, description, buttonText }) {
     <Stack sx={sx_text} component="article">
       <Typography variant="h1" color="primary.light" children={title} />
       <Typography color="primary.light" children={description} />
-      <Button children={buttonText} />
+      <ButtonMainAction children={buttonText} />
     </Stack>
   );
 }
@@ -52,9 +52,9 @@ const sx_text = {
   gridArea: "1/1",
   justifyContent: "center",
   alignItems: "center",
-  gap: 3,
+  textAlign: { xs: "center", sm: "left" },
   mr: "auto",
   ml: { xs: "auto", md: "15%" },
   px: 3,
-  textAlign: { xs: "center", sm: "left" },
+  gap: 3,
 };
