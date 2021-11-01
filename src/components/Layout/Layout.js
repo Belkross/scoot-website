@@ -8,6 +8,7 @@ import Footer from "./Footer";
 import { initializeThemeModeCookie, setUpCookie } from "../functions/cookie";
 import { useStaticQuery, graphql } from "gatsby";
 import PageTransition from "./PageTransition";
+import ContainerVertical from "./ContainerVertical";
 
 function Layout({ children }) {
   const data = useStaticQuery(query);
@@ -28,14 +29,16 @@ function Layout({ children }) {
   return (
     <ThemeProvider theme={cachedMuiTheme}>
       <CssBaseline />
-      <HtmlAttributesAndHead content={data.site.siteMetadata}/>
-      <Header
-        content={content}
-        currentThemeMode={themeMode}
-        onThemeModeTrigger={handleToggle_themeMode}
-      />
-      <PageTransition>{children}</PageTransition>
-      <Footer />
+      <HtmlAttributesAndHead content={data.site.siteMetadata} />
+      <ContainerVertical>
+        <Header
+          content={content}
+          currentThemeMode={themeMode}
+          onThemeModeTrigger={handleToggle_themeMode}
+        />
+        <PageTransition>{children}</PageTransition>
+        <Footer />
+      </ContainerVertical>
     </ThemeProvider>
   );
 }

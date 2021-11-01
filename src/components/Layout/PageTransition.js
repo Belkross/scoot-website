@@ -22,6 +22,7 @@ function PageTransition({ children }) {
         stiffness: 75,
         duration: 0.5,
       }}
+      style={{flexGrow: 1}} // to make sure footer always well positioned
     >
       {children}
     </motion.main>
