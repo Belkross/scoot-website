@@ -2,12 +2,11 @@ import React from "react";
 import Grid from "@mui/material/Grid";
 import Stack from "@mui/material/Stack";
 import Typography from "@mui/material/Typography";
-import IconButton from "@mui/material/IconButton";
-import MenuIcon from "@mui/icons-material/Menu";
 import ButtonThemeMode from "../ButtonThemeMode.js";
 import LinkMui from "../LinkMui.js";
 import AppBarTop from "../AppBarTop.js";
 import ButtonMainAction from "../ButtonMainAction.js";
+import ButtonMenu from "./ButtonMenu.js";
 
 function Header(props) {
   const { content } = props;
@@ -33,7 +32,7 @@ function Header(props) {
             onClick={props.onThemeModeTrigger}
             currentThemeMode={props.currentThemeMode}
           />
-          <IconButton children={<MenuIcon />} />
+          <ButtonMenu tabs={array_tabs}/>
         </Grid>
       </Grid>
     </AppBarTop>

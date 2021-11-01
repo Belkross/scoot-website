@@ -12,4 +12,4 @@ function AppBarTop({ children }) {
 
 export default AppBarTop;
 
-const sx_container = { opacity: "0.96", backgroundColor: "primary.main" };
+const sx_container = { opacity: "0.96" };

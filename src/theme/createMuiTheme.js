@@ -2,15 +2,21 @@ import { createTheme, responsiveFontSizes } from "@mui/material/styles";
 import breakpoints from "./breakpoints.js";
 import palette from "./palette.js";
 import shape from "./shape.js";
-import components from "./components.js";
-import applyDependentThemePart from "./themeDependentPart.js";
+import addComponents from "./components.js";
+import addTypography from "./typography.js";
 
 function createMuiTheme(mode) {
-  const themeObjectBase = { breakpoints, components, palette: palette(mode), shape };
-  let themeObject = createTheme(themeObjectBase);
-  themeObject = responsiveFontSizes(themeObject);
-  themeObject = applyDependentThemePart(themeObject);
-  return themeObject;
+  const themeObjectBase = {
+    breakpoints,
+    palette: palette(mode),
+    shape,
+  };
+
+  let theme = createTheme(themeObjectBase);
+  theme = addComponents(theme);
+  theme = addTypography(theme);
+  theme = responsiveFontSizes(theme);
+  return theme;
 }
 
 export default createMuiTheme;

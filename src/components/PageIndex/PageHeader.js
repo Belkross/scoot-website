@@ -1,9 +1,9 @@
 import React from "react";
 import Box from "@mui/material/Box";
 import Stack from "@mui/material/Stack";
+import Typography from "@mui/material/Typography";
 import ButtonMainAction from "../ButtonMainAction";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
-import Point from "../Point";
 
 function section1(props) {
   const { content } = props;
@@ -27,12 +27,8 @@ function section1(props) {
 function Text({ title, description, buttonText }) {
   return (
     <Stack sx={sx_text} component="article">
-      <Point
-        title={title}
-        description={description}
-        titleVariant="h1"
-        color="primary.light"
-      />
+      <Typography variant="h1" children={title} />
+      <Typography children={description} color="primary.light" />
       <ButtonMainAction children={buttonText} />
     </Stack>
   );

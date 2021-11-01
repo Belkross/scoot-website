@@ -12,7 +12,7 @@ export function palette(mode) {
         light: "#fff4df",
       },
       text: {
-        primary: "#495567",
+        primary: "#fff",
       },
       background: {
         paper: "#939caa",
@@ -25,6 +25,7 @@ export function palette(mode) {
         main: "#939caa",
         light: "#e5ecf4",
         dark: "#495567",
+        contrastText: "#495567",
       },
       secondary: {
         main: "#fcb72b",

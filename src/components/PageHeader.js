@@ -33,6 +33,5 @@ const sx_typography = {
   gridArea: "1/1",
   position: "relative",
   placeItems: "center left",
-  color: "primary.light",
   pl: 3,
 };
