@@ -2,14 +2,15 @@ import React from "react";
 import { Helmet } from "react-helmet";
 
 function HtmlAttributesAndHead(props) {
+  const { content } = props;
   return (
     <Helmet
       htmlAttributes={{
         lang: "fr",
       }}
     >
-      <title>Maker</title>
-      <meta name="description" content={props.content.description} />
+      <title>{content.title}</title>
+      <meta name="description" content={content.description} />
     </Helmet>
   );
 }

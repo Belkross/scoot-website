@@ -50,6 +50,7 @@ const query = graphql`
     site {
       siteMetadata {
         description
+        title
       }
     }
     contentYaml {
