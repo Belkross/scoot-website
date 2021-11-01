@@ -22,7 +22,7 @@ function PageTransition({ children }) {
         stiffness: 75,
         duration: 0.5,
       }}
-      style={{flexGrow: 1}} // to make sure footer always well positioned
+      style={sx_container}
     >
       {children}
     </motion.main>
@@ -30,3 +30,14 @@ function PageTransition({ children }) {
 }
 
 export default PageTransition;
+
+const sx_container = {
+  // to make sure footer always well positioned
+  flexGrow: 1,
+  //to make sure when content is centered when <main> stretch
+  display: "flex",
+  flexFlow: "column nowrap",
+  justifyContent: "center",
+  // to make sure footer don’t stick header
+  minHeight: "200px"
+};
