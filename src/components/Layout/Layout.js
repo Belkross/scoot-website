@@ -1,4 +1,4 @@
-import React, { useMemo, useState } from "react";
+import React, { useMemo, useState, useEffect } from "react";
 import { ThemeProvider } from "@mui/material/styles";
 import CssBaseline from "@mui/material/CssBaseline";
 import createMuiTheme from "../../theme/createMuiTheme";
@@ -15,9 +15,7 @@ function Layout({ children }) {
   const data = useStaticQuery(query);
   const { header: content } = data.contentYaml;
   //darkMode
-  const [themeMode, setThemeMode] = useState(
-    initializeThemeModeCookie(COOKIE_THEME_MODE_NAME)
-  );
+  const [themeMode, setThemeMode] = useState("light");
   const cachedMuiTheme = useMemo(() => createMuiTheme(themeMode), [themeMode]);
   const handleToggle_themeMode = () => {
     setThemeMode((previousMode) => {
@@ -26,6 +24,17 @@ function Layout({ children }) {
       return newMode;
     });
   };
+
+  useEffect(() => {
+    const newMode = initializeThemeModeCookie(COOKIE_THEME_MODE_NAME);
+    setThemeMode(newMode);
+  }, []);
+
+/*
+  On attend que le composant soit monté avant de vérifier l’existence du cookie.
+  Cela suppose que lorsque les pages html statiques sont créées durant le build
+  les composants ne passent pas l’étape du montage. 
+*/
 
   return (
     <ThemeProvider theme={cachedMuiTheme}>
