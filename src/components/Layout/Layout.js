@@ -9,19 +9,20 @@ import { initializeThemeModeCookie, setUpCookie } from "../functions/cookie";
 import { useStaticQuery, graphql } from "gatsby";
 import PageTransition from "./PageTransition";
 import ContainerVertical from "./ContainerVertical";
+const COOKIE_THEME_MODE_NAME = "MuiThemeMode";
 
 function Layout({ children }) {
   const data = useStaticQuery(query);
   const { header: content } = data.contentYaml;
   //darkMode
   const [themeMode, setThemeMode] = useState(
-    initializeThemeModeCookie("muiThemeMode")
+    initializeThemeModeCookie(COOKIE_THEME_MODE_NAME)
   );
   const cachedMuiTheme = useMemo(() => createMuiTheme(themeMode), [themeMode]);
   const handleToggle_themeMode = () => {
     setThemeMode((previousMode) => {
       const newMode = previousMode === "light" ? "dark" : "light";
-      setUpCookie("muiThemeMode", newMode);
+      setUpCookie(COOKIE_THEME_MODE_NAME, newMode);
       return newMode;
     });
   };

@@ -5,6 +5,7 @@ export function setUpCookie(cookieName, cookieValue) {
 }
 
 export function checkOneCookieExistance(cookieName) {
+  if (document === undefined) return undefined; //no access to document with ssr
   const string_cookies = document.cookie;
   const atLeastOneCookieExist = string_cookies === "" ? false : true;
 
@@ -24,13 +25,14 @@ export function checkOneCookieExistance(cookieName) {
   }
 }
 
-// vérifie l’existence du cookie en argument, configure le cookie quoi qu’il arrive et retourne la valeur configurée
+// vérifie l’existence du cookie en argument,
+// configure le cookie quoi qu’il arrive et retourne la valeur configurée
 export function initializeThemeModeCookie(cookieName) {
   const currentThemeModeCookie = checkOneCookieExistance(cookieName);
   if (currentThemeModeCookie === "dark") {
     return "dark";
   } else {
-    setUpCookie("muiThemeMode", "light");
+    setUpCookie(cookieName, "light");
     return "light";
   }
 }
