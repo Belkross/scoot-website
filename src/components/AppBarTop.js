@@ -4,7 +4,7 @@ import Toolbar from "@mui/material/Toolbar";
 
 function AppBarTop({ children }) {
   return (
-    <AppBar position="sticky" component="header" sx={sx_container}>
+    <AppBar position="sticky" sx={sx_container}>
       <Toolbar>{children}</Toolbar>
     </AppBar>
   );
@@ -13,3 +13,7 @@ function AppBarTop({ children }) {
 export default AppBarTop;
 
 const sx_container = { opacity: "0.96" };
+
+/*
+AppBar is a header markup by default
+*/

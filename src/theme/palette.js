@@ -1,3 +1,5 @@
+import { blueGrey } from "@mui/material/colors";
+
 export function palette(mode) {
   if (mode === "dark") {
     return {
@@ -15,7 +17,7 @@ export function palette(mode) {
         primary: "#fff",
       },
       background: {
-        paper: "#939caa",
+        paper: blueGrey[800],
       },
     };
   } else {
@@ -35,7 +37,8 @@ export function palette(mode) {
         primary: "#495567",
       },
       background: {
-        paper: "#f2f5f9",
+        paper: blueGrey[100],
+        navBar: blueGrey[300],
       },
     };
   }

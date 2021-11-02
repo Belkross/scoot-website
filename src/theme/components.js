@@ -3,11 +3,10 @@ import { createTheme } from "@mui/material/styles";
 function addComponents(theme) {
   return createTheme(theme, {
     components: {
-      MuiToolbar: {
+      MuiAppBar: {
         styleOverrides: {
           root: {
-            height: "100%",
-            backgroundColor: theme.palette.primary.main,
+            backgroundColor: theme.palette.background.navBar,
           },
         },
       },
@@ -18,8 +17,7 @@ function addComponents(theme) {
         },
         styleOverrides: {
           root: {
-            padding: "16px 28px",
-            
+            padding: "12px 20px",
           },
         },
       },

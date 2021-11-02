@@ -3,9 +3,9 @@ import IconButton from "@mui/material/IconButton";
 import MenuIcon from "@mui/icons-material/Menu";
 import Drawer from "@mui/material/Drawer";
 import Box from "@mui/material/Box";
-import Toolbar from "@mui/material/Toolbar";
 import Stack from "@mui/material/Stack";
 import LinkMui from "../LinkMui.js";
+import AppBarLateral from "../MyComponents/AppBarLateral.js";
 
 function ButtonMenu(props) {
   const [drawerDisplay, setDrawerDisplay] = useState(false);
@@ -32,9 +32,9 @@ function ButtonMenu(props) {
         children={<MenuIcon />}
       />
       <Drawer anchor="right" open={drawerDisplay} onClose={toggleDrawer}>
-        <Toolbar>
-          <Stack>{list_tabs}</Stack>
-        </Toolbar>
+        <AppBarLateral>
+          <Stack spacing={1}>{list_tabs}</Stack>
+        </AppBarLateral>
       </Drawer>
     </Box>
   );
