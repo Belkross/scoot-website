@@ -99,7 +99,7 @@ const query = graphql`
             publicURL
           }
         }
-        mention
+        copyright
       }
     }
   }
