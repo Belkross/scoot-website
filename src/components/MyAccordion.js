@@ -43,4 +43,7 @@ const sx_stackSummary = {
 const sx_Accordion = {
   boxShadow: "none",
   maxWidth: "600px",
+  "&:hover": {
+    backgroundColor: "rgba(125, 125, 125, .5)"
+  }
 };
