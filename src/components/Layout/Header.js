@@ -27,12 +27,19 @@ function Header(props) {
             <ButtonMainAction children={content.mainAction} />
           </Stack>
         </Grid>
-        <Grid item xs={6} md={2} textAlign="right">
-          <ButtonThemeMode
-            onClick={props.onThemeModeTrigger}
-            currentThemeMode={props.currentThemeMode}
-          />
-          <ButtonMenu tabs={array_tabs}/>
+        <Grid item xs={6} md={2}>
+          <Stack
+            direction="row"
+            spacing={1}
+            justifyContent="flex-end"
+            alignItems="center"
+          >
+            <ButtonThemeMode
+              onClick={props.onThemeModeTrigger}
+              currentThemeMode={props.currentThemeMode}
+            />
+            <ButtonMenu tabs={array_tabs} />
+          </Stack>
         </Grid>
       </Grid>
     </AppBarTop>
@@ -50,7 +57,7 @@ const sx_tabs = {
   alignItems: "center",
   justifyContent: "center",
 
-  gap: 2,
+  gap: 1,
 };
 
 const sx_logo = {

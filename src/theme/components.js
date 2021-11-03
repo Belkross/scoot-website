@@ -3,6 +3,17 @@ import { createTheme } from "@mui/material/styles";
 function addComponents(theme) {
   return createTheme(theme, {
     components: {
+      MuiIconButton: {
+        variants: [
+          {
+            props: { variant: "navigation" },
+            style: {
+              border: "1px solid",
+              borderRadius: "15px",
+            },
+          },
+        ],
+      },
       MuiAppBar: {
         styleOverrides: {
           root: {

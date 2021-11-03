@@ -5,7 +5,7 @@ import LightModeIcon from "@mui/icons-material/LightMode";
 
 function ButtonThemeMode({ onClick, currentThemeMode }) {
   return (
-    <IconButton onClick={onClick} aria-label="toggle dark mode">
+    <IconButton onClick={onClick} aria-label="toggle dark mode" variant="navigation">
       {currentThemeMode === "light" ? <LightModeIcon fontSize="large" /> : <DarkModeIcon fontSize="large"/>}
     </IconButton>
   );

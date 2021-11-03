@@ -27,9 +27,10 @@ function ButtonMenu(props) {
   return (
     <Box display="inline">
       <IconButton
+        variant="navigation"
         /* variant="AppBar" // to applay a peculiar style */
         onClick={toggleDrawer}
-        children={<MenuIcon fontSize="large"/>}
+        children={<MenuIcon fontSize="large" />}
         aria-label="toggle side navigation bar"
       />
       <Drawer anchor="right" open={drawerDisplay} onClose={toggleDrawer}>
