@@ -9,22 +9,22 @@ import Contact from "../MyComponents/Contact";
 function FooterPart1(props) {
   const { contact } = props.content;
   return (
-    <Box sx={sx_container}>
+    <Box sx={sx_container} component="section">
       <Container>
         <Grid container spacing={6}>
-          <Grid item xs={12} md={8} textAlign="center" component="section">
+          <Grid item xs={12} md={8} textAlign="center" component="article">
             <Download content={props.content} />
           </Grid>
-          <Grid item xs={12} md={4} textAlign="center" component="section">
+          <Grid item xs={12} md={4} textAlign="center" component="article">
             <Typography
               variant="h4"
               component="p"
               children="Nous contacter"
-              color="white"
+              color="primary.light"
               mb={3}
             />
             <Contact
-              color="white"
+              color="primary.light"
               name={contact.name}
               addressLine1={contact.address[0]}
               addressLine2={contact.address[1]}
