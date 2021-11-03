@@ -3,11 +3,12 @@ import Box from "@mui/material/Box";
 import FooterPart1 from "./FooterPart1";
 import FooterPart2 from "./FooterPart2";
 
-function Footer() {
+function Footer(props) {
+  const { content } = props;
   return (
     <Box component="footer" id="footer">
-      <FooterPart1 />
-      <FooterPart2 />
+      <FooterPart1 content={content} />
+      <FooterPart2 content={content} />
     </Box>
   );
 }

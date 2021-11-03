@@ -16,8 +16,21 @@ header:
   mainAction: Télécharger Scoot
 
 footer:
-  title: Télécharge gratuitement l’application !
-
+  download:
+    title: Télécharge gratuitement l’application !
+    icon1: ../assets/icons/app-store.svg
+    icon_alt1: plateforme de téléchargement app store
+    icon2: ../assets/icons/google-play.svg
+    icon_alt2: plateforme de téléchargement google play
+  contact:
+    name: Scootin
+    address: 
+      - 2 place du caribou
+      - 3900 Sermersooq
+      - Groenland
+    mail: support@scootin.com
+  mention: © 2021 Scootin, all rights reserved
+    
 page_index:
   section1:
     title: La mobilité rendue simple

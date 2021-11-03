@@ -13,7 +13,7 @@ const COOKIE_THEME_MODE_NAME = "MuiThemeMode";
 
 function Layout({ children }) {
   const data = useStaticQuery(query);
-  const { header: content } = data.contentYaml;
+  const { contentYaml: content } = data;
   //darkMode
   const [themeMode, setThemeMode] = useState("light");
   const cachedMuiTheme = useMemo(() => createMuiTheme(themeMode), [themeMode]);
@@ -25,29 +25,25 @@ function Layout({ children }) {
     });
   };
 
+  /* On attend que le composant soit monté avant de vérifier l’existence du cookie.
+  Cela suppose que lorsque les pages html statiques sont créées durant le build
+  les composants ne passent pas l’étape du montage. */
   useEffect(() => {
     const newMode = initializeThemeModeCookie(COOKIE_THEME_MODE_NAME);
     setThemeMode(newMode);
   }, []);
-
-/*
-  On attend que le composant soit monté avant de vérifier l’existence du cookie.
-  Cela suppose que lorsque les pages html statiques sont créées durant le build
-  les composants ne passent pas l’étape du montage. 
-*/
-
   return (
     <ThemeProvider theme={cachedMuiTheme}>
       <CssBaseline />
       <HtmlAttributesAndHead content={data.site.siteMetadata} />
       <ContainerVertical>
         <Header
-          content={content}
+          content={content.header}
           currentThemeMode={themeMode}
           onThemeModeTrigger={handleToggle_themeMode}
         />
         <PageTransition>{children}</PageTransition>
-        <Footer />
+        <Footer content={content.footer} />
       </ContainerVertical>
     </ThemeProvider>
   );
@@ -85,6 +81,25 @@ const query = graphql`
             url
           }
         }
+      }
+      footer {
+        contact {
+          address
+          mail
+          name
+        }
+        download {
+          icon_alt1
+          icon_alt2
+          title
+          icon1 {
+            publicURL
+          }
+          icon2 {
+            publicURL
+          }
+        }
+        mention
       }
     }
   }
