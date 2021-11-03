@@ -10,6 +10,7 @@ function HtmlAttributesAndHead(props) {
       }}
     >
       <title>{content.title}</title>
+      <meta charset={content.charset} />
       <meta name="description" content={content.description} />
     </Helmet>
   );

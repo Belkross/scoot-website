@@ -57,6 +57,7 @@ const query = graphql`
       siteMetadata {
         description
         title
+        charset
       }
     }
     contentYaml {
