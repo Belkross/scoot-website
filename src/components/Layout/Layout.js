@@ -43,7 +43,7 @@ function Layout({ children }) {
           onThemeModeTrigger={handleToggle_themeMode}
         />
         <PageTransition>{children}</PageTransition>
-        <Footer content={content.footer} />
+        <Footer content={content} />
       </ContainerVertical>
     </ThemeProvider>
   );
@@ -60,6 +60,26 @@ const query = graphql`
       }
     }
     contentYaml {
+      general {
+        social_media {
+          facebook {
+            name
+            website
+          }
+          instagram {
+            name
+            website
+          }
+          linkedin {
+            name
+            website
+          }
+          twitter {
+            name
+            website
+          }
+        }
+      }
       header {
         logo
         mainAction

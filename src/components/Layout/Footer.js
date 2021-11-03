@@ -7,7 +7,7 @@ function Footer(props) {
   const { content } = props;
   return (
     <Box component="footer" id="footer">
-      <FooterPart1 content={content} />
+      <FooterPart1 content={content.footer} />
       <FooterPart2 content={content} />
     </Box>
   );

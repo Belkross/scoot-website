@@ -1,38 +1,40 @@
 import React from "react";
 import Stack from "@mui/material/Stack";
-import LinkedInIcon from "@mui/icons-material/LinkedIn";
-import InstagramIcon from "@mui/icons-material/Instagram";
-import FacebookIcon from "@mui/icons-material/Facebook";
-import TwitterIcon from "@mui/icons-material/Twitter";
-import IconButton from "@mui/material/IconButton";
 import Typography from "@mui/material/Typography";
+import IconButtonLink from "../MyComponents/IconButtonLink";
+import IconsSocialMedia from "../MyComponents/IconsSocialMedia";
 
 function FooterPart2(props) {
   const { content } = props;
-  const list_Icons = array_Icons.map((icon, index) => {
+  const array_socialMedia = Object.values(props.content.general.social_media);
+
+  /* I didn’t find a way to call mui’s icons from content.yaml so we have to 
+  add them manually before creating the list of social media icons */
+  array_socialMedia.forEach((media) => {
+    media["icon"] = IconsSocialMedia[media.name];
+  });
+
+  const list_socialMedia = array_socialMedia.map((media) => {
     return (
-      <IconButton key={index} color="secondary">
-        {icon}
-      </IconButton>
+      <IconButtonLink
+        key={media.name}
+        name={media.name}
+        icon={media.icon}
+        website={media.website}
+        color="secondary"
+      />
     );
   });
 
   return (
     <Stack sx={sx_container} component="section">
-      <Typography color="primary.light">{content.copyright}</Typography>
-      <Stack direction="row">{list_Icons}</Stack>
+      <Typography color="primary.light">{content.footer.copyright}</Typography>
+      <Stack direction="row">{list_socialMedia}</Stack>
     </Stack>
   );
 }
 
 export default FooterPart2;
-
-const array_Icons = [
-  <TwitterIcon fontSize="large" />,
-  <InstagramIcon fontSize="large" />,
-  <FacebookIcon fontSize="large" />,
-  <LinkedInIcon fontSize="large" />,
-];
 
 const sx_container = {
   height: 70,

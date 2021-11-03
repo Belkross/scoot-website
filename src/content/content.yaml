@@ -1,3 +1,18 @@
+general:
+  social_media:
+    facebook:
+      name: facebook
+      website: https://www.facebook.com/
+    instagram:
+      name: instagram
+      website: https://www.linkedin.com/
+    linkedin:
+      name: linkedin
+      website: https://www.linkedin.com/
+    twitter:
+      name: twitter
+      website: https://twitter.com/
+
 header:
   logo: Scoot
   tabs:
@@ -24,13 +39,13 @@ footer:
     icon_alt2: plateforme de téléchargement google play
   contact:
     name: Scootin
-    address: 
+    address:
       - 2 place du caribou
       - 3900 Sermersooq
       - Groenland
     mail: support@scootin.com
   copyright: © 2021 Scootin, all rights reserved
-    
+
 page_index:
   section1:
     title: La mobilité rendue simple
