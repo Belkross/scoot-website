@@ -15,7 +15,7 @@ export function palette(mode) {
         light: "#fff4df",
       },
       text: {
-        primary: "#495567",
+        primary: blueGrey[900],
       },
       background: {
         /* default:, */
