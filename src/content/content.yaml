@@ -1,4 +1,5 @@
 general:
+  favicon: ../assets/icons/scootin.svg
   social_media:
     facebook:
       name: facebook

@@ -35,7 +35,11 @@ function Layout({ children }) {
   return (
     <ThemeProvider theme={cachedMuiTheme}>
       <CssBaseline />
-      <HtmlAttributesAndHead content={data.site.siteMetadata} />
+      <HtmlAttributesAndHead
+        siteMetadata={data.site.siteMetadata}
+        favicon={data.contentYaml.general.favicon.publicURL}
+        language="fr"
+      />
       <ContainerVertical>
         <Header
           content={content.header}
@@ -62,6 +66,9 @@ const query = graphql`
     }
     contentYaml {
       general {
+        favicon {
+          publicURL
+        }
         social_media {
           facebook {
             name

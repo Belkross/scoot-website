@@ -1,17 +1,17 @@
 import React from "react";
 import { Helmet } from "react-helmet";
 
-function HtmlAttributesAndHead(props) {
-  const { content } = props;
+function HtmlAttributesAndHead({ siteMetadata, favicon, language }) {
   return (
     <Helmet
       htmlAttributes={{
-        lang: "fr",
+        lang: { language },
       }}
     >
-      <title>{content.title}</title>
-      <meta charset={content.charset} />
-      <meta name="description" content={content.description} />
+      <title>{siteMetadata.title}</title>
+      <meta charset={siteMetadata.charset} />
+      <link rel="icon" href={favicon} type="image/x-icon" />
+      <meta name="description" content={siteMetadata.description} />
     </Helmet>
   );
 }
