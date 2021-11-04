@@ -1,26 +1,7 @@
-import { blueGrey } from "@mui/material/colors";
+import { blueGrey, indigo, blue } from "@mui/material/colors";
 
 export function palette(mode) {
-  if (mode === "dark") {
-    return {
-      mode: "dark",
-      primary: {
-        main: "#939caa",
-        light: "#e5ecf4",
-        dark: "#495567",
-      },
-      secondary: {
-        main: "#fcb72b",
-        light: "#fff4df",
-      },
-      text: {
-        primary: "#fff",
-      },
-      background: {
-        paper: blueGrey[800],
-      },
-    };
-  } else {
+  if (mode === "light") {
     return {
       mode: "light",
       primary: {
@@ -37,8 +18,37 @@ export function palette(mode) {
         primary: "#495567",
       },
       background: {
-        paper: blueGrey[100],
-        navBar: blueGrey[300],
+        paper: indigo[50],
+        navBar: blue[100],
+        footerUp: "#495567",
+        footerDown: "#333A44",
+      },
+      action: {
+        /* active: "rgba(125, 125, 185, 0.95)", */
+        hover: "rgba(125, 125, 185, 0.2)",
+        selected: "rgba(125,125, 205, 0.35)",
+      },
+    };
+  } else {
+    return {
+      mode: "dark",
+      primary: {
+        main: "#939caa",
+        light: "#e5ecf4",
+        dark: "#495567",
+      },
+      secondary: {
+        main: "#fcb72b",
+        light: "#fff4df",
+      },
+      text: {
+        primary: "rgba(255, 255, 255, .85)",
+      },
+      background: {
+        paper: blueGrey[800],
+        default: blueGrey[900],
+        footerUp: blueGrey[800],
+        footerDown: blueGrey[700],
       },
     };
   }

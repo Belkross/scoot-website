@@ -11,7 +11,7 @@ function LinkMui(props) {
     padding: 8px;
     border-radius: ${theme.shape.borderRadius}px;
     &:hover {
-      background-color: rgba(125, 125, 125, 0.35);
+      background-color: ${theme.palette.action.hover};
     }
   `;
 
@@ -19,7 +19,7 @@ function LinkMui(props) {
     <StyledLink
       to={props.to}
       activeStyle={{
-        backgroundColor: "rgba(125,125,125, 0.75)",
+        backgroundColor: theme.palette.action.selected,
       }}
       children={props.children}
       onClick={props.onClick} //s’applique à la balise <a>

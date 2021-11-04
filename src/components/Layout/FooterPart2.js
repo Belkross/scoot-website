@@ -38,7 +38,7 @@ export default FooterPart2;
 
 const sx_container = {
   height: 70,
-  backgroundColor: "#333A44",
+  backgroundColor: "background.footerDown",
   flexDirection: "row",
   justifyContent: "center",
   alignItems: "center",

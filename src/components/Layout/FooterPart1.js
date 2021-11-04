@@ -76,7 +76,7 @@ function Download(props) {
 const sx_container = {
   py: 10,
   width: "100%",
-  backgroundColor: "primary.dark",
+  backgroundColor: "background.footerUp",
 };
 
 const sx_Download = {
