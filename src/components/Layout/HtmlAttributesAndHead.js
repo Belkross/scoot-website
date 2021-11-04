@@ -5,7 +5,7 @@ function HtmlAttributesAndHead({ siteMetadata, favicon, language }) {
   return (
     <Helmet
       htmlAttributes={{
-        lang: { language },
+        lang: language,
       }}
     >
       <title>{siteMetadata.title}</title>
