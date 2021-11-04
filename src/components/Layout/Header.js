@@ -1,12 +1,13 @@
 import React from "react";
 import Grid from "@mui/material/Grid";
 import Stack from "@mui/material/Stack";
-import Typography from "@mui/material/Typography";
 import ButtonThemeMode from "../ButtonThemeMode.js";
 import LinkMui from "../LinkMui.js";
 import AppBarTop from "../AppBarTop.js";
 import ButtonMainAction from "../ButtonMainAction.js";
 import ButtonMenu from "./ButtonMenu.js";
+import Logo from "../MyComponents/Logo";
+import SportsMotorsportsIcon from "@mui/icons-material/SportsMotorsports";
 
 function Header(props) {
   const { content } = props;
@@ -18,16 +19,19 @@ function Header(props) {
   return (
     <AppBarTop>
       <Grid container component="nav" alignItems="center">
-        <Grid item xs={6} md={2}>
-          <Typography sx={sx_logo}>{content.logo}</Typography>
+        <Grid item xs={6} b9={2}>
+          <Logo
+            name={content.logo}
+            illustration={<SportsMotorsportsIcon fontSize="large" />}
+          />
         </Grid>
-        <Grid item sx={sx_tabsGrid} md={8}>
+        <Grid item sx={sx_GridTabs} md={8}>
           <Stack sx={sx_tabs}>
             {list_tabs}
             <ButtonMainAction children={content.mainAction} />
           </Stack>
         </Grid>
-        <Grid item xs={6} md={2}>
+        <Grid item xs={6} b9={2}>
           <Stack
             direction="row"
             spacing={1}
@@ -48,18 +52,20 @@ function Header(props) {
 
 export default Header;
 
-const sx_tabsGrid = {
-  display: { xs: "none", md: "grid" },
+const sx_GridTabs = {
+  display: { xs: "none", b9: "grid" },
 };
 
 const sx_tabs = {
   flexDirection: "row",
   alignItems: "center",
   justifyContent: "center",
-
   gap: 1,
 };
 
-const sx_logo = {
-  fontSize: "1.5rem",
-};
+/* 
+to adjust when all tabs have to disapear, 3 breakpoints to change : 
+  -first grid item last breakpoint
+  -third grid item last breakpoint
+  -sx_GridTabs last breakpoint
+*/

@@ -14,7 +14,7 @@ general:
       website: https://twitter.com/
 
 header:
-  logo: Scoot
+  logo: Scootin
   tabs:
     tab1:
       name: Accueil
@@ -28,7 +28,7 @@ header:
     tab4:
       name: Contact
       url: /contact/
-  mainAction: Télécharger Scoot
+  mainAction: Télécharger Scootin
 
 footer:
   download:
@@ -55,7 +55,7 @@ page_index:
       le, et c’est parti !
     illustration: ../assets/images/home-hero-desktop.jpg
     illustration_alt: ""
-    button: Get scootin
+    button: Télécharger Scootin
     buttonPath:
   section2:
     title: Comment ça marche ?
