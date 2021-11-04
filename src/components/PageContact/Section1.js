@@ -1,14 +1,16 @@
 import React from "react";
 import TextField from "@mui/material/TextField";
 import Stack from "@mui/material/Stack";
-import Button from "@mui/material/Button";
+import Button from "@mui/material/Button"
+import Typography from "@mui/material/Typography"
 import Checkbox from "@mui/material/Checkbox";
 import FormControlLabel from "@mui/material/FormControlLabel";
 import Grid from "@mui/material/Grid";
 
 function Section1() {
   return (
-    <Stack component="section">
+    <Stack component="section" alignItems="center">
+      <Typography variant="h2" children="Formulaire de contact" mb={6}/>
       <form
         style={style_form}
         name="Formulaire de contact"
