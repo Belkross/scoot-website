@@ -1,10 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
 import Grid from "@mui/material/Grid";
 import IconButton from "@mui/material/IconButton";
 import Contact from "../MyComponents/Contact";
+import DialogAction from "../MyComponents/DialogAction";
 
 function FooterPart1(props) {
   const { contact } = props.content;
@@ -43,6 +44,10 @@ export default FooterPart1;
 
 function Download(props) {
   const { content } = props;
+  const [dialogDisplay, setDialogDisplay] = useState(false);
+  const toggleDialog = (event) => {
+    setDialogDisplay((prevDisplay) => !prevDisplay);
+  };
   return (
     <Grid container sx={sx_Download} spacing={3}>
       <Grid item xs={12} md={12}>
@@ -54,7 +59,7 @@ function Download(props) {
         />
       </Grid>
       <Grid item xs={12} sm={6} textAlign={{ xs: "center", sm: "right" }}>
-        <IconButton>
+        <IconButton onClick={toggleDialog}>
           <img
             src={content.download.icon1.publicURL}
             alt={content.download.icon_alt1}
@@ -62,16 +67,30 @@ function Download(props) {
         </IconButton>
       </Grid>
       <Grid item xs={12} sm={6} textAlign={{ xs: "center", sm: "left" }}>
-        <IconButton>
+        <IconButton onClick={toggleDialog}>
           <img
             src={content.download.icon2.publicURL}
             alt={content.download.icon_alt2}
           />
         </IconButton>
       </Grid>
+      <DialogAction
+        title={Dialog.title}
+        description={Dialog.description}
+        buttons={Dialog.buttons}
+        open={dialogDisplay}
+        close={toggleDialog}
+      />
     </Grid>
   );
 }
+
+const Dialog = {
+  title: "Téléchargement de l’application Scootin",
+  description:
+    "Ce site est une démonstration et l’application Scootin n’existe pas réellement.",
+  buttons: [{ name: "J’ai compris" }, { name: "J’ai pas compris" }],
+};
 
 const sx_container = {
   py: 10,
