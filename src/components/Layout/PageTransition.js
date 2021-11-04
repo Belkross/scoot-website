@@ -6,7 +6,6 @@ function PageTransition({ children }) {
     <motion.main
       initial={{
         opacity: 0,
-        x: -300,
       }}
       animate={{
         opacity: 1,
@@ -14,13 +13,12 @@ function PageTransition({ children }) {
       }}
       exit={{
         opacity: 0,
-        x: 300,
       }}
       transition={{
         type: "spring",
         mass: 0.35,
         stiffness: 75,
-        duration: 0.5,
+        duration: 0.2,
       }}
       style={sx_container}
     >
@@ -39,5 +37,5 @@ const sx_container = {
   flexFlow: "column nowrap",
   justifyContent: "center",
   // to make sure footer don’t stick header
-  minHeight: "200px"
+  minHeight: "200px",
 };

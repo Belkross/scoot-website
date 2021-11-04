@@ -18,6 +18,7 @@ export function palette(mode) {
         primary: "#495567",
       },
       background: {
+        /* default:, */
         paper: indigo[50],
         navBar: blue[100],
         footerUp: "#495567",
@@ -45,8 +46,9 @@ export function palette(mode) {
         primary: "rgba(255, 255, 255, .85)",
       },
       background: {
-        paper: blueGrey[800],
         default: blueGrey[900],
+        paper: blueGrey[800],
+        navBar: blueGrey[800],
         footerUp: blueGrey[800],
         footerDown: blueGrey[700],
       },

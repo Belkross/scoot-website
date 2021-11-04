@@ -12,7 +12,7 @@ function AppBarTop({ children }) {
 
 export default AppBarTop;
 
-const sx_container = { opacity: "0.96" };
+const sx_container = { opacity: "0.96", backgroundColor: "background.navBar" };
 
 /*
 AppBar is a header markup by default
