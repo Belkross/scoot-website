@@ -2,18 +2,26 @@ import React from "react";
 import Grid from "@mui/material/Grid";
 import Stack from "@mui/material/Stack";
 import ButtonThemeMode from "../ButtonThemeMode.js";
-import LinkMui from "../LinkMui.js";
 import AppBarTop from "../AppBarTop.js";
 import ButtonMainAction from "../ButtonMainAction.js";
 import ButtonMenu from "./ButtonMenu.js";
 import Logo from "../MyComponents/Logo";
 import SportsMotorsportsIcon from "@mui/icons-material/SportsMotorsports";
+import LinkNavBar from "../LinkNavbar.js";
 
 function Header(props) {
-  const { content } = props;
+  const { content, dato } = props;
   const array_tabs = Object.values(content.tabs);
-  const list_tabs = array_tabs.map((tab) => {
-    return <LinkMui key={tab.name} to={tab.url} children={tab.name} />;
+  const list_tabs = dato.map((tab) => {
+    return (
+      <LinkNavBar
+        key={tab.id}
+        url={tab.url}
+        name={tab.name}
+        linkType={tab.linkType}
+        menuItems={tab.menuItems}
+      />
+    );
   });
 
   return (

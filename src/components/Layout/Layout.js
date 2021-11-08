@@ -14,6 +14,8 @@ const COOKIE_THEME_MODE_NAME = "MuiThemeMode";
 function Layout({ children }) {
   const data = useStaticQuery(query);
   const { contentYaml: content } = data;
+  const { content: datoContent } = data.allDatoCmsNavigationBar.nodes[0].tabs[0]
+  
   //darkMode
   const [themeMode, setThemeMode] = useState("light");
   const cachedMuiTheme = useMemo(() => createMuiTheme(themeMode), [themeMode]);
@@ -43,6 +45,7 @@ function Layout({ children }) {
       <ContainerVertical>
         <Header
           content={content.header}
+          dato={datoContent}
           currentThemeMode={themeMode}
           onThemeModeTrigger={handleToggle_themeMode}
         />
@@ -57,6 +60,32 @@ export default Layout;
 
 const query = graphql`
   query component_layout {
+    allDatoCmsNavigationBar {
+      nodes {
+        tabs {
+          locale
+          content {
+            ... on DatoCmsLink {
+              id
+              name
+              url
+              linkType
+            }
+            ... on DatoCmsLinkMenu {
+              id
+              name
+              linkType
+              menuItems {
+                url
+                name
+                id
+                linkType
+              }
+            }
+          }
+        }
+      }
+    }
     site {
       siteMetadata {
         description

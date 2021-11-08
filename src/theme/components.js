@@ -22,6 +22,18 @@ function addComponents(theme) {
         },
       },
       MuiButton: {
+        variants: [
+          {
+            props: { variant: "navBar", },
+            style: {
+              backgroundColor: "background.navBar",
+              color: "secondary.main",
+              "&:hover": {
+                backgroundColor: "action.hover",
+              },
+            },
+          },
+        ],
         defaultProps: {
           variant: "contained",
           color: "secondary",
