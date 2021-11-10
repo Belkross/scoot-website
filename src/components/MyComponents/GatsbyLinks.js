@@ -4,12 +4,12 @@ import MenuItem from "@mui/material/MenuItem";
 import { Link } from "gatsby";
 import { useTheme } from "@mui/material";
 
-export function LinkButton({ name, url, onClick }) {
+export function LinkButton({ name, path, onClick }) {
   const theme = useTheme();
   return (
     <Button
       component={Link}
-      to={url}
+      to={path}
       sx={sx_Link}
       disableElevation
       activeStyle={{
@@ -27,13 +27,13 @@ export function LinkMenuAnchor({ name, onClick }) {
   );
 }
 
-export function LinkMenuItem({ name, url, onClick }) {
+export function LinkMenuItem({ name, path, onClick }) {
   const theme = useTheme();
   return (
     <MenuItem
       component={Link}
       children={name}
-      to={url}
+      to={path}
       sx={sx_Link}
       activeStyle={{
         backgroundColor: theme.palette.action.selected,

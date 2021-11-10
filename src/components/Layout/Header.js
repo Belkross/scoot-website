@@ -16,7 +16,7 @@ function Header(props) {
     return (
       <LinkNavBar
         key={tab.id}
-        url={tab.url}
+        path={tab.path}
         name={tab.name}
         linkType={tab.linkType}
         menuItems={tab.menuItems}

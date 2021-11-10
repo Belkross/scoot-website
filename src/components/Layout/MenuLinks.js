@@ -13,7 +13,7 @@ function MenuLinks({ name, menuItems }) {
   };
 
   const list_MenuItem = menuItems.map((link) => {
-    return <LinkMenuItem key={link.id} name={link.name} url={link.url} />;
+    return <LinkMenuItem key={link.id} name={link.name} path={link.path} />;
   });
   return (
     <div>

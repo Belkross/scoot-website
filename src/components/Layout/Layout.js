@@ -14,9 +14,10 @@ const COOKIE_THEME_MODE_NAME = "MuiThemeMode";
 function Layout({ children }) {
   const data = useStaticQuery(query);
   const { contentYaml: content } = data;
-  const { content: datoContent } = data.allDatoCmsNavigationBar.nodes[0].tabs[0]
-  
+  const { links: datoContent } =
+    data.allDatoCmsNavigationBar.nodes[0].groupMixedLink[0];
   //darkMode
+
   const [themeMode, setThemeMode] = useState("light");
   const cachedMuiTheme = useMemo(() => createMuiTheme(themeMode), [themeMode]);
   const handleToggle_themeMode = () => {
@@ -62,13 +63,12 @@ const query = graphql`
   query component_layout {
     allDatoCmsNavigationBar {
       nodes {
-        tabs {
-          locale
-          content {
+        groupMixedLink {
+          links {
             ... on DatoCmsLink {
               id
               name
-              url
+              path
               linkType
             }
             ... on DatoCmsLinkMenu {
@@ -76,7 +76,7 @@ const query = graphql`
               name
               linkType
               menuItems {
-                url
+                path
                 name
                 id
                 linkType
@@ -84,6 +84,7 @@ const query = graphql`
             }
           }
         }
+        locale
       }
     }
     site {
