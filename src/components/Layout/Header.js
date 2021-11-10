@@ -8,6 +8,7 @@ import ButtonMenu from "./ButtonMenu.js";
 import Logo from "../MyComponents/Logo";
 import SportsMotorsportsIcon from "@mui/icons-material/SportsMotorsports";
 import LinkNavBar from "../LinkNavbar.js";
+import ButtonLangue from "../MyComponents/ButtonLangue"
 
 function Header(props) {
   const { content, dato } = props;
@@ -46,6 +47,10 @@ function Header(props) {
             justifyContent="flex-end"
             alignItems="center"
           >
+            <ButtonLangue 
+              onClick={props.onLangueTrigger}
+              currentLangue={props.currentLangue}
+            />
             <ButtonThemeMode
               onClick={props.onThemeModeTrigger}
               currentThemeMode={props.currentThemeMode}

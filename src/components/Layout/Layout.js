@@ -17,7 +17,7 @@ function Layout({ children }) {
   const { links: datoContent } =
     data.allDatoCmsNavigationBar.nodes[0].groupMixedLink[0];
   //darkMode
-
+  const [langue, setLangue] = useState("fr");
   const [themeMode, setThemeMode] = useState("light");
   const cachedMuiTheme = useMemo(() => createMuiTheme(themeMode), [themeMode]);
   const handleToggle_themeMode = () => {
@@ -27,7 +27,13 @@ function Layout({ children }) {
       return newMode;
     });
   };
-
+  const handleToggle_langue = () => {
+    setLangue((previousLangue) => {
+      const newLangue = previousLangue === "fr" ? "en" : "fr";
+      /* setUpCookie(COOKIE_THEME_MODE_NAME, newMode); */
+      return newLangue;
+    });
+  };
   /* On attend que le composant soit monté avant de vérifier l’existence du cookie.
   Cela suppose que lorsque les pages html statiques sont créées durant le build
   les composants ne passent pas l’étape du montage. */
@@ -49,6 +55,8 @@ function Layout({ children }) {
           dato={datoContent}
           currentThemeMode={themeMode}
           onThemeModeTrigger={handleToggle_themeMode}
+          currentLangue={langue}
+          onLangueTrigger={handleToggle_langue}
         />
         <PageTransition>{children}</PageTransition>
         <Footer content={content} />
