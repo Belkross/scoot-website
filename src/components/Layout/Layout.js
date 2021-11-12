@@ -73,7 +73,7 @@ const query = graphql`
       nodes {
         groupMixedLink {
           links {
-            ... on DatoCmsLink {
+            ... on DatoCmsLinkInternal {
               id
               name
               path
