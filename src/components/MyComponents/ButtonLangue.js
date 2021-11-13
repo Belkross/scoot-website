@@ -1,19 +1,26 @@
-import React, { useContext } from "react";
-import IconButton from "@mui/material/IconButton";
-import Typography from "@mui/material/Typography";
-import { LangueContext } from "./LangueProvider";
+import React from "react";
+import ToggleButton from "@mui/material/ToggleButton";
+import ToggleButtonGroup from "@mui/material/ToggleButtonGroup";
+import { LangueContext, SUPPORTED_LANGUES } from "./LangueProvider";
 
-function ButtonLangue() {
-  const context = useContext(LangueContext)
+export default function ButtonLangue() {
+  const context = React.useContext(LangueContext);
+
+  const handleChange = (event, newLangue) => {
+    context.toggleLangue(newLangue);
+  };
+
+  const list_ToggleButton = SUPPORTED_LANGUES.map((langue) => {
+    return <ToggleButton key={langue} value={langue} children={langue} />;
+  });
   return (
-    <IconButton
-      onClick={context.toggleLangue}
-      aria-label="change language"
-      variant="navigation"
+    <ToggleButtonGroup
+      color="secondary"
+      value={context.langue}
+      exclusive
+      onChange={handleChange}
     >
-      <Typography children={context.langue} />
-    </IconButton>
+      {list_ToggleButton}
+    </ToggleButtonGroup>
   );
 }
-
-export default ButtonLangue;

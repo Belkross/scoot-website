@@ -48,10 +48,7 @@ function Header(props) {
             alignItems="center"
           >
             <ButtonLangue />
-            <ButtonThemeMode
-              onClick={props.onThemeModeTrigger}
-              currentThemeMode={props.currentThemeMode}
-            />
+            <ButtonThemeMode />
             <ButtonMenu tabs={array_tabs} />
           </Stack>
         </Grid>

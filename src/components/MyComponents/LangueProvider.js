@@ -1,16 +1,29 @@
 import React from "react";
-const primaryLangue = "fr";
-const secondaryLangue = "en";
+import { initializeCookie, setUpCookie } from "../functions/cookie";
+const COOKIE_NAME = "langue";
+const DEFAULT_LANGUE = "fr";
+export const SUPPORTED_LANGUES = ["fr", "en"]; //scalable
 export const LangueContext = React.createContext();
 
 function LangueProvider({ children }) {
-  const [langue, setLangue] = React.useState(primaryLangue);
+  const [langue, setLangue] = React.useState(DEFAULT_LANGUE);
 
-  const toggleLangue = () => {
-    setLangue((previousLangue) => {
-      return previousLangue === primaryLangue ? secondaryLangue : primaryLangue;
-    });
+  const toggleLangue = (selectedLangue) => {
+    const selectedLangueIsCorrect = SUPPORTED_LANGUES.find(
+      (langue) => langue === selectedLangue
+    );
+    setUpCookie(COOKIE_NAME, selectedLangue);
+    setLangue(selectedLangueIsCorrect ? selectedLangue : DEFAULT_LANGUE);
   };
+
+  React.useEffect(() => {
+    const initialLangue = initializeCookie(
+      COOKIE_NAME,
+      SUPPORTED_LANGUES,
+      DEFAULT_LANGUE
+    );
+    setLangue(initialLangue);
+  }, []);
 
   return (
     <LangueContext.Provider value={{ langue, toggleLangue }}>

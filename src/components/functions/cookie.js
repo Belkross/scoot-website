@@ -4,8 +4,9 @@ export function setUpCookie(cookieName, cookieValue) {
   document.cookie = `${cookieName}=${cookieValue}; path=/; samesite=strict; secure; max-age=${COOKIE_MAX_AGE}`;
 }
 
+//if cookie exist, return its value
+//if cookie doesn’t exist, return undefined
 export function checkOneCookieExistance(cookieName) {
-  if (document === undefined) return undefined; //no access to document with ssr
   const string_cookies = document.cookie;
   const atLeastOneCookieExist = string_cookies === "" ? false : true;
 
@@ -34,5 +35,21 @@ export function initializeThemeModeCookie(cookieName) {
   } else {
     setUpCookie(cookieName, "light");
     return "light";
+  }
+}
+
+//correct values are regrouped in the array correctValues
+export function initializeCookie(cookieName, correctValues, defaultValue) {
+  const cookieValue = checkOneCookieExistance(cookieName);
+  //if the cookie exist, it returns its value, else it returns undefined
+  const cookieValueSuits = correctValues.find((value) => value === cookieValue);
+  /* cookie don’t exist, returns undefined
+  cookie exist and value not correct, returns undefined
+  cookie exist and value correct, returns value */
+  if (cookieValueSuits) {
+    return cookieValueSuits;
+  } else {
+    setUpCookie(cookieName, defaultValue);
+    return defaultValue;
   }
 }

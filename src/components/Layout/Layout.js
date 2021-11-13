@@ -1,62 +1,34 @@
-import React, { useMemo, useState, useEffect } from "react";
-import { ThemeProvider } from "@mui/material/styles";
-import CssBaseline from "@mui/material/CssBaseline";
-import createMuiTheme from "../../theme/createMuiTheme";
+import React from "react";
 import HtmlAttributesAndHead from "./HtmlAttributesAndHead";
 import Header from "./Header";
 import Footer from "./Footer";
-import { initializeThemeModeCookie, setUpCookie } from "../functions/cookie";
 import { useStaticQuery, graphql } from "gatsby";
 import PageTransition from "./PageTransition";
 import ContainerVertical from "./ContainerVertical";
 import LangueProvider from "../MyComponents/LangueProvider";
-const COOKIE_THEME_MODE_NAME = "MuiThemeMode";
+import MuiThemeProvider from "../MyComponents/MuiThemeProvider";
 
 function Layout({ children }) {
   const data = useStaticQuery(query);
   const { contentYaml: content } = data;
   const { links: datoContent } =
     data.allDatoCmsNavigationBar.nodes[0].groupMixedLink[0];
-  //darkMode
 
-  const [themeMode, setThemeMode] = useState("light");
-  const cachedMuiTheme = useMemo(() => createMuiTheme(themeMode), [themeMode]);
-  const handleToggle_themeMode = () => {
-    setThemeMode((previousMode) => {
-      const newMode = previousMode === "light" ? "dark" : "light";
-      setUpCookie(COOKIE_THEME_MODE_NAME, newMode);
-      return newMode;
-    });
-  };
-
-  /* On attend que le composant soit monté avant de vérifier l’existence du cookie.
-  Cela suppose que lorsque les pages html statiques sont créées durant le build
-  les composants ne passent pas l’étape du montage. */
-  useEffect(() => {
-    const newMode = initializeThemeModeCookie(COOKIE_THEME_MODE_NAME);
-    setThemeMode(newMode);
-  }, []);
   return (
-    <LangueProvider>
-      <ThemeProvider theme={cachedMuiTheme}>
-        <CssBaseline />
+    <MuiThemeProvider>
+      <LangueProvider>
         <HtmlAttributesAndHead
           siteMetadata={data.site.siteMetadata}
           favicon={data.contentYaml.general.favicon.publicURL}
           language="fr"
         />
         <ContainerVertical>
-          <Header
-            content={content.header}
-            dato={datoContent}
-            currentThemeMode={themeMode}
-            onThemeModeTrigger={handleToggle_themeMode}
-          />
+          <Header content={content.header} dato={datoContent} />
           <PageTransition>{children}</PageTransition>
           <Footer content={content} />
         </ContainerVertical>
-      </ThemeProvider>
-    </LangueProvider>
+      </LangueProvider>
+    </MuiThemeProvider>
   );
 }
 

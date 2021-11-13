@@ -45,6 +45,7 @@ export function LinkMenuItem({ name, path, onClick }) {
 
 const sx_Link = {
   backgroundColor: "background.navBar",
+  color: "text.primary",
   "&:hover": {
     backgroundColor: "action.hover",
   },
