@@ -9,6 +9,7 @@ import { initializeThemeModeCookie, setUpCookie } from "../functions/cookie";
 import { useStaticQuery, graphql } from "gatsby";
 import PageTransition from "./PageTransition";
 import ContainerVertical from "./ContainerVertical";
+import LangueProvider from "../MyComponents/LangueProvider";
 const COOKIE_THEME_MODE_NAME = "MuiThemeMode";
 
 function Layout({ children }) {
@@ -17,7 +18,7 @@ function Layout({ children }) {
   const { links: datoContent } =
     data.allDatoCmsNavigationBar.nodes[0].groupMixedLink[0];
   //darkMode
-  const [langue, setLangue] = useState("fr");
+
   const [themeMode, setThemeMode] = useState("light");
   const cachedMuiTheme = useMemo(() => createMuiTheme(themeMode), [themeMode]);
   const handleToggle_themeMode = () => {
@@ -27,13 +28,7 @@ function Layout({ children }) {
       return newMode;
     });
   };
-  const handleToggle_langue = () => {
-    setLangue((previousLangue) => {
-      const newLangue = previousLangue === "fr" ? "en" : "fr";
-      /* setUpCookie(COOKIE_THEME_MODE_NAME, newMode); */
-      return newLangue;
-    });
-  };
+
   /* On attend que le composant soit monté avant de vérifier l’existence du cookie.
   Cela suppose que lorsque les pages html statiques sont créées durant le build
   les composants ne passent pas l’étape du montage. */
@@ -42,26 +37,26 @@ function Layout({ children }) {
     setThemeMode(newMode);
   }, []);
   return (
-    <ThemeProvider theme={cachedMuiTheme}>
-      <CssBaseline />
-      <HtmlAttributesAndHead
-        siteMetadata={data.site.siteMetadata}
-        favicon={data.contentYaml.general.favicon.publicURL}
-        language="fr"
-      />
-      <ContainerVertical>
-        <Header
-          content={content.header}
-          dato={datoContent}
-          currentThemeMode={themeMode}
-          onThemeModeTrigger={handleToggle_themeMode}
-          currentLangue={langue}
-          onLangueTrigger={handleToggle_langue}
+    <LangueProvider>
+      <ThemeProvider theme={cachedMuiTheme}>
+        <CssBaseline />
+        <HtmlAttributesAndHead
+          siteMetadata={data.site.siteMetadata}
+          favicon={data.contentYaml.general.favicon.publicURL}
+          language="fr"
         />
-        <PageTransition>{children}</PageTransition>
-        <Footer content={content} />
-      </ContainerVertical>
-    </ThemeProvider>
+        <ContainerVertical>
+          <Header
+            content={content.header}
+            dato={datoContent}
+            currentThemeMode={themeMode}
+            onThemeModeTrigger={handleToggle_themeMode}
+          />
+          <PageTransition>{children}</PageTransition>
+          <Footer content={content} />
+        </ContainerVertical>
+      </ThemeProvider>
+    </LangueProvider>
   );
 }
 
