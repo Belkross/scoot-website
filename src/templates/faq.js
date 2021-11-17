@@ -1,7 +1,10 @@
 import React from "react";
+import Layout from "../components/Layout/Layout";
 
-function PageFaq() {
-  return <h1>page faq</h1>;
+export default function PageFaq({data, pageContext}) {
+  return (
+    <Layout PageContext={pageContext}>
+      <h1>PageFaq</h1>
+    </Layout>
+  );
 }
-
-export default PageFaq;

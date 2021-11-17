@@ -15,20 +15,20 @@ exports.createPages = async ({ graphql, actions }) => {
       }
     }
   `);
-  const locales = query.data.allDatoCmsSite.nodes.map((element) => {
-    return element.locale;
+  const supportedLocales = query.data.allDatoCmsSite.nodes.map((node) => {
+    return node.locale;
   });
-  const pages = query.data.allDatoCmsPagesScootin.nodes.map((element) => {
-    return element.slug;
+  const slugs = query.data.allDatoCmsPagesScootin.nodes.map((node) => {
+    return node.slug;
   });
-  
-  locales.forEach((locale) => {
-    pages.forEach((page) => {
-      const prefix = `/${locale}`;
+
+  supportedLocales.forEach((locale) => {
+    slugs.forEach((slug) => {
+      const langue = `/${locale}`;
       createPage({
-        path: `${prefix}/${page}`,
-        component: path.resolve(`./src/templates/${page}.js`),
-        context: { locale },
+        path: `${langue}/${slug}`,
+        component: path.resolve(`./src/templates/${slug}.js`),
+        context: { locale, slug, supportedLocales },
       });
     });
   });

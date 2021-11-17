@@ -1,7 +1,10 @@
 import React from "react";
+import Layout from "../components/Layout/Layout";
 
-function PageContact() {
-  return <h1>page contact</h1>;
+export default function PageContact({data, pageContext}) {
+  return (
+    <Layout PageContext={pageContext}>
+      <h1>PageContact</h1>
+    </Layout>
+  );
 }
-
-export default PageContact;

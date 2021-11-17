@@ -4,7 +4,7 @@ import MenuIcon from "@mui/icons-material/Menu";
 import Drawer from "@mui/material/Drawer";
 import Box from "@mui/material/Box";
 import Stack from "@mui/material/Stack";
-import LinkMui from "../LinkNavbar.js";
+import NavBarLinkSelector from "../NavBarLinkSelector.js";
 import AppBarLateral from "../MyComponents/AppBarLateral.js";
 
 function ButtonMenu(props) {
@@ -15,10 +15,13 @@ function ButtonMenu(props) {
 
   const list_tabs = props.tabs.map((tab) => {
     return (
-      <LinkMui
-        key={tab.name}
-        to={tab.url}
-        children={tab.name}
+      <NavBarLinkSelector
+        key={tab.id}
+        slug={tab.slug}
+        anchor={tab.anchor}
+        linkType={tab.model.apiKey}
+        menuItems={tab.menuItems}
+        locale={props.locale}
         onClick={toggleDrawer}
       />
     );
@@ -30,7 +33,7 @@ function ButtonMenu(props) {
         variant="navigation"
         /* variant="AppBar" // to applay a peculiar style */
         onClick={toggleDrawer}
-        children={<MenuIcon/>}
+        children={<MenuIcon />}
         aria-label="toggle side navigation bar"
       />
       <Drawer anchor="right" open={drawerDisplay} onClose={toggleDrawer}>

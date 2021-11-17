@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 
 function PageTransition({ children }) {
   return (
-    <motion.main
+    <motion.main //crée une balise main
       initial={{
         opacity: 0,
       }}

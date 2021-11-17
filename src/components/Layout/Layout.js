@@ -5,29 +5,33 @@ import Footer from "./Footer";
 import { useStaticQuery, graphql } from "gatsby";
 import PageTransition from "./PageTransition";
 import ContainerVertical from "./ContainerVertical";
-import LangueProvider from "../MyComponents/LangueProvider";
+import LocaleProvider from "../MyComponents/LocaleProvider";
+import SlugProvider from "../MyComponents/SlugProvider";
 import MuiThemeProvider from "../MyComponents/MuiThemeProvider";
 
-function Layout({ children }) {
+function Layout({ children, PageContext }) {
   const data = useStaticQuery(query);
   const { contentYaml: content } = data;
-  const { links: datoContent } =
-    data.allDatoCmsNavigationBar.nodes[0].groupMixedLink[0];
+  const headerContent = data.allDatoCmsHeaderScootin.nodes.find(
+    (node) => node.locale === PageContext.locale
+  );
 
   return (
     <MuiThemeProvider>
-      <LangueProvider>
-        <HtmlAttributesAndHead
-          siteMetadata={data.site.siteMetadata}
-          favicon={data.contentYaml.general.favicon.publicURL}
-          language="fr"
-        />
-        <ContainerVertical>
-          <Header content={content.header} dato={datoContent} />
-          <PageTransition>{children}</PageTransition>
-          <Footer content={content} />
-        </ContainerVertical>
-      </LangueProvider>
+      <LocaleProvider supportedLocales={PageContext.supportedLocales}>
+        <SlugProvider slug={PageContext.slug}>
+          <HtmlAttributesAndHead
+            siteMetadata={data.site.siteMetadata}
+            favicon={data.contentYaml.general.favicon.publicURL}
+            language="fr"
+          />
+          <ContainerVertical>
+            <Header content={headerContent} />
+            <PageTransition>{children}</PageTransition>
+            <Footer content={content} />
+          </ContainerVertical>
+        </SlugProvider>
+      </LocaleProvider>
     </MuiThemeProvider>
   );
 }
@@ -36,29 +40,32 @@ export default Layout;
 
 const query = graphql`
   query component_layout {
-    allDatoCmsNavigationBar {
+    allDatoCmsHeaderScootin {
       nodes {
-        groupMixedLink {
-          links {
-            ... on DatoCmsLinkInternal {
-              id
-              name
-              path
-              linkType
+        name
+        navLinks {
+          ... on DatoCmsInternalLink {
+            id
+            anchor
+            slug
+            model {
+              apiKey
             }
-            ... on DatoCmsLinkMenu {
+          }
+          ... on DatoCmsMenuLink {
+            id
+            anchor
+            menuItems {
+              anchor
+              slug
               id
-              name
-              linkType
-              menuItems {
-                path
-                name
-                id
-                linkType
-              }
+            }
+            model {
+              apiKey
             }
           }
         }
+        mainAction
         locale
       }
     }

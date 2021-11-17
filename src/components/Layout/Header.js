@@ -7,19 +7,18 @@ import ButtonMainAction from "../ButtonMainAction.js";
 import ButtonMenu from "./ButtonMenu.js";
 import Logo from "../MyComponents/Logo";
 import SportsMotorsportsIcon from "@mui/icons-material/SportsMotorsports";
-import LinkNavBar from "../LinkNavbar.js";
-import ButtonLangue from "../MyComponents/ButtonLangue";
+import NavBarLinkSelector from "../NavBarLinkSelector.js";
+import ButtonLocale from "../MyComponents/ButtonLocale";
 
 function Header(props) {
-  const { content, dato } = props;
-  const array_tabs = Object.values(content.tabs);
-  const list_tabs = dato.map((tab) => {
+  const { content } = props;
+  const list_tabs = content.navLinks.map((tab) => {
     return (
-      <LinkNavBar
+      <NavBarLinkSelector
         key={tab.id}
-        path={tab.path}
-        name={tab.name}
-        linkType={tab.linkType}
+        slug={tab.slug}
+        anchor={tab.anchor}
+        linkType={tab.model.apiKey}
         menuItems={tab.menuItems}
       />
     );
@@ -30,7 +29,7 @@ function Header(props) {
       <Grid container component="nav" alignItems="center">
         <Grid item xs={6} b9={2}>
           <Logo
-            name={content.logo}
+            name={content.name}
             illustration={<SportsMotorsportsIcon fontSize="large" />}
           />
         </Grid>
@@ -47,9 +46,9 @@ function Header(props) {
             justifyContent="flex-end"
             alignItems="center"
           >
-            <ButtonLangue />
+            <ButtonLocale />
             <ButtonThemeMode />
-            <ButtonMenu tabs={array_tabs} />
+            <ButtonMenu tabs={content.navLinks} />
           </Stack>
         </Grid>
       </Grid>
