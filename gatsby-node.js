@@ -25,9 +25,9 @@ exports.createPages = async ({ graphql, actions }) => {
 
   supportedLocales.forEach((locale) => {
     slugs.forEach((slug) => {
-      const langue = `/${locale}`;
+      const localePrefix = `/${locale}`;
       createPage({
-        path: `${langue}/${slug}`,
+        path: `${localePrefix}/${slug}`,
         component: path.resolve(`./src/templates/${slug}.js`),
         context: { locale, slug, supportedLocales },
       });
