@@ -7,7 +7,6 @@ import PageTransition from "./PageTransition";
 import ContainerVertical from "./ContainerVertical";
 import LocaleProvider from "../MyComponents/LocaleProvider";
 import SlugProvider from "../MyComponents/SlugProvider";
-import MuiThemeProvider from "../MyComponents/MuiThemeProvider";
 
 function Layout({ children, PageContext }) {
   const data = useStaticQuery(query);
@@ -17,22 +16,23 @@ function Layout({ children, PageContext }) {
   );
 
   return (
-    <MuiThemeProvider>
-      <LocaleProvider pageLocale={PageContext.locale} supportedLocales={PageContext.supportedLocales} >
-        <SlugProvider slug={PageContext.slug}>
-          <HtmlAttributesAndHead
-            siteMetadata={data.site.siteMetadata}
-            favicon={data.contentYaml.general.favicon.publicURL}
-            language="fr"
-          />
-          <ContainerVertical>
-            <Header content={headerContent} />
-            <PageTransition>{children}</PageTransition>
-            <Footer content={content} />
-          </ContainerVertical>
-        </SlugProvider>
-      </LocaleProvider>
-    </MuiThemeProvider>
+    <LocaleProvider
+      pageLocale={PageContext.locale}
+      supportedLocales={PageContext.supportedLocales}
+    >
+      <SlugProvider slug={PageContext.slug}>
+        <HtmlAttributesAndHead
+          siteMetadata={data.site.siteMetadata}
+          favicon={data.contentYaml.general.favicon.publicURL}
+          language="fr"
+        />
+        <ContainerVertical>
+          <Header content={headerContent} />
+          <PageTransition>{children}</PageTransition>
+          <Footer content={content} />
+        </ContainerVertical>
+      </SlugProvider>
+    </LocaleProvider>
   );
 }
 

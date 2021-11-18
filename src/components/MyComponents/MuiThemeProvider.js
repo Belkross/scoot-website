@@ -1,17 +1,19 @@
 import React from "react";
-import { initializeCookie, setUpCookie } from "../functions/cookie";
 import { ThemeProvider } from "@mui/material/styles";
 import createMuiTheme from "../../theme/createMuiTheme";
 import CssBaseline from "@mui/material/CssBaseline";
+import { setUpCookie, checkOneCookieExistance } from "../../functions/cookie";
 
-const COOKIE_NAME = "MuiThemeMode";
-const DEFAULT_MODE = "light";
+export const COOKIE_NAME = "MuiThemeMode";
+export const DEFAULT_MODE = "light";
 const SECONDARY_MODE = "dark";
-const SUPPORTED_MODES = [DEFAULT_MODE, SECONDARY_MODE];
+export const SUPPORTED_MODES = [DEFAULT_MODE, SECONDARY_MODE];
 export const ThemeModeContext = React.createContext();
 
 export default function MuiThemeProvider({ children }) {
-  const [themeMode, setThemeMode] = React.useState(DEFAULT_MODE);
+  const [themeMode, setThemeMode] = React.useState(
+    checkOneCookieExistance(COOKIE_NAME)
+  );
   const cachedMuiTheme = React.useMemo(
     () => createMuiTheme(themeMode),
     [themeMode]
@@ -26,19 +28,6 @@ export default function MuiThemeProvider({ children }) {
     });
   };
 
-  /* On attend que le composant soit monté avant de vérifier l’existence du cookie.
-  Cela suppose que lorsque les pages html statiques sont créées durant le build
-  les composants ne passent pas l’étape du montage. */
-  //this useEffect allow to remember themeMode preference
-  React.useEffect(() => {
-    const initialThemeMode = initializeCookie(
-      COOKIE_NAME,
-      SUPPORTED_MODES,
-      DEFAULT_MODE
-    );
-    setThemeMode(initialThemeMode);
-  }, []);
-
   return (
     <ThemeModeContext.Provider value={{ themeMode, toggleThemeMode }}>
       <ThemeProvider theme={cachedMuiTheme}>
@@ -49,5 +38,10 @@ export default function MuiThemeProvider({ children }) {
   );
 }
 
-/* Le ThemeProvider de Mui ne me permet de modifier le theme depuis un composant imbriqué.
-C’est pour cela que je créer un second contexte */
+/*
+The cookie is initilized onClientEntry() in gatsby-browser. There you can access to 
+window.document
+
+you need to synchronyze the cookie with a local state otherwise, the component don’t
+update on themeMode change. Components updates only with props or lacal state change.
+*/
