@@ -1,32 +1,20 @@
 import React from "react";
-import { initializeCookie, setUpCookie } from "../functions/cookie";
-const COOKIE_NAME = "locale";
-const DEFAULT_LOCALE = "fr";
+
 export const LocaleContext = React.createContext();
 
-export default function LocaleProvider({ children, supportedLocales }) {
-  const [locale, setLocale] = React.useState(DEFAULT_LOCALE);
-  /* idealy, I would initialize locale with the value stored in the cookie
-  but with static behavior, it is not possible to access to document.cookie 
-  before the component get mounted. When the user get to the website, there
-  is a brief moment where the DEFAULT_LOCALE will be seen*/
+export default function LocaleProvider({
+  children,
+  supportedLocales,
+  pageLocale,
+}) {
+  const [locale, setLocale] = React.useState(pageLocale);
 
   const updateLocale = (selectedLocale) => {
     const selectedLocaleIsCorrect = supportedLocales.find(
       (locale) => locale === selectedLocale
     );
-    setUpCookie(COOKIE_NAME, selectedLocale);
-    setLocale(selectedLocaleIsCorrect ? selectedLocale : DEFAULT_LOCALE);
+    setLocale(selectedLocaleIsCorrect ? selectedLocale : pageLocale);
   };
-
-  React.useEffect(() => {
-    const initialLocale = initializeCookie(
-      COOKIE_NAME,
-      supportedLocales,
-      DEFAULT_LOCALE
-    );
-    setLocale(initialLocale);
-  }, [supportedLocales]);
 
   return (
     <LocaleContext.Provider value={{ locale, updateLocale, supportedLocales }}>
@@ -34,3 +22,8 @@ export default function LocaleProvider({ children, supportedLocales }) {
     </LocaleContext.Provider>
   );
 }
+
+/* the page load and set up the locale context with pageLocale which comes from
+gatsby-node.js. If another locale is selected, the component will update the
+cookie where is stored the locale preference. 
+*/

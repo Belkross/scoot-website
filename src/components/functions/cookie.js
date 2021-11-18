@@ -26,26 +26,14 @@ export function checkOneCookieExistance(cookieName) {
   }
 }
 
-// vérifie l’existence du cookie en argument,
-// configure le cookie quoi qu’il arrive et retourne la valeur configurée
-export function initializeThemeModeCookie(cookieName) {
-  const currentThemeModeCookie = checkOneCookieExistance(cookieName);
-  if (currentThemeModeCookie === "dark") {
-    return "dark";
-  } else {
-    setUpCookie(cookieName, "light");
-    return "light";
-  }
-}
-
-//correct values are regrouped in the array correctValues
 export function initializeCookie(cookieName, correctValues, defaultValue) {
+  //if the cookie exist, checkOneCookieExistance returns its value, else it returns undefined
   const cookieValue = checkOneCookieExistance(cookieName);
-  //if the cookie exist, it returns its value, else it returns undefined
   const cookieValueSuits = correctValues.find((value) => value === cookieValue);
-  /* cookie don’t exist, returns undefined
-  cookie exist and value not correct, returns undefined
-  cookie exist and value correct, returns value */
+  
+  /* cookie exist and value correct, returns value 
+  cookie don’t exist, create the cookie and return default value
+  cookie exist and value not correct, set up the cookie with default value and returns it */
   if (cookieValueSuits) {
     return cookieValueSuits;
   } else {

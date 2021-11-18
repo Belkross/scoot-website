@@ -1,4 +1,5 @@
 const path = require("path");
+
 exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions;
   const query = await graphql(`
@@ -33,3 +34,7 @@ exports.createPages = async ({ graphql, actions }) => {
     });
   });
 };
+
+/* supportedLocales devrait être une variable globalement accessible. Je n’aime 
+pas bien l’idée de la transmettre via pageContext mais cela a au moins l’avantage
+de respecter le principe de l’unique source de vérité */

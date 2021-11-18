@@ -18,7 +18,7 @@ function Layout({ children, PageContext }) {
 
   return (
     <MuiThemeProvider>
-      <LocaleProvider supportedLocales={PageContext.supportedLocales}>
+      <LocaleProvider pageLocale={PageContext.locale} supportedLocales={PageContext.supportedLocales} >
         <SlugProvider slug={PageContext.slug}>
           <HtmlAttributesAndHead
             siteMetadata={data.site.siteMetadata}
