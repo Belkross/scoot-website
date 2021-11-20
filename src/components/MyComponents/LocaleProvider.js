@@ -1,5 +1,6 @@
 import React from "react";
-
+export const LOCALSTORAGE_KEY = "langue-preference";
+export const DEFAULT_LOCALE = "en"
 export const LocaleContext = React.createContext();
 
 export default function LocaleProvider({
@@ -10,10 +11,8 @@ export default function LocaleProvider({
   const [locale, setLocale] = React.useState(pageLocale);
 
   const updateLocale = (selectedLocale) => {
-    const selectedLocaleIsCorrect = supportedLocales.find(
-      (locale) => locale === selectedLocale
-    );
-    setLocale(selectedLocaleIsCorrect ? selectedLocale : pageLocale);
+    localStorage.setItem(LOCALSTORAGE_KEY, selectedLocale);
+    setLocale(selectedLocale);
   };
 
   return (
@@ -23,7 +22,7 @@ export default function LocaleProvider({
   );
 }
 
-/* the page load and set up the locale context with pageLocale which comes from
-gatsby-node.js. If another locale is selected, the component will update the
-cookie where is stored the locale preference. 
+/* 
+  selectedLocale is always correct because, it comes from buttons "value" props which
+  comes from supportedLocale which comes from CMS
 */
