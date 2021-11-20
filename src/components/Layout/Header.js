@@ -9,9 +9,14 @@ import Logo from "../MyComponents/Logo";
 import SportsMotorsportsIcon from "@mui/icons-material/SportsMotorsports";
 import NavBarLinkSelector from "../NavBarLinkSelector.js";
 import ButtonLocale from "../MyComponents/ButtonLocale";
+import { graphql, useStaticQuery } from "gatsby";
 
 function Header(props) {
-  const { content } = props;
+  const data = useStaticQuery(query);
+  const content = data.allDatoCmsHeaderScootin.nodes.find(
+    (node) => node.locale === props.PageContext.locale
+  );
+
   const list_tabs = content.navLinks.map((tab) => {
     return (
       <NavBarLinkSelector
@@ -68,6 +73,40 @@ const sx_tabs = {
   justifyContent: "center",
   gap: 1,
 };
+
+const query = graphql`
+  query component_header {
+    allDatoCmsHeaderScootin {
+      nodes {
+        name
+        navLinks {
+          ... on DatoCmsInternalLink {
+            id
+            anchor
+            slug
+            model {
+              apiKey
+            }
+          }
+          ... on DatoCmsMenuLink {
+            id
+            anchor
+            menuItems {
+              anchor
+              slug
+              id
+            }
+            model {
+              apiKey
+            }
+          }
+        }
+        mainAction
+        locale
+      }
+    }
+  }
+`;
 
 /* 
 to adjust when all tabs have to disapear, 3 breakpoints to change : 

@@ -1,37 +1,38 @@
-import React, { useState } from "react";
+import React, { useContext } from "react";
+import { DialogFakeWebsiteContext } from "../MyComponents/DialogFakeWebsite";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
 import Grid from "@mui/material/Grid";
 import IconButton from "@mui/material/IconButton";
 import Contact from "../MyComponents/Contact";
-import DialogAction from "../MyComponents/DialogAction";
 
 function FooterPart1(props) {
-  const { contact } = props.content;
+  const { content } = props;
+
   return (
     <Box sx={sx_container} component="section">
       <Container>
         <Grid container spacing={6}>
           <Grid item xs={12} md={8} textAlign="center" component="article">
-            <Download content={props.content} />
+            <Download content={content} />
           </Grid>
           <Grid item xs={12} md={4} textAlign="center" component="article">
             <Typography
               variant="h4"
               component="p"
-              children="Nous contacter"
+              children="Contact"
               color="primary.light"
               mb={3}
             />
             <Contact
-              color="primary.light"
-              name={contact.name}
-              addressLine1={contact.address[0]}
-              addressLine2={contact.address[1]}
-              addressLine3={contact.address[2]}
-              phone="01 23 45 67 89"
-              mail={contact.mail}
+              name={content.name}
+              addressLine1={content.line1}
+              addressLine2={content.line2}
+              addressLine3={content.line3}
+              addressLine4={content.line4}
+              phone={content.phone}
+              mail={content.mail}
             />
           </Grid>
         </Grid>
@@ -44,53 +45,30 @@ export default FooterPart1;
 
 function Download(props) {
   const { content } = props;
-  const [dialogDisplay, setDialogDisplay] = useState(false);
-  const toggleDialog = (event) => {
-    setDialogDisplay((prevDisplay) => !prevDisplay);
-  };
+  const context = useContext(DialogFakeWebsiteContext);
   return (
     <Grid container sx={sx_Download} spacing={3}>
       <Grid item xs={12} md={12}>
         <Typography
           variant="h3"
           component="h2"
-          children={content.download.title}
+          children={content.title}
           color="secondary.main"
         />
       </Grid>
       <Grid item xs={12} sm={6} textAlign={{ xs: "center", sm: "right" }}>
-        <IconButton onClick={toggleDialog}>
-          <img
-            src={content.download.icon1.publicURL}
-            alt={content.download.icon_alt1}
-          />
+        <IconButton onClick={context.toggleDialog}>
+          <img src={content.icons[0].url} alt={content.icons[0].alt} />
         </IconButton>
       </Grid>
       <Grid item xs={12} sm={6} textAlign={{ xs: "center", sm: "left" }}>
-        <IconButton onClick={toggleDialog}>
-          <img
-            src={content.download.icon2.publicURL}
-            alt={content.download.icon_alt2}
-          />
+        <IconButton onClick={context.toggleDialog}>
+          <img src={content.icons[1].url} alt={content.icons[1].alt} />
         </IconButton>
       </Grid>
-      <DialogAction
-        title={Dialog.title}
-        description={Dialog.description}
-        buttons={Dialog.buttons}
-        open={dialogDisplay}
-        close={toggleDialog}
-      />
     </Grid>
   );
 }
-
-const Dialog = {
-  title: "Téléchargement de l’application Scootin",
-  description:
-    "Ce site est une démonstration et l’application Scootin n’existe pas réellement.",
-  buttons: [{ name: "J’ai compris" }, { name: "J’ai pas compris" }],
-};
 
 const sx_container = {
   py: 10,

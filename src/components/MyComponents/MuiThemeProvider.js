@@ -26,7 +26,6 @@ export default function MuiThemeProvider({ children }) {
   //don’t occured server side
   React.useEffect(() => {
     const browserPreference = localStorage.getItem(LOCALSTORAGE_KEY);
-    console.log(browserPreference)
     const OSPreference = window.matchMedia("(prefers-color-scheme: dark)")
       .matches
       ? "dark"
