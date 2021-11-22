@@ -38,7 +38,7 @@ function ButtonMenu(props) {
       />
       <Drawer anchor="right" open={drawerDisplay} onClose={toggleDrawer}>
         <AppBarLateral>
-          <Stack spacing={1}>{list_tabs}</Stack>
+          <Stack spacing={1} alignItems="center">{list_tabs}</Stack>
         </AppBarLateral>
       </Drawer>
     </Box>

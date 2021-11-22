@@ -68,7 +68,7 @@ function LinkMenuItem({ anchor, slug, onClick }) {
     <MenuItem
       component={Link}
       to={context.getPathname(context.locale, slug)}
-      sx={sx_Link}
+      sx={sx_MenuItem}
       activeStyle={{
         backgroundColor: theme.palette.action.selected,
       }}
@@ -84,10 +84,14 @@ function LinkMenuAnchor({ anchor, onClick }) {
   );
 }
 
-const sx_Link = {
-  backgroundColor: "background.navBar",
+const sx_MenuItem = {
   color: "text.primary",
   "&:hover": {
     backgroundColor: "action.hover",
   },
+};
+
+const sx_Link = {
+  backgroundColor: "background.navBar",
+  ...sx_MenuItem,
 };
