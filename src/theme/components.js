@@ -40,7 +40,7 @@ function addComponents(theme) {
         },
         styleOverrides: {
           root: {
-            padding: "12px 20px",
+            padding: "12px 12px",
           },
         },
       },

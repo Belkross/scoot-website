@@ -34,7 +34,7 @@ function Header(props) {
   return (
     <AppBarTop>
       <Grid container component="nav" alignItems="center">
-        <Grid item xs={6} b9={2}>
+        <Grid item xs={6} b11={2}>
           <Logo
             name={content.name}
             illustration={<SportsMotorsportsIcon fontSize="large" />}
@@ -46,7 +46,7 @@ function Header(props) {
             <ButtonMainAction children={content.mainAction} />
           </Stack>
         </Grid>
-        <Grid item xs={6} b9={2}>
+        <Grid item xs={6} b11={2}>
           <Stack
             direction="row"
             spacing={1}
@@ -66,7 +66,7 @@ function Header(props) {
 export default Header;
 
 const sx_GridTabs = {
-  display: { xs: "none", b9: "grid" },
+  display: { xs: "none", b11: "grid" },
 };
 
 const sx_tabs = {
