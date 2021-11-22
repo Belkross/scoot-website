@@ -13,7 +13,7 @@ export default function ButtonLocale() {
   };
 
   const list_ToggleButton = supportedLocales.map((locale) => {
-    return <ToggleButton key={locale} value={locale} children={locale} />;
+    return <ToggleButton key={locale} value={locale} children={locale} sx={sx_ToggleButton}/>;
   });
 
   return (
@@ -28,6 +28,9 @@ export default function ButtonLocale() {
   );
 }
 
+const sx_ToggleButton = {
+  width: 45
+}
 /*
 The button needs an array of supported locales to scale. The single truth source comes from
 gatsby-node.js with a pageContext
