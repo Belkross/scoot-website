@@ -6,18 +6,15 @@ import { useStaticQuery, graphql } from "gatsby";
 import PageTransition from "./PageTransition";
 import ContainerVertical from "./ContainerVertical";
 import LocaleProvider from "../MyComponents/LocaleProvider";
-import SlugProvider from "../MyComponents/SlugProvider";
 import DialogFakeWebsite from "../MyComponents/DialogFakeWebsite";
+import PageContextProvider from "../MyComponents/PageContextProvider";
 
-function Layout({ children, PageContext }) {
+function Layout({ children, pageContext }) {
   const data = useStaticQuery(query);
 
   return (
-    <LocaleProvider
-      pageLocale={PageContext.locale}
-      supportedLocales={PageContext.supportedLocales}
-    >
-      <SlugProvider slug={PageContext.slug}>
+    <PageContextProvider pageContext={pageContext}>
+      <LocaleProvider> 
         <DialogFakeWebsite>
           <HtmlAttributesAndHead
             siteMetadata={data.site.siteMetadata}
@@ -25,13 +22,13 @@ function Layout({ children, PageContext }) {
             language="fr"
           />
           <ContainerVertical>
-            <Header PageContext={PageContext} />
+            <Header />
             <PageTransition>{children}</PageTransition>
-            <Footer PageContext={PageContext} />
+            <Footer />
           </ContainerVertical>
         </DialogFakeWebsite>
-      </SlugProvider>
-    </LocaleProvider>
+      </LocaleProvider>
+    </PageContextProvider>
   );
 }
 
@@ -71,7 +68,6 @@ const query = graphql`
           }
         }
       }
-  
     }
   }
 `;

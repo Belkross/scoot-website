@@ -1,27 +1,25 @@
 import React from "react";
 import ToggleButton from "@mui/material/ToggleButton";
 import ToggleButtonGroup from "@mui/material/ToggleButtonGroup";
-import { LocaleContext } from "./LocaleProvider";
-import { SlugContext } from "./SlugProvider";
+import { PageContext } from "./PageContextProvider";
 import { navigate } from "gatsby";
 
 export default function ButtonLocale() {
-  const context_locale = React.useContext(LocaleContext);
-  const context_slug = React.useContext(SlugContext);
+  const context = React.useContext(PageContext);
+  const { slug: currentSlug, supportedLocales, getPathname } = context;
 
   const handleChange = (event, newLocale) => {
-    context_locale.updateLocale(newLocale);
-    navigate(`/${newLocale}/${context_slug.slug}`);
+    navigate(getPathname(newLocale, currentSlug));
   };
 
-  const list_ToggleButton = context_locale.supportedLocales.map((locale) => {
+  const list_ToggleButton = supportedLocales.map((locale) => {
     return <ToggleButton key={locale} value={locale} children={locale} />;
   });
 
   return (
     <ToggleButtonGroup
       color="secondary"
-      value={context_locale.locale}
+      value={context.locale}
       exclusive
       onChange={handleChange}
     >
@@ -31,12 +29,6 @@ export default function ButtonLocale() {
 }
 
 /*
-The button needs an array of supported locales to scale. The truth source comes from
+The button needs an array of supported locales to scale. The single truth source comes from
 gatsby-node.js with a pageContext
-
-When you pick a new locale, the component refresh the current page with the new locale.
-To deliver to navigate() a proper path, it needs the new locale (not hard) and the slug (hard) of 
-the current page. 
-
-
 */

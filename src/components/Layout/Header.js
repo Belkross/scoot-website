@@ -10,11 +10,13 @@ import SportsMotorsportsIcon from "@mui/icons-material/SportsMotorsports";
 import NavBarLinkSelector from "../NavBarLinkSelector.js";
 import ButtonLocale from "../MyComponents/ButtonLocale";
 import { graphql, useStaticQuery } from "gatsby";
+import { PageContext } from "../MyComponents/PageContextProvider.js";
 
 function Header(props) {
   const data = useStaticQuery(query);
+  const context = React.useContext(PageContext)
   const content = data.allDatoCmsHeaderScootin.nodes.find(
-    (node) => node.locale === props.PageContext.locale
+    (node) => node.locale === context.locale
   );
 
   const list_tabs = content.navLinks.map((tab) => {

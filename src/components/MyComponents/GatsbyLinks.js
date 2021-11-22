@@ -4,7 +4,7 @@ import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
 import { Link } from "gatsby";
 import { useTheme } from "@mui/material";
-import { LocaleContext } from "./LocaleProvider";
+import { PageContext } from "./PageContextProvider";
 
 /* LinkButton and LinkMenuItem have exactly the same purpose, but to respect Mui, 
 you need to use a specific MenuItem component with Menu */
@@ -12,11 +12,11 @@ you need to use a specific MenuItem component with Menu */
 
 export function LinkButton({ anchor, slug, onClick }) {
   const theme = useTheme();
-  const context = React.useContext(LocaleContext);
+  const context = React.useContext(PageContext);
   return (
     <Button
       component={Link}
-      to={`/${context.locale}/${slug}`}
+      to={context.getPathname(context.locale, slug)}
       sx={sx_Link}
       activeStyle={{
         backgroundColor: theme.palette.action.selected,
@@ -63,11 +63,11 @@ export function LinkMenu({ anchor, menuItems, onClick }) {
 
 function LinkMenuItem({ anchor, slug, onClick }) {
   const theme = useTheme();
-  const context = React.useContext(LocaleContext);
+  const context = React.useContext(PageContext);
   return (
     <MenuItem
       component={Link}
-      to={`/${context.locale}/${slug}`}
+      to={context.getPathname(context.locale, slug)}
       sx={sx_Link}
       activeStyle={{
         backgroundColor: theme.palette.action.selected,

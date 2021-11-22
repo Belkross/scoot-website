@@ -3,15 +3,17 @@ import Box from "@mui/material/Box";
 import FooterPart1 from "./FooterPart1";
 import FooterPart2 from "./FooterPart2";
 import { useStaticQuery, graphql } from "gatsby";
+import { PageContext } from "../MyComponents/PageContextProvider";
 
 function Footer(props) {
   const data = useStaticQuery(query);
-
+  const context = React.useContext(PageContext);
+  
   const footerContent = data.allDatoCmsFooterScootin.nodes.find(
-    (node) => node.locale === props.PageContext.locale
+    (node) => node.locale === context.locale
   );
   const generalContent = data.allDatoCmsGeneral.nodes.find(
-    (node) => node.locale === props.PageContext.locale
+    (node) => node.locale === context.locale
   );
 
   return (
