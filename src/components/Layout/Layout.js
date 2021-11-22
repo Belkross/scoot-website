@@ -5,7 +5,6 @@ import Footer from "./Footer";
 import { useStaticQuery, graphql } from "gatsby";
 import PageTransition from "./PageTransition";
 import ContainerVertical from "./ContainerVertical";
-import LocaleProvider from "../MyComponents/LocaleProvider";
 import DialogFakeWebsite from "../MyComponents/DialogFakeWebsite";
 import PageContextProvider from "../MyComponents/PageContextProvider";
 
@@ -14,20 +13,18 @@ function Layout({ children, pageContext }) {
 
   return (
     <PageContextProvider pageContext={pageContext}>
-      <LocaleProvider> 
-        <DialogFakeWebsite>
-          <HtmlAttributesAndHead
-            siteMetadata={data.site.siteMetadata}
-            favicon={data.contentYaml.general.favicon.publicURL}
-            language="fr"
-          />
-          <ContainerVertical>
-            <Header />
-            <PageTransition>{children}</PageTransition>
-            <Footer />
-          </ContainerVertical>
-        </DialogFakeWebsite>
-      </LocaleProvider>
+      <DialogFakeWebsite>
+        <HtmlAttributesAndHead
+          siteMetadata={data.site.siteMetadata}
+          favicon={data.contentYaml.general.favicon.publicURL}
+          language="fr"
+        />
+        <ContainerVertical>
+          <Header />
+          <PageTransition>{children}</PageTransition>
+          <Footer />
+        </ContainerVertical>
+      </DialogFakeWebsite>
     </PageContextProvider>
   );
 }
