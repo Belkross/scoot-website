@@ -1,9 +1,10 @@
 const path = require("path");
-const DEFAULT_LOCALE = "en";
+const ORIGIN_LOCALE = "en";
 const ORIGIN_SLUG = "home"; 
-/* I didn’t find a way to get the principale locale with graphQL layer
-Dato only provide an array of locales, and the principale is supposed to 
-be the first one on the array. I don’t really trust it */
+/* The main locale on DatoCMS is the first provided. Remember you can only copy content
+from the main locale.
+The ORIGIN_LOCALE is the locale that will be replaced by an empty string in the url.
+It can be considered as the default locale of the website */
 
 exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions;
@@ -30,7 +31,7 @@ exports.createPages = async ({ graphql, actions }) => {
 
   supportedLocales.forEach((locale) => {
     slugs.forEach((slug) => {
-      const localePrefix = locale === DEFAULT_LOCALE ? "" : `/${locale}`;
+      const localePrefix = locale === ORIGIN_LOCALE ? "" : `/${locale}`;
       const pathSlug = slug === ORIGIN_SLUG ? "" : slug;
       createPage({
         path: `${localePrefix}/${pathSlug}`,
@@ -39,14 +40,10 @@ exports.createPages = async ({ graphql, actions }) => {
           locale,
           slug,
           supportedLocales,
-          DEFAULT_LOCALE,
+          ORIGIN_LOCALE,
           ORIGIN_SLUG,
         },
       });
     });
   });
 };
-
-/* supportedLocales devrait être une variable globalement accessible. Je n’aime 
-pas bien l’idée de la transmettre via pageContext mais cela a au moins l’avantage
-de respecter le principe de l’unique source de vérité */
