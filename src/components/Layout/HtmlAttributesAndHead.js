@@ -25,6 +25,7 @@ export default function HtmlAttributesAndHead() {
   ).globalSeo;
 
   const title = getTitle(pageSeo, globalSeo);
+  const description = getDescription(pageSeo, globalSeo);
 
   return (
     <Helmet
@@ -35,7 +36,7 @@ export default function HtmlAttributesAndHead() {
       <title>{title}</title>
       <meta charset={CHARSET} />
       {list_favicon}
-      {/* <meta name="description" content={siteMetadata.description} /> */}
+      <meta name="description" content={description} />
     </Helmet>
   );
 }
@@ -53,6 +54,20 @@ function getTitle(pageSeo, globalSeo) {
   }
   return title + titleSuffix;
 }
+
+function getDescription(pageSeo, globalSeo) {
+  let description = globalSeo.fallbackSeo.description;
+  if (pageSeo !== null) {
+    const keys = Object.keys(pageSeo);
+    const descriptionKeyExist = keys.find((key) => key === "description");
+    const descriptionValueExist = pageSeo.description === null ? false : true;
+    if (descriptionKeyExist && descriptionValueExist) {
+      description = pageSeo.description;
+    }
+  }
+  return description;
+}
+
 const query = graphql`
   query component_HtmlAttributesAndHead {
     datoCmsFaviconMetaTags {
