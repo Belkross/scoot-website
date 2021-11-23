@@ -7,25 +7,24 @@ const CHARSET = "utf-8";
 export default function HtmlAttributesAndHead() {
   const data = useStaticQuery(query);
   const context = React.useContext(PageContext);
-
-  //favicon
   const array_favicon = data.datoCmsFaviconMetaTags.tags.filter(
     (element) => element.tagName === "link"
   );
-  const list_favicon = array_favicon.map((markup) => {
-    const { rel, sizes, href, type } = markup.attributes;
-    return <link key={sizes} rel={rel} sizes={sizes} href={href} type={type} />;
-  });
-
+  //we only need data that concern the page and its locale
   const pageSeo = data.allDatoCmsPagesScootin.nodes.find(
     (node) => node.locale === context.locale && node.slug === context.slug
   ).seoData;
   const globalSeo = data.allDatoCmsSite.nodes.find(
     (node) => node.locale === context.locale
   ).globalSeo;
+  //end of getting data part
 
-  const title = getTitle(pageSeo, globalSeo);
-  const description = getDescription(pageSeo, globalSeo);
+  const list_favicon = array_favicon.map((markup) => {
+    const { rel, sizes, href, type } = markup.attributes;
+    return <link key={sizes} rel={rel} sizes={sizes} href={href} type={type} />;
+  });
+  const title = getDynamicTitle(pageSeo, globalSeo);
+  const description = getDynamicDescription(pageSeo, globalSeo);
 
   return (
     <Helmet
@@ -33,15 +32,15 @@ export default function HtmlAttributesAndHead() {
         lang: context.locale,
       }}
     >
-      <title>{title}</title>
       <meta charset={CHARSET} />
-      {list_favicon}
+      <title>{title}</title>
       <meta name="description" content={description} />
+      {list_favicon}
     </Helmet>
   );
 }
 
-function getTitle(pageSeo, globalSeo) {
+function getDynamicTitle(pageSeo, globalSeo) {
   const titleSuffix = globalSeo.titleSuffix;
   let title = globalSeo.fallbackSeo.title;
   if (pageSeo !== null) {
@@ -55,7 +54,7 @@ function getTitle(pageSeo, globalSeo) {
   return title + titleSuffix;
 }
 
-function getDescription(pageSeo, globalSeo) {
+function getDynamicDescription(pageSeo, globalSeo) {
   let description = globalSeo.fallbackSeo.description;
   if (pageSeo !== null) {
     const keys = Object.keys(pageSeo);
