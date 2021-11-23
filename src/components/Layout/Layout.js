@@ -6,6 +6,7 @@ import PageTransition from "./PageTransition";
 import ContainerVertical from "./ContainerVertical";
 import DialogFakeWebsite from "../MyComponents/DialogFakeWebsite";
 import PageContextProvider from "../MyComponents/PageContextProvider";
+import Container from "@mui/material/Container";
 
 export default function Layout({ children, pageContext }) {
   return (
@@ -14,7 +15,9 @@ export default function Layout({ children, pageContext }) {
         <HtmlAttributesAndHead />
         <ContainerVertical>
           <Header />
-          <PageTransition>{children}</PageTransition>
+          <PageTransition>
+            <Container component="main">{children}</Container>
+          </PageTransition>
           <Footer />
         </ContainerVertical>
       </DialogFakeWebsite>
