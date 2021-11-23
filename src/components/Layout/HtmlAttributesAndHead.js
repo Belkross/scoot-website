@@ -7,7 +7,8 @@ const CHARSET = "utf-8";
 export default function HtmlAttributesAndHead() {
   const data = useStaticQuery(query);
   const context = React.useContext(PageContext);
-  
+
+  //favicon
   const array_favicon = data.datoCmsFaviconMetaTags.tags.filter(
     (element) => element.tagName === "link"
   );
@@ -16,13 +17,22 @@ export default function HtmlAttributesAndHead() {
     return <link key={sizes} rel={rel} sizes={sizes} href={href} type={type} />;
   });
 
+  const pageSeo = data.allDatoCmsPagesScootin.nodes.find(
+    (node) => node.locale === context.locale && node.slug === context.slug
+  ).seoData;
+  const globalSeo = data.allDatoCmsSite.nodes.find(
+    (node) => node.locale === context.locale
+  ).globalSeo;
+
+  const title = getTitle(pageSeo, globalSeo);
+
   return (
     <Helmet
       htmlAttributes={{
         lang: context.locale,
       }}
     >
-      {/* <title>{siteMetadata.title}</title> */}
+      <title>{title}</title>
       <meta charset={CHARSET} />
       {list_favicon}
       {/* <meta name="description" content={siteMetadata.description} /> */}
@@ -30,10 +40,45 @@ export default function HtmlAttributesAndHead() {
   );
 }
 
+function getTitle(pageSeo, globalSeo) {
+  const titleSuffix = globalSeo.titleSuffix;
+  let title = globalSeo.fallbackSeo.title;
+  if (pageSeo !== null) {
+    const keys = Object.keys(pageSeo);
+    const titleKeyExist = keys.find((key) => key === "title");
+    const titleValueExist = pageSeo.title === null ? false : true;
+    if (titleKeyExist && titleValueExist) {
+      title = pageSeo.title;
+    }
+  }
+  return title + titleSuffix;
+}
 const query = graphql`
   query component_HtmlAttributesAndHead {
     datoCmsFaviconMetaTags {
       tags
+    }
+    allDatoCmsPagesScootin {
+      nodes {
+        seoData {
+          title
+          description
+        }
+        locale
+        slug
+      }
+    }
+    allDatoCmsSite {
+      nodes {
+        globalSeo {
+          fallbackSeo {
+            title
+            description
+          }
+          titleSuffix
+        }
+        locale
+      }
     }
   }
 `;
