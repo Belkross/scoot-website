@@ -1,14 +1,16 @@
 import React from "react";
 import { graphql } from "gatsby";
 import Layout from "../components/Layout/Layout";
+import HomeSection2 from "../components/PageIndex/HomeSection2";
 import HomeSection3 from "../components/PageIndex/HomeSection3";
 
 export default function PageHome({ data, pageContext }) {
   const page = data.allDatoCmsPagesScootin.nodes[0];
   const [section1, section2, section3] = page.sections;
-  console.log(page);
+
   return (
     <Layout pageContext={pageContext}>
+      <HomeSection2 content={section2} />
       <HomeSection3 content={section3} />
     </Layout>
   );
@@ -42,7 +44,7 @@ export const query = graphql`
                 description
                 illustration {
                   alt
-                  gatsbyImageData
+                  url
                 }
               }
               ... on DatoCmsPointIllustrationLinkint {

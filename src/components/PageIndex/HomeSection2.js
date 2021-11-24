@@ -2,19 +2,18 @@ import React from "react";
 import Stack from "@mui/material/Stack";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
-import PointIllustratedSvg from "../PointIllustratedSvg";
+import PointIllustrationSvg from "./PointIllustrationSvg";
 
-function Section2(props) {
-  const { content } = props;
-  const array_articles = Object.values(content.articles);
+export default function Section(props) {
+  const array_articles = props.content.components[0].componentBlocks;
   const list_articles = array_articles.map((article) => {
     return (
-      <PointIllustratedSvg
-        key={article.title}
+      <PointIllustrationSvg
+        key={article.id}
         title={article.title}
         description={article.description}
-        illustration={article.illustration}
-        illustration_alt={article.illustration_alt}
+        illustration={article.illustration.url}
+        illustration_alt={article.illustration.alt}
       />
     );
   });
@@ -23,7 +22,7 @@ function Section2(props) {
     <Box component="section" sx={sx_container}>
       <Typography
         variant="h2"
-        children={content.title}
+        children={props.content.title}
         textAlign="center"
         mb={8}
       />
@@ -31,8 +30,6 @@ function Section2(props) {
     </Box>
   );
 }
-
-export default Section2;
 
 const sx_container = {
   mb: 12,

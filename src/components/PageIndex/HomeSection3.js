@@ -1,6 +1,6 @@
 import React from "react";
 import Stack from "@mui/material/Stack";
-import PointIllustrationLinkInt from "../PointIllustrationLinkInt";
+import PointIllustrationLinkInt from "./PointIllustrationLinkInt";
 
 export default function Section(props) {
   const array_articles = props.content.components[0].componentBlocks;

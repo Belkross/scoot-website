@@ -1,7 +1,7 @@
 import React from "react";
 import Stack from "@mui/material/Stack";
 import Typography from "@mui/material/Typography";
-import { LinkButton } from "./MyComponents/GatsbyLinks";
+import { LinkButton } from "../MyComponents/GatsbyLinks";
 import { GatsbyImage } from "gatsby-plugin-image";
 
 export default function PointIllustrationLinkInt(props) {

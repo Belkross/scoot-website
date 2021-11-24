@@ -3,12 +3,17 @@ import Stack from "@mui/material/Stack";
 import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
 
-function PointIllustratedSvg({ title, description, illustration, illustration_alt }) {
+export default function PointIllustrationSvg({
+  title,
+  description,
+  illustration,
+  illustration_alt,
+}) {
   return (
     <Stack component="article" sx={sx_container}>
       <Box
         component="img"
-        src={illustration.publicURL}
+        src={illustration}
         alt={illustration_alt}
       />
       <Stack sx={sx_text}>
@@ -18,8 +23,6 @@ function PointIllustratedSvg({ title, description, illustration, illustration_al
     </Stack>
   );
 }
-
-export default PointIllustratedSvg;
 
 const sx_container = {
   alignItems: { xs: "center", md: "flex-start" },
