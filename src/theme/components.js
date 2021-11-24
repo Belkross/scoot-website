@@ -36,7 +36,6 @@ export default function addComponents(theme) {
             },
           },
         ],
-
         styleOverrides: {
           root: {
             padding: "12px 12px",

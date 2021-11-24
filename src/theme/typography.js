@@ -11,7 +11,6 @@ function addTypography(theme) {
         lineHeight: 1,
         fontWeight: 700,
         letterSpacing: -2.5,
-        color: theme.palette.primary.light,
       },
       h2: {
         fontFamily: titleFont,
