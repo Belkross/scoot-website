@@ -1,20 +1,20 @@
 import React from "react";
 import Stack from "@mui/material/Stack";
 import Typography from "@mui/material/Typography";
-import ButtonLink from "./ButtonLink";
-import { GatsbyImage, getImage } from "gatsby-plugin-image";
+import { LinkButton } from "./MyComponents/GatsbyLinks";
+import { GatsbyImage } from "gatsby-plugin-image";
 
-function PointIllustratedLink(props) {
+export default function PointIllustrationLinkInt(props) {
   const {
     title,
     description,
     illustration,
     illustration_alt,
-    link,
-    linkPath,
+    anchor,
+    slug,
     direction,
   } = props;
-  const image = getImage(illustration);
+
   return (
     <Stack
       component="article"
@@ -24,17 +24,19 @@ function PointIllustratedLink(props) {
         md: direction === "row-reverse" ? "row-reverse" : "row",
       }}
     >
-      <GatsbyImage image={image} style={style_image} alt={illustration_alt} />
+      <GatsbyImage
+        image={illustration}
+        style={style_image}
+        alt={illustration_alt}
+      />
       <Stack sx={sx_text}>
         <Typography variant="h2" children={title} />
         <Typography children={description} />
-        <ButtonLink children={link} linkPath={linkPath} />
+        <LinkButton anchor={anchor} slug={slug} variant="importantAction" />
       </Stack>
     </Stack>
   );
 }
-
-export default PointIllustratedLink;
 
 const sx_container = {
   justifyContent: "center",

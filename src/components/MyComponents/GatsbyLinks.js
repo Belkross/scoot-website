@@ -15,7 +15,7 @@ export function LinkButton({ anchor, slug, onClick, variant }) {
   const context = React.useContext(PageContext);
   return (
     <Button
-      variant={variant}
+      variant={variant || "contained"}
       component={Link}
       to={context.getPathname(context.locale, slug)}
       activeStyle={{

@@ -8,3 +8,4 @@ export default function PageContact({ data, pageContext }) {
     </Layout>
   );
 }
+
