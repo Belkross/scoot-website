@@ -1,7 +1,7 @@
 import { graphql } from "gatsby";
 import React from "react";
 import Layout from "../components/Layout/Layout";
-import Section3 from "../components/PageRecrutement/Section3";
+import CareerSection2 from "../components/PageRecrutement/CareerSection2";
 
 export default function PageCareer({ data, pageContext }) {
   const sections = data.allDatoCmsPagesScootin.nodes[0].sections
@@ -10,7 +10,7 @@ export default function PageCareer({ data, pageContext }) {
   return (
     <Layout pageContext={pageContext}>
       <h1>{data.allDatoCmsPagesScootin.nodes[0].title}</h1>
-      <Section3 content={section2}/>
+      <CareerSection2 content={section2}/>
     </Layout>
   );
 }

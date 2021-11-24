@@ -1,6 +1,6 @@
 import { createTheme } from "@mui/material/styles";
 
-function addComponents(theme) {
+export default function addComponents(theme) {
   return createTheme(theme, {
     components: {
       MuiIconButton: {
@@ -24,23 +24,26 @@ function addComponents(theme) {
       MuiButton: {
         variants: [
           {
-            props: { variant: "navBar", },
+            props: { variant: "navBar" },
             style: {
-              backgroundColor: "background.navBar",
-              color: "secondary.main",
-              "&:hover": {
-                backgroundColor: "action.hover",
-              },
+              backgroundColor: theme.palette.background.navBar,
+            },
+          },
+          {
+            props: { variant: "importantAction" },
+            style: {
+              backgroundColor: theme.palette.secondary.main,
             },
           },
         ],
-        defaultProps: {
-          variant: "contained",
-          color: "secondary",
-        },
+
         styleOverrides: {
           root: {
             padding: "12px 12px",
+            color: theme.palette.text.primary,
+            "&:hover": {
+              backgroundColor: theme.palette.action.hover,
+            },
           },
         },
       },
@@ -48,4 +51,7 @@ function addComponents(theme) {
   });
 }
 
-export default addComponents;
+/* 
+light mode, components must have a dark color with a light background
+darkmode, light color with a dark background 
+*/

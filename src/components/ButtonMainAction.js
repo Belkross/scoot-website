@@ -5,6 +5,7 @@ import { scroller } from "react-scroll";
 function ButtonMainAction({ children }) {
   return (
     <Button
+      variant="importantAction"
       children={children}
       onClick={() =>
         scroller.scrollTo("footer", {

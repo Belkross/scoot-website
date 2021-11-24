@@ -1,6 +1,6 @@
-import { blueGrey, indigo, blue } from "@mui/material/colors";
+import { blueGrey, indigo, blue, orange } from "@mui/material/colors";
 
-export function palette(mode) {
+export default function palette(mode) {
   if (mode === "light") {
     return {
       mode: "light",
@@ -11,8 +11,7 @@ export function palette(mode) {
         contrastText: "#495567",
       },
       secondary: {
-        main: "#fcb72b",
-        light: "#fff4df",
+        main: orange[300],
       },
       text: {
         primary: blueGrey[900],
@@ -26,7 +25,7 @@ export function palette(mode) {
       },
       action: {
         /* active: "rgba(125, 125, 185, 0.95)", */
-        hover: "rgba(125, 125, 185, 0.2)",
+        hover: "rgba(125, 125, 125, 0.25)",
         selected: "rgba(125,125, 205, 0.35)",
       },
     };
@@ -39,8 +38,8 @@ export function palette(mode) {
         dark: "#495567",
       },
       secondary: {
-        main: "#fcb72b",
-        light: "#fff4df",
+        main: orange[800],
+        /* light: "#fff4df", */
       },
       text: {
         primary: "rgba(255, 255, 255, .85)",
@@ -52,8 +51,16 @@ export function palette(mode) {
         footerUp: blueGrey[800],
         footerDown: blueGrey[700],
       },
+      action: {
+        hover: "rgba(255, 255, 255, 0.25)"
+      }
     };
   }
 }
+/* 
+les icônes ne peuvent pas changer de couleur en fonction du theme mode. 
+Il est donc conseillé de choisir une teinte intermédiaire
 
-export default palette;
+certaines couleurs comme le jaune n’ont qu’une seule couleur de contraste pour
+leur police. Les utiliser amène de la complexité sur la propriété color des composants.
+*/

@@ -11,7 +11,7 @@ export default function LinkNavBar({
   const component = linkType === "menu_link" ? "menu_link" : "internal_link";
 
   if (component === "internal_link") {
-    return <LinkButton anchor={anchor} slug={slug} onClick={onClick} />;
+    return <LinkButton anchor={anchor} slug={slug} onClick={onClick} variant="navBar"/>;
   } else {
     return <LinkMenu anchor={anchor} menuItems={menuItems} onClick={onClick} />;
   }

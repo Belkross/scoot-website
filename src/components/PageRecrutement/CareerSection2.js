@@ -1,14 +1,14 @@
 import React from "react";
 import Stack from "@mui/material/Stack";
-import Job from "./Job";
+import PointInternalLinkJob from "./PointInternalLinkJob";
 import Typography from "@mui/material/Typography";
 
-function Section3(props) {
+export default function Section(props) {
   const { content } = props;
   const array_articles = content.components[0].componentBlocks;
   const list_articles = array_articles.map((article) => {
     return (
-      <Job
+      <PointInternalLinkJob
         key={article.id}
         title={article.title}
         description={article.description}
@@ -20,16 +20,14 @@ function Section3(props) {
 
   return (
     <Stack component="section" sx={sx_container}>
-      <Typography variant="h2">{content.title}</Typography>
+      <Typography variant="h2" mb={4}>{content.title}</Typography>
       {list_articles}
     </Stack>
   );
 }
 
-export default Section3;
-
 const sx_container = {
   mb: 12,
   gap: 2,
-  alignItems: "center"
+  alignItems: "center",
 };

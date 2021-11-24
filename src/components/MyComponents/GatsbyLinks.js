@@ -10,16 +10,17 @@ import { PageContext } from "./PageContextProvider";
 you need to use a specific MenuItem component with Menu */
 /* due to url architecture, remember to deliver a locale everytime you think about an internal link*/
 
-export function LinkButton({ anchor, slug, onClick }) {
+export function LinkButton({ anchor, slug, onClick, variant }) {
   const theme = useTheme();
   const context = React.useContext(PageContext);
   return (
     <Button
+      variant={variant}
       component={Link}
       to={context.getPathname(context.locale, slug)}
-      sx={sx_Link}
       activeStyle={{
         backgroundColor: theme.palette.action.selected,
+        border: "1px solid rgba(0, 0, 0, .1)",
       }}
       onClick={onClick}
       children={anchor}
@@ -68,9 +69,9 @@ function LinkMenuItem({ anchor, slug, onClick }) {
     <MenuItem
       component={Link}
       to={context.getPathname(context.locale, slug)}
-      sx={sx_MenuItem}
       activeStyle={{
         backgroundColor: theme.palette.action.selected,
+        border: "1px solid rgba(0, 0, 0, .1)",
       }}
       onClick={onClick}
       children={anchor}
@@ -79,19 +80,5 @@ function LinkMenuItem({ anchor, slug, onClick }) {
 }
 
 function LinkMenuAnchor({ anchor, onClick }) {
-  return (
-    <Button sx={sx_Link} onClick={onClick} children={anchor} disableElevation />
-  );
+  return <Button onClick={onClick} children={anchor} disableElevation />;
 }
-
-const sx_MenuItem = {
-  color: "text.primary",
-  "&:hover": {
-    backgroundColor: "action.hover",
-  },
-};
-
-const sx_Link = {
-  backgroundColor: "background.navBar",
-  ...sx_MenuItem,
-};
