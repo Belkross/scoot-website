@@ -39,7 +39,7 @@ export default function PointIllustrationLinkInt(props) {
 }
 
 const sx_container = {
-  justifyContent: "center",
+  justifyContent: {xs:"center", md: "space-between"},
   alignItems: "center",
   mb: 8,
   gap: 6,
