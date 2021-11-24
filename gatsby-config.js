@@ -10,7 +10,6 @@ module.exports = {
     "gatsby-plugin-react-helmet",
     "gatsby-plugin-sharp",
     "gatsby-transformer-sharp",
-    `gatsby-transformer-yaml`,
     {
       resolve: "gatsby-source-filesystem",
       options: {
@@ -18,13 +17,6 @@ module.exports = {
         path: "./src/assets/",
       },
       __key: "images",
-    },
-    {
-      resolve: "gatsby-source-filesystem",
-      options: {
-        name: "content",
-        path: "./src/content/",
-      },
     },
     {
       resolve: `gatsby-source-datocms`,
