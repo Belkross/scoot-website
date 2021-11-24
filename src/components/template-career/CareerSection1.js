@@ -1,19 +1,20 @@
 import React from "react";
 import Stack from "@mui/material/Stack";
 import Typography from "@mui/material/Typography";
-import Value from "./Value";
+import PointIllustration from "./PointIllustration";
 
-function Section2(props) {
+export default function Section(props) {
   const { content } = props;
-  const array_articles = Object.values(content.articles);
+
+  const array_articles = content.components[0].componentBlocks;
   const list_articles = array_articles.map((article) => {
     return (
-      <Value
-        key={article.title}
+      <PointIllustration
+        key={article.id}
         title={article.title}
         description={article.description}
-        illustration={article.illustration}
-        alt={article.illustration_alt}
+        illustration={article.illustration.gatsbyImageData}
+        alt={article.illustration.alt}
       />
     );
   });
@@ -25,8 +26,6 @@ function Section2(props) {
     </Stack>
   );
 }
-
-export default Section2;
 
 const sx_articles = {
   flexDirection: { xs: "column", md: "row" },

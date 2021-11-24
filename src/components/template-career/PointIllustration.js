@@ -1,14 +1,13 @@
 import React from "react";
 import Stack from "@mui/material/Stack";
 import Typography from "@mui/material/Typography";
-import { GatsbyImage, getImage } from "gatsby-plugin-image";
+import { GatsbyImage } from "gatsby-plugin-image";
 
-function Value(props) {
+export default function PointIllustration(props) {
   const { title, description, illustration, alt } = props;
-  const image = getImage(illustration);
   return (
     <Stack sx={sx_container} component="article">
-      <GatsbyImage image={image} alt={alt} style={style_image} />
+      <GatsbyImage image={illustration} alt={alt} style={style_image} />
       <Stack sx={sx_text}>
         <Typography variant="h3" children={title} />
         <Typography children={description} />
@@ -16,8 +15,6 @@ function Value(props) {
     </Stack>
   );
 }
-
-export default Value;
 
 const sx_container = {
   mb: { xs: 8, md: 12 },

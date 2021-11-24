@@ -1,22 +1,22 @@
 import { graphql } from "gatsby";
 import React from "react";
 import Layout from "../components/Layout/Layout";
-import CareerSection2 from "../components/PageRecrutement/CareerSection2";
+import CareerSection2 from "../components/template-career/CareerSection2";
+import CareerSection1 from "../components/template-career/CareerSection1";
 
 export default function PageCareer({ data, pageContext }) {
-  const sections = data.allDatoCmsPagesScootin.nodes[0].sections
-  const [section1, section2] = sections
-  console.log(section1)
+  const sections = data.allDatoCmsPagesScootin.nodes[0].sections;
+  const [section1, section2] = sections;
   return (
     <Layout pageContext={pageContext}>
-      <h1>{data.allDatoCmsPagesScootin.nodes[0].title}</h1>
-      <CareerSection2 content={section2}/>
+      <CareerSection1 content={section1} />
+      <CareerSection2 content={section2} />
     </Layout>
   );
 }
 
 export const query = graphql`
-  query template_career ($slug: String, $locale: String) {
+  query template_career($slug: String, $locale: String) {
     allDatoCmsPagesScootin(
       filter: { slug: { eq: $slug }, locale: { eq: $locale } }
     ) {
@@ -35,7 +35,7 @@ export const query = graphql`
                 description
                 illustration {
                   alt
-                  url
+                  gatsbyImageData
                 }
               }
               ... on DatoCmsPointLinkint {
