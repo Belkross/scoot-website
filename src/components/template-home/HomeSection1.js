@@ -15,8 +15,8 @@ export default function Section(props) {
         style={style_image}
       />
       <Stack sx={sx_text} component="article">
-        <Typography variant="h1" children={props.content.title} />
-        <Typography children={content.description} color="primary.light" />
+        <Typography variant="h1" children={props.content.title} color="secondary.main" />
+        <Typography children={content.description} color="common.white" />
       </Stack>
     </Box>
   );

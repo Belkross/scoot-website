@@ -1,5 +1,8 @@
 import { blueGrey, indigo, blue, orange } from "@mui/material/colors";
 
+const lightTextPrimary = blueGrey[900];
+const darkTextPrimary = "rgba(255, 255, 255, .85)";
+
 export default function palette(mode) {
   if (mode === "light") {
     return {
@@ -14,7 +17,8 @@ export default function palette(mode) {
         main: orange[300],
       },
       text: {
-        primary: blueGrey[900],
+        primary: lightTextPrimary,
+        opposite: darkTextPrimary,
       },
       background: {
         /* default:, */
@@ -42,7 +46,8 @@ export default function palette(mode) {
         /* light: "#fff4df", */
       },
       text: {
-        primary: "rgba(255, 255, 255, .85)",
+        primary: darkTextPrimary,
+        opposite: lightTextPrimary,
       },
       background: {
         default: blueGrey[900],
@@ -52,8 +57,8 @@ export default function palette(mode) {
         footerDown: blueGrey[700],
       },
       action: {
-        hover: "rgba(255, 255, 255, 0.25)"
-      }
+        hover: "rgba(255, 255, 255, 0.25)",
+      },
     };
   }
 }

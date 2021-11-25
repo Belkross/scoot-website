@@ -4,6 +4,7 @@ import Layout from "../components/Layout/Layout";
 import HomeSection2 from "../components/template-home/HomeSection2";
 import HomeSection3 from "../components/template-home/HomeSection3";
 import HomeSection1 from "../components/template-home/HomeSection1";
+import Container from "@mui/material/Container";
 
 export default function PageHome({ data, pageContext }) {
   const page = data.allDatoCmsPagesScootin.nodes[0];
@@ -11,9 +12,11 @@ export default function PageHome({ data, pageContext }) {
 
   return (
     <Layout pageContext={pageContext}>
-      <HomeSection1 content={section1}/>
-      <HomeSection2 content={section2} />
-      <HomeSection3 content={section3} />
+      <HomeSection1 content={section1} />
+      <Container component="main">
+        <HomeSection2 content={section2} />
+        <HomeSection3 content={section3} />
+      </Container>
     </Layout>
   );
 }
