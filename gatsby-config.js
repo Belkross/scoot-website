@@ -1,10 +1,5 @@
 module.exports = {
-  siteMetadata: {
-    siteUrl: "https://www.yourdomain.tld",
-    title: "Scoot",
-    description: "Exemple d’un site vitrine par Truong Huy",
-    charset: "utf-8",
-  },
+  // siteMetadata: {}, 
   plugins: [
     "gatsby-plugin-image",
     "gatsby-plugin-react-helmet",
