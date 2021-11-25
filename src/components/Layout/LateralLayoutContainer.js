@@ -5,7 +5,7 @@ import Container from "@mui/material/Container";
 export default function ContainerLateral({ children }) {
   const context = React.useContext(PageContext);
   const currentPage = context.slug;
-
+  
   if (currentPage === "home") {
     return children;
   } else {

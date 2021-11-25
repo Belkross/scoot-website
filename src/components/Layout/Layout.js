@@ -3,24 +3,27 @@ import HtmlAttributesAndHead from "./HtmlAttributesAndHead";
 import Header from "./Header";
 import Footer from "./Footer";
 import PageTransition from "./PageTransition";
-import ContainerVertical from "./ContainerVertical";
-import ContainerLateral from "./ContainerLateral";
+import VerticalLayoutContainerA from "./VerticalLayoutContainerA";
+import VerticalLayoutContainerB from "./VerticalLayoutContainerB";
+import LateralLayoutContainer from "./LateralLayoutContainer";
 import DialogFakeWebsite from "../MyComponents/DialogFakeWebsite";
 import PageContextProvider from "../MyComponents/PageContextProvider";
 
 export default function Layout({ children, pageContext }) {
-  return (
-    <PageContextProvider pageContext={pageContext}>
-      <DialogFakeWebsite>
-        <HtmlAttributesAndHead />
-        <ContainerVertical>
-          <Header />
-          <PageTransition>
-            <ContainerLateral>{children}</ContainerLateral>
-          </PageTransition>
-          <Footer />
-        </ContainerVertical>
-      </DialogFakeWebsite>
-    </PageContextProvider>
-  );
+	return (
+		<PageContextProvider pageContext={pageContext}>
+			<DialogFakeWebsite>
+				<HtmlAttributesAndHead />
+				<VerticalLayoutContainerA>
+					<Header />
+					<VerticalLayoutContainerB>
+						<PageTransition>
+							<LateralLayoutContainer>{children}</LateralLayoutContainer>
+						</PageTransition>
+					</VerticalLayoutContainerB>
+					<Footer />
+				</VerticalLayoutContainerA>
+			</DialogFakeWebsite>
+		</PageContextProvider>
+	);
 }
