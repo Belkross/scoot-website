@@ -2,12 +2,14 @@ import React from "react";
 import { graphql } from "gatsby";
 import Layout from "../components/Layout/Layout";
 import ContactSection1 from "../components/PageContact/ContactSection1";
+import ContactSection2 from "../components/PageContact/ContactSection2";
 
 export default function PageContact({ data, pageContext }) {
-	const section1 = data.allDatoCmsPagesScootin.nodes[0].sections[0];
+	const [section1, section2] = data.allDatoCmsPagesScootin.nodes[0].sections;
 	
 	return (
 		<Layout pageContext={pageContext}>
+			<ContactSection2 content={section2} />
 			<ContactSection1 content={section1} />
 		</Layout>
 	);
