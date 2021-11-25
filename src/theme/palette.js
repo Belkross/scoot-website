@@ -18,7 +18,7 @@ export default function palette(mode) {
       },
       text: {
         primary: lightTextPrimary,
-        opposite: darkTextPrimary,
+        oppositeMode: darkTextPrimary,
       },
       background: {
         /* default:, */
@@ -47,7 +47,7 @@ export default function palette(mode) {
       },
       text: {
         primary: darkTextPrimary,
-        opposite: lightTextPrimary,
+        oppositeMode: lightTextPrimary,
       },
       background: {
         default: blueGrey[900],
