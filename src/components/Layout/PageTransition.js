@@ -9,7 +9,6 @@ export default function PageTransition({ children }) {
 			}}
 			animate={{
 				opacity: 1,
-				x: 0,
 			}}
 			exit={{
 				opacity: 0,
@@ -18,7 +17,6 @@ export default function PageTransition({ children }) {
 				type: "spring",
 				mass: 0.35,
 				stiffness: 75,
-				duration: 0.2,
 			}}
 		>
 			{children}
