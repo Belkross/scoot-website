@@ -11,74 +11,72 @@ you need to use a specific MenuItem component with Menu */
 /* due to url architecture, remember to deliver a locale everytime you think about an internal link*/
 
 export function LinkButton({ anchor, slug, onClick, variant }) {
-  const theme = useTheme();
-  const context = React.useContext(PageContext);
-  return (
-    <Button
-      variant={variant || "contained"}
-      component={Link}
-      to={context.getPathname(context.locale, slug)}
-      activeStyle={{
-        backgroundColor: theme.palette.action.selected,
-        border: "1px solid rgba(0, 0, 0, .1)",
-      }}
-      onClick={onClick}
-      children={anchor}
-      disableElevation
-    />
-  );
+	const theme = useTheme();
+	const context = React.useContext(PageContext);
+	return (
+		<Button
+			variant={variant || "contained"}
+			component={Link}
+			to={context.getPathname(context.locale, slug)}
+			activeStyle={{
+				backgroundColor: theme.palette.action.selected,
+			}}
+			onClick={onClick}
+			children={anchor}
+			disableElevation
+		/>
+	);
 }
 
 export function LinkMenu({ anchor, menuItems, onClick }) {
-  const [anchorEl, setAnchorEl] = React.useState(null);
-  const open = Boolean(anchorEl);
-  const handleClick = (event) => {
-    setAnchorEl(event.currentTarget);
-  };
-  const handleClose = () => {
-    setAnchorEl(null);
-  };
+	const [anchorEl, setAnchorEl] = React.useState(null);
+	const open = Boolean(anchorEl);
+	const handleClick = (event) => {
+		setAnchorEl(event.currentTarget);
+	};
+	const handleClose = () => {
+		setAnchorEl(null);
+	};
 
-  const list_MenuItem = menuItems.map((menuItem) => {
-    return (
-      <LinkMenuItem
-        key={menuItem.id}
-        anchor={menuItem.anchor}
-        slug={menuItem.slug}
-        onClick={onClick}
-      />
-    );
-  });
+	const list_MenuItem = menuItems.map((menuItem) => {
+		return (
+			<LinkMenuItem
+				key={menuItem.id}
+				anchor={menuItem.anchor}
+				slug={menuItem.slug}
+				onClick={onClick}
+			/>
+		);
+	});
 
-  return (
-    <div>
-      <LinkMenuAnchor anchor={anchor} onClick={handleClick} />
-      <Menu anchorEl={anchorEl} open={open} onClose={handleClose}>
-        {list_MenuItem}
-      </Menu>
-    </div>
-  );
+	return (
+		<div>
+			<LinkMenuAnchor anchor={anchor} onClick={handleClick} />
+			<Menu anchorEl={anchorEl} open={open} onClose={handleClose}>
+				{list_MenuItem}
+			</Menu>
+		</div>
+	);
 }
 
 //---------------------Sous composants
 
 function LinkMenuItem({ anchor, slug, onClick }) {
-  const theme = useTheme();
-  const context = React.useContext(PageContext);
-  return (
-    <MenuItem
-      component={Link}
-      to={context.getPathname(context.locale, slug)}
-      activeStyle={{
-        backgroundColor: theme.palette.action.selected,
-        border: "1px solid rgba(0, 0, 0, .1)",
-      }}
-      onClick={onClick}
-      children={anchor}
-    />
-  );
+	const theme = useTheme();
+	const context = React.useContext(PageContext);
+	return (
+		<MenuItem
+			component={Link}
+			to={context.getPathname(context.locale, slug)}
+			activeStyle={{
+				backgroundColor: theme.palette.action.selected,
+			}}
+			onClick={onClick}
+			children={anchor}
+		/>
+	);
 }
 
 function LinkMenuAnchor({ anchor, onClick }) {
-  return <Button onClick={onClick} children={anchor} disableElevation />;
+	return <Button onClick={onClick} children={anchor} disableElevation />;
 }
