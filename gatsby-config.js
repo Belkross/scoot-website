@@ -1,5 +1,5 @@
 require("dotenv").config({
-	path: `.env.${process.env.NODE_ENV}`,
+  path: `.env.${process.env.NODE_ENV}`,
 });
 
 module.exports = {
@@ -18,12 +18,12 @@ module.exports = {
 			__key: "images",
 		},
 		{
-			resolve: `gatsby-source-datocms`,
+			resolve: "gatsby-source-datocms",
 			options: {
 				// You can find your read-only API token under the Settings > API tokens
 				// section of your administrative area. Make sure to grant both CDA and CMA permissions.
 				apiToken: process.env.DATOCMS_API_KEY,
-				environment: `main`,
+				environment: "main",
 				// If you are working on development/staging environment, you might want to
 				// preview the latest version of records instead of the published one:
 				previewMode: false,

@@ -10,7 +10,7 @@ import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
 
 function MyAccordion({ title, description }) {
   const [expansion, setExpansion] = useState(false);
-  const handleClick = (event) => {
+  const handleClick = () => {
     setExpansion((prevState) => !prevState);
   };
 

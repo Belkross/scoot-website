@@ -12,7 +12,7 @@ import ButtonLocale from "../MyComponents/ButtonLocale";
 import { graphql, useStaticQuery } from "gatsby";
 import { PageContext } from "../MyComponents/PageContextProvider.js";
 
-function Header(props) {
+function Header() {
 	const data = useStaticQuery(query);
 	const context = React.useContext(PageContext);
 	const content = data.allDatoCmsHeaderScootin.nodes.find(

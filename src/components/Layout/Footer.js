@@ -5,7 +5,7 @@ import FooterPart2 from "./FooterPart2";
 import { useStaticQuery, graphql } from "gatsby";
 import { PageContext } from "../MyComponents/PageContextProvider";
 
-function Footer(props) {
+function Footer() {
   const data = useStaticQuery(query);
   const context = React.useContext(PageContext);
   

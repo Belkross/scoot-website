@@ -1,0 +1,31 @@
+// it is recommended to not install eslint globally
+// to manually run : .\node_modules\.bin/eslint ./src
+{
+	"env": {
+		"browser": true,
+		"es2021": true,
+		"node": true
+	},
+	"extends": ["eslint:recommended", "plugin:react/recommended"],
+	"parserOptions": {
+		"ecmaFeatures": {
+			"jsx": true
+		},
+		"ecmaVersion": 2021,
+		"sourceType": "module"
+	},
+	"plugins": ["react"],
+	"rules": {
+		"indent": 0,
+		"linebreak-style": ["error", "windows"],
+		"quotes": ["error", "double"],
+		"semi": ["error", "always"],
+		"react/prop-types": 0, //will need Typescript respect these rules
+		"react/no-children-prop": 0
+	},
+	"settings": {
+		"react": {
+			"version": "detect" //warning if not provided
+		}
+	}
+}
