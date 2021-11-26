@@ -9,7 +9,7 @@ export default function addComponents(theme) {
             props: { variant: "navigation" },
             style: {
               border: "1px solid",
-              borderRadius: "15px",
+              borderRadius: theme.shape.borderRadius,
             },
           },
         ],
@@ -33,7 +33,7 @@ export default function addComponents(theme) {
             props: { variant: "importantAction" },
             style: {
               backgroundColor: theme.palette.secondary.main,
-              color: "black"
+              color: theme.palette.text.dark
             },
           },
         ],
