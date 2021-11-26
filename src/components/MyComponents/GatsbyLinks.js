@@ -5,6 +5,7 @@ import MenuItem from "@mui/material/MenuItem";
 import { Link } from "gatsby";
 import { useTheme } from "@mui/material";
 import { PageContext } from "./PageContextProvider";
+import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 
 /* LinkButton and LinkMenuItem have exactly the same purpose, but to respect Mui, 
 you need to use a specific MenuItem component with Menu */
@@ -78,5 +79,12 @@ function LinkMenuItem({ anchor, slug, onClick }) {
 }
 
 function LinkMenuAnchor({ anchor, onClick }) {
-	return <Button onClick={onClick} children={anchor} disableElevation />;
+	return (
+		<Button
+			onClick={onClick}
+			children={anchor}
+			disableElevation
+			endIcon={<KeyboardArrowDownIcon />}
+		/>
+	);
 }
