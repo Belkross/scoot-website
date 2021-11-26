@@ -21,7 +21,7 @@ function FooterPart2(props) {
   return (
     <Grid component="section" container sx={sx_container} spacing={1}>
       <Grid item sx={sx_GridItem1} xs={12} sm={6}>
-        <Typography color="primary.light">{content.copyright}</Typography>
+        <Typography color="text.light">{content.copyright}</Typography>
       </Grid>
       <Grid item sx={sx_GridItem2} xs={12} sm={6}>
         <Stack

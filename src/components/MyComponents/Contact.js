@@ -13,10 +13,10 @@ function Contact(props) {
   const secondPart = [props.phone, props.mail];
 
   const list_firstPart = firstPart.map((line) => {
-    return <Typography key={line} color="primary.light" children={line} />;
+    return <Typography key={line} color="text.light" children={line} />;
   });
   const list_secondPart = secondPart.map((line) => {
-    return <Typography key={line} color="primary.light" children={line} />;
+    return <Typography key={line} color="text.light" children={line} />;
   });
 
   return (

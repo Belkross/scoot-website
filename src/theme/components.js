@@ -33,6 +33,7 @@ export default function addComponents(theme) {
             props: { variant: "importantAction" },
             style: {
               backgroundColor: theme.palette.secondary.main,
+              color: "black"
             },
           },
         ],

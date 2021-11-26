@@ -22,7 +22,7 @@ function FooterPart1(props) {
               variant="h4"
               component="p"
               children="Contact"
-              color="primary.light"
+              color="text.light"
               mb={3}
             />
             <Contact
