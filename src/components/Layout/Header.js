@@ -13,101 +13,98 @@ import { graphql, useStaticQuery } from "gatsby";
 import { PageContext } from "../MyComponents/PageContextProvider.js";
 
 function Header(props) {
-  const data = useStaticQuery(query);
-  const context = React.useContext(PageContext)
-  const content = data.allDatoCmsHeaderScootin.nodes.find(
-    (node) => node.locale === context.locale
-  );
+	const data = useStaticQuery(query);
+	const context = React.useContext(PageContext);
+	const content = data.allDatoCmsHeaderScootin.nodes.find(
+		(node) => node.locale === context.locale
+	);
 
-  const list_tabs = content.navLinks.map((tab) => {
-    return (
-      <NavBarLinkSelector
-        key={tab.id}
-        slug={tab.slug}
-        anchor={tab.anchor}
-        linkType={tab.model.apiKey}
-        menuItems={tab.menuItems}
-      />
-    );
-  });
+	const list_tabs = content.navLinks.map((tab) => {
+		return (
+			<NavBarLinkSelector
+				key={tab.id}
+				slug={tab.slug}
+				anchor={tab.anchor}
+				linkType={tab.model.apiKey}
+				menuItems={tab.menuItems}
+			/>
+		);
+	});
 
-  return (
-    <AppBarTop>
-      <Grid container component="nav" alignItems="center">
-        <Grid item xs={6} b11={2}>
-          <Logo
-            name={content.name}
-            illustration={<SportsMotorsportsIcon fontSize="large" />}
-          />
-        </Grid>
-        <Grid item sx={sx_GridTabs} md={8}>
-          <Stack sx={sx_tabs}>
-            {list_tabs}
-            <ButtonMainAction children={content.mainAction} />
-          </Stack>
-        </Grid>
-        <Grid item xs={6} b11={2}>
-          <Stack
-            direction="row"
-            spacing={1}
-            justifyContent="flex-end"
-            alignItems="center"
-          >
-            <ButtonLocale />
-            <ButtonThemeMode />
-            <ButtonMenu tabs={content.navLinks} />
-          </Stack>
-        </Grid>
-      </Grid>
-    </AppBarTop>
-  );
+	return (
+		<AppBarTop>
+			<Grid container component="nav" alignItems="center">
+				<Grid item xs={6} b11={2}>
+					<Logo name={content.name} illustration={<SportsMotorsportsIcon />} />
+				</Grid>
+				<Grid item sx={sx_GridTabs} md={8}>
+					<Stack sx={sx_tabs}>
+						{list_tabs}
+						<ButtonMainAction children={content.mainAction} />
+					</Stack>
+				</Grid>
+				<Grid item xs={6} b11={2}>
+					<Stack
+						direction="row"
+						spacing={1}
+						justifyContent="flex-end"
+						alignItems="center"
+					>
+						<ButtonLocale />
+						<ButtonThemeMode />
+						<ButtonMenu tabs={content.navLinks} />
+					</Stack>
+				</Grid>
+			</Grid>
+		</AppBarTop>
+	);
 }
 
 export default Header;
 
 const sx_GridTabs = {
-  display: { xs: "none", b11: "grid" },
+	display: { xs: "none", b11: "grid" },
 };
 
 const sx_tabs = {
-  flexDirection: "row",
-  alignItems: "center",
-  justifyContent: "center",
-  gap: 1,
+	flexDirection: "row",
+	alignItems: "center",
+	justifyContent: "center",
+	gap: 1,
 };
 
 const query = graphql`
-  query component_header {
-    allDatoCmsHeaderScootin {
-      nodes {
-        name
-        navLinks {
-          ... on DatoCmsInternalLink {
-            id
-            anchor
-            slug
-            model {
-              apiKey
-            }
-          }
-          ... on DatoCmsMenuLink {
-            id
-            anchor
-            menuItems {
-              anchor
-              slug
-              id
-            }
-            model {
-              apiKey
-            }
-          }
-        }
-        mainAction
-        locale
-      }
-    }
-  }
+	query component_header {
+		allDatoCmsHeaderScootin {
+			nodes {
+				name
+				navLinks {
+					... on DatoCmsInternalLink {
+						id
+						anchor
+						slug
+						model {
+							apiKey
+						}
+					}
+					... on DatoCmsMenuLink {
+						id
+						anchor
+						menuItems {
+							anchor
+							slug
+							id
+						}
+						model {
+							apiKey
+						}
+					}
+				}
+				mainAction
+				locale
+			}
+		}
+	}
 `;
 
 /* 
