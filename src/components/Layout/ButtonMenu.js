@@ -8,41 +8,42 @@ import NavBarLinkSelector from "../NavBarLinkSelector.js";
 import AppBarLateral from "../MyComponents/AppBarLateral.js";
 
 function ButtonMenu(props) {
-  const [drawerDisplay, setDrawerDisplay] = useState(false);
-  const toggleDrawer = () => {
-    setDrawerDisplay((prevState) => !prevState);
-  };
+	const [drawerDisplay, setDrawerDisplay] = useState(false);
+	const toggleDrawer = () => {
+		setDrawerDisplay((prevState) => !prevState);
+	};
 
-  const list_tabs = props.tabs.map((tab) => {
-    return (
-      <NavBarLinkSelector
-        key={tab.id}
-        slug={tab.slug}
-        anchor={tab.anchor}
-        linkType={tab.model.apiKey}
-        menuItems={tab.menuItems}
-        locale={props.locale}
-        onClick={toggleDrawer}
-      />
-    );
-  });
+	const list_tabs = props.tabs.map((tab) => {
+		return (
+			<NavBarLinkSelector
+				key={tab.id}
+				slug={tab.slug}
+				anchor={tab.anchor}
+				linkType={tab.model.apiKey}
+				menuItems={tab.menuItems}
+				locale={props.locale}
+				onClick={toggleDrawer}
+			/>
+		);
+	});
 
-  return (
-    <Box display="inline">
-      <IconButton
-        variant="navigation"
-        /* variant="AppBar" // to applay a peculiar style */
-        onClick={toggleDrawer}
-        children={<MenuIcon />}
-        aria-label="toggle side navigation bar"
-      />
-      <Drawer anchor="right" open={drawerDisplay} onClose={toggleDrawer}>
-        <AppBarLateral>
-          <Stack spacing={1} alignItems="center">{list_tabs}</Stack>
-        </AppBarLateral>
-      </Drawer>
-    </Box>
-  );
+	return (
+		<Box display="inline">
+			<IconButton
+				variant="navigation"
+				onClick={toggleDrawer}
+				children={<MenuIcon />}
+				aria-label="toggle side navigation bar"
+			/>
+			<Drawer anchor="right" open={drawerDisplay} onClose={toggleDrawer}>
+				<AppBarLateral>
+					<Stack spacing={1} alignItems="center">
+						{list_tabs}
+					</Stack>
+				</AppBarLateral>
+			</Drawer>
+		</Box>
+	);
 }
 
 export default ButtonMenu;
