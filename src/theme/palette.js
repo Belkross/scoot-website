@@ -21,8 +21,8 @@ export default function palette(mode) {
         oppositeMode: darkTextPrimary,
       },
       background: {
-        /* default:, */
-        paper: indigo[50],
+        default: blue[50],
+        paper: indigo[100],
         navBar: blue[100],
         footerUp: "#495567",
         footerDown: "#333A44",
