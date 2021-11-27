@@ -2,9 +2,11 @@
 
 Live Site : [scootin.belkross.com](https://scootin.belkross.com/)
 
-### Description
+### Description
 
-A commercial website thought for a scooter company. All the content (including SEO) is connected to a CMS and easily editable by non developers. To take advantage of this, most of the components are scalable. 
+A commercial website thought for a scooter company. All the content (including SEO) is
+connected to a CMS and easily editable by non developers. To take advantage of this, most
+of the components are scalable.
 
 ### Features
 
