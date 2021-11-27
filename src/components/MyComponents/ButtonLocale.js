@@ -27,7 +27,8 @@ export default function ButtonLocale() {
 }
 
 const sx_ToggleButton = {
-	width: 45,
+	width: 42,
+	height: 42,
 	borderColor: "text.primary",
 	"&.Mui-selected": {
 		backgroundColor: "action.selected",
