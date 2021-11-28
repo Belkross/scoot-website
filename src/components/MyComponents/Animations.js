@@ -21,3 +21,16 @@ export function ScaleWhenHover({ children }) {
 		</motion.div>
 	);
 }
+
+export function RotateWhenMounted({ children }) {
+	return (
+		<motion.div
+			initial={{ rotate: 270 }}
+			animate={{ rotate: 0 }}
+			transition={{ duration: 1 }}
+		>
+			{children}
+		</motion.div>
+	);
+}
+
