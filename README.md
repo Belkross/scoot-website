@@ -1,12 +1,11 @@
 # Website Scootin
 
-Live Site : [scootin.belkross.com](https://scootin.belkross.com/)
+Live site : [scootin.belkross.com](https://scootin.belkross.com/)
 
 ### Description
 
 A commercial website thought for a scooter company. All the content (including SEO) is
-connected to a CMS and easily editable by non developers. To take advantage of this, most
-of the components are scalable.
+connected to a CMS and easily editable by non developers.
 
 ### Features
 
@@ -15,6 +14,7 @@ of the components are scalable.
 - Contact form connected to a mail address
 - Page transition, animations, scrolling
 - First-mobile design, responsiveness
+- Accessibility
 
 ### Build with
 
