@@ -13,3 +13,11 @@ export function FadeInWhenVisible({ children }) {
 		</motion.div>
 	);
 }
+
+export function ScaleWhenHover({ children }) {
+	return (
+		<motion.div whileHover={{ scale: 1.05 }} transition={{ duration: 0.2 }}>
+			{children}
+		</motion.div>
+	);
+}
