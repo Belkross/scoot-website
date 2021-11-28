@@ -34,3 +34,15 @@ export function RotateWhenMounted({ children }) {
 	);
 }
 
+export function TranslateWhenVisible({ children }) {
+	return (
+		<motion.div
+			initial={{ x: -500 }}
+			whileInView={{ x: 0 }}
+			transition={{ duration: 0.8 }}
+			viewport={{ once: false }}
+		>
+			{children}
+		</motion.div>
+	);
+}
